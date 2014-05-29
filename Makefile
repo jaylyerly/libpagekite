@@ -1,9 +1,28 @@
 #!/usr/bin/colormake
 
+LIBEV_INC_DIR ?= /usr/include/libev
+LIBEV_LIB_DIR ?= /usr/lib/libev
+ifeq ($(mac),1)
+    # location after a 'brew install libev'
+    LIBEV_INC_DIR = /usr/local/include
+    LIBEV_LIB_DIR = /usr/local/lib
+endif
+
 OPT ?= -g -O3
+ifeq ($(debug),1)
+   OPT = -g
+endif
+
+OSFLAGS = 
+ifeq ($(mac),1)
+    # LibPageKite uses a bunch of methods in the 
+    # SSL lib that are deprecated as of 10.7
+    OSFLAGS = -Wno-deprecated 
+endif
+
 CFLAGS ?= -std=c99 -pedantic -Wall -W -fpic -fno-strict-aliasing \
-          -I/usr/include/libev $(OPT)
-CLINK ?= -lpthread -lssl -lcrypto -lm -lev
+          -I$(LIBEV_INC_DIR) $(OPT) $(OSFLAGS)
+CLINK ?= -L$(LIBEV_LIB_DIR) -lpthread -lssl -lcrypto -lm -lev
 
 TOBJ = pkproto_test.o pkmanager_test.o sha1_test.o utils_test.o
 OBJ = pkerror.o pkproto.o pkconn.o pkblocker.o pkmanager.o \
@@ -21,9 +40,9 @@ DEFINES=-DHAVE_IPV6=$(HAVE_IPV6) \
 
 NDK_PROJECT_PATH ?= "/home/bre/Projects/android-ndk-r8"
 
-default: libpagekite.so pagekitec
+default: libpagekite pagekitec
 
-all: runtests libpagekite.so pagekitec httpkite
+all: runtests libpagekite pagekitec httpkite
 
 runtests: tests
 	@./tests && echo Tests passed || echo Tests FAILED.
@@ -32,11 +51,21 @@ runtests: tests
 android:
 	@$(NDK_PROJECT_PATH)/ndk-build
 
+# for mac builds, rerun make with the mac flag set to 1
+mac:
+	$(MAKE) libpagekite pagekitec httpkite mac=1 debug=$(debug)
+	$(MAKE) runtests mac=1 debug=$(debug)
+
 tests: tests.o $(OBJ) $(TOBJ)
 	$(CC) $(CFLAGS) -o tests tests.o $(OBJ) $(TOBJ) $(CLINK)
 
+libpagekite: libpagekite.so libpagekite.a
+
 libpagekite.so: $(OBJ)
 	$(CC) $(CFLAGS) -shared -o libpagekite.so $(OBJ) $(CLINK)
+
+libpagekite.a: $(OBJ)
+	ar rcs libpagekite.a $(OBJ) 
 
 httpkite: httpkite.o $(OBJ)
 	$(CC) $(CFLAGS) -o httpkite httpkite.o $(OBJ) $(CLINK)
@@ -49,7 +78,7 @@ version:
 	@touch pkproto.h
 
 clean:
-	rm -vf tests pagekitec httpkite *.o *.so
+	rm -vf tests pagekitec httpkite *.o *.so *.a
 
 allclean: clean
 	find . -name '*.o' |xargs rm -vf
