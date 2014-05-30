@@ -1,0 +1,527 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4062D6B69B61478282C20DDB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 69C9E08C096A4449BB02459A /* libPods.a */; };
+		EC7A27341937B0FD002CAB06 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC7A27331937B0FD002CAB06 /* Cocoa.framework */; };
+		EC7A273E1937B0FD002CAB06 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EC7A273C1937B0FD002CAB06 /* InfoPlist.strings */; };
+		EC7A27491937B0FD002CAB06 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC7A27481937B0FD002CAB06 /* XCTest.framework */; };
+		EC7A274A1937B0FD002CAB06 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC7A27331937B0FD002CAB06 /* Cocoa.framework */; };
+		EC7A274D1937B0FD002CAB06 /* PageKiteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC7A27301937B0FD002CAB06 /* PageKiteKit.framework */; };
+		EC7A27531937B0FD002CAB06 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EC7A27511937B0FD002CAB06 /* InfoPlist.strings */; };
+		EC7A27551937B0FD002CAB06 /* PageKiteKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC7A27541937B0FD002CAB06 /* PageKiteKitTests.m */; };
+		EC7A27601937B174002CAB06 /* PKKManager.h in Headers */ = {isa = PBXBuildFile; fileRef = EC7A275E1937B174002CAB06 /* PKKManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EC7A27611937B174002CAB06 /* PKKManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EC7A275F1937B174002CAB06 /* PKKManager.m */; };
+		EC7A27641937B1BF002CAB06 /* PKKKite.h in Headers */ = {isa = PBXBuildFile; fileRef = EC7A27621937B1BF002CAB06 /* PKKKite.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EC7A27651937B1BF002CAB06 /* PKKKite.m in Sources */ = {isa = PBXBuildFile; fileRef = EC7A27631937B1BF002CAB06 /* PKKKite.m */; };
+		EC7A27ED1937CCC5002CAB06 /* PageKiteKit.h in Headers */ = {isa = PBXBuildFile; fileRef = EC7A27401937B0FD002CAB06 /* PageKiteKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EC7A27F21938CAE6002CAB06 /* PKKXmlRpcClient.h in Headers */ = {isa = PBXBuildFile; fileRef = EC7A27F01938CAE6002CAB06 /* PKKXmlRpcClient.h */; };
+		EC7A27F31938CAE6002CAB06 /* PKKXmlRpcClient.m in Sources */ = {isa = PBXBuildFile; fileRef = EC7A27F11938CAE6002CAB06 /* PKKXmlRpcClient.m */; };
+		EC7A27F61939077B002CAB06 /* PKKDomain.h in Headers */ = {isa = PBXBuildFile; fileRef = EC7A27F41939077B002CAB06 /* PKKDomain.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EC7A27F71939077B002CAB06 /* PKKDomain.m in Sources */ = {isa = PBXBuildFile; fileRef = EC7A27F51939077B002CAB06 /* PKKDomain.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EC7A274B1937B0FD002CAB06 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC7A27271937B0FD002CAB06 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC7A272F1937B0FD002CAB06;
+			remoteInfo = PageKiteKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		69C9E08C096A4449BB02459A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC7A27301937B0FD002CAB06 /* PageKiteKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PageKiteKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC7A27331937B0FD002CAB06 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		EC7A27361937B0FD002CAB06 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EC7A27371937B0FD002CAB06 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		EC7A27381937B0FD002CAB06 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		EC7A273B1937B0FD002CAB06 /* PageKiteKit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PageKiteKit-Info.plist"; sourceTree = "<group>"; };
+		EC7A273D1937B0FD002CAB06 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EC7A273F1937B0FD002CAB06 /* PageKiteKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PageKiteKit-Prefix.pch"; sourceTree = "<group>"; };
+		EC7A27401937B0FD002CAB06 /* PageKiteKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PageKiteKit.h; sourceTree = "<group>"; };
+		EC7A27471937B0FD002CAB06 /* PageKiteKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PageKiteKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC7A27481937B0FD002CAB06 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		EC7A27501937B0FD002CAB06 /* PageKiteKitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PageKiteKitTests-Info.plist"; sourceTree = "<group>"; };
+		EC7A27521937B0FD002CAB06 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EC7A27541937B0FD002CAB06 /* PageKiteKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageKiteKitTests.m; sourceTree = "<group>"; };
+		EC7A275E1937B174002CAB06 /* PKKManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKKManager.h; sourceTree = "<group>"; };
+		EC7A275F1937B174002CAB06 /* PKKManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKKManager.m; sourceTree = "<group>"; };
+		EC7A27621937B1BF002CAB06 /* PKKKite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKKKite.h; sourceTree = "<group>"; };
+		EC7A27631937B1BF002CAB06 /* PKKKite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKKKite.m; sourceTree = "<group>"; };
+		EC7A27F01938CAE6002CAB06 /* PKKXmlRpcClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKKXmlRpcClient.h; sourceTree = "<group>"; };
+		EC7A27F11938CAE6002CAB06 /* PKKXmlRpcClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKKXmlRpcClient.m; sourceTree = "<group>"; };
+		EC7A27F41939077B002CAB06 /* PKKDomain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKKDomain.h; sourceTree = "<group>"; };
+		EC7A27F51939077B002CAB06 /* PKKDomain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKKDomain.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EC7A272C1937B0FD002CAB06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC7A27341937B0FD002CAB06 /* Cocoa.framework in Frameworks */,
+				4062D6B69B61478282C20DDB /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC7A27441937B0FD002CAB06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC7A274A1937B0FD002CAB06 /* Cocoa.framework in Frameworks */,
+				EC7A27491937B0FD002CAB06 /* XCTest.framework in Frameworks */,
+				EC7A274D1937B0FD002CAB06 /* PageKiteKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EC7A27261937B0FD002CAB06 = {
+			isa = PBXGroup;
+			children = (
+				EC7A27391937B0FD002CAB06 /* PageKiteKit */,
+				EC7A274E1937B0FD002CAB06 /* PageKiteKitTests */,
+				EC7A27321937B0FD002CAB06 /* Frameworks */,
+				EC7A27311937B0FD002CAB06 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EC7A27311937B0FD002CAB06 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EC7A27301937B0FD002CAB06 /* PageKiteKit.framework */,
+				EC7A27471937B0FD002CAB06 /* PageKiteKitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EC7A27321937B0FD002CAB06 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EC7A27331937B0FD002CAB06 /* Cocoa.framework */,
+				EC7A27481937B0FD002CAB06 /* XCTest.framework */,
+				EC7A27351937B0FD002CAB06 /* Other Frameworks */,
+				69C9E08C096A4449BB02459A /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EC7A27351937B0FD002CAB06 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EC7A27361937B0FD002CAB06 /* Foundation.framework */,
+				EC7A27371937B0FD002CAB06 /* CoreData.framework */,
+				EC7A27381937B0FD002CAB06 /* AppKit.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		EC7A27391937B0FD002CAB06 /* PageKiteKit */ = {
+			isa = PBXGroup;
+			children = (
+				EC7A27661937B1E9002CAB06 /* Public */,
+				EC7A27671937B1F5002CAB06 /* Private */,
+				EC7A273A1937B0FD002CAB06 /* Supporting Files */,
+			);
+			path = PageKiteKit;
+			sourceTree = "<group>";
+		};
+		EC7A273A1937B0FD002CAB06 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EC7A273B1937B0FD002CAB06 /* PageKiteKit-Info.plist */,
+				EC7A273C1937B0FD002CAB06 /* InfoPlist.strings */,
+				EC7A273F1937B0FD002CAB06 /* PageKiteKit-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EC7A274E1937B0FD002CAB06 /* PageKiteKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				EC7A27541937B0FD002CAB06 /* PageKiteKitTests.m */,
+				EC7A274F1937B0FD002CAB06 /* Supporting Files */,
+			);
+			path = PageKiteKitTests;
+			sourceTree = "<group>";
+		};
+		EC7A274F1937B0FD002CAB06 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EC7A27501937B0FD002CAB06 /* PageKiteKitTests-Info.plist */,
+				EC7A27511937B0FD002CAB06 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EC7A27661937B1E9002CAB06 /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				EC7A27401937B0FD002CAB06 /* PageKiteKit.h */,
+				EC7A275E1937B174002CAB06 /* PKKManager.h */,
+				EC7A275F1937B174002CAB06 /* PKKManager.m */,
+				EC7A27621937B1BF002CAB06 /* PKKKite.h */,
+				EC7A27631937B1BF002CAB06 /* PKKKite.m */,
+				EC7A27F41939077B002CAB06 /* PKKDomain.h */,
+				EC7A27F51939077B002CAB06 /* PKKDomain.m */,
+			);
+			name = Public;
+			sourceTree = "<group>";
+		};
+		EC7A27671937B1F5002CAB06 /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				EC7A27F01938CAE6002CAB06 /* PKKXmlRpcClient.h */,
+				EC7A27F11938CAE6002CAB06 /* PKKXmlRpcClient.m */,
+			);
+			name = Private;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		EC7A272D1937B0FD002CAB06 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC7A27ED1937CCC5002CAB06 /* PageKiteKit.h in Headers */,
+				EC7A27641937B1BF002CAB06 /* PKKKite.h in Headers */,
+				EC7A27F61939077B002CAB06 /* PKKDomain.h in Headers */,
+				EC7A27F21938CAE6002CAB06 /* PKKXmlRpcClient.h in Headers */,
+				EC7A27601937B174002CAB06 /* PKKManager.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		EC7A272F1937B0FD002CAB06 /* PageKiteKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC7A27581937B0FD002CAB06 /* Build configuration list for PBXNativeTarget "PageKiteKit" */;
+			buildPhases = (
+				EC7A272B1937B0FD002CAB06 /* Sources */,
+				EC7A272C1937B0FD002CAB06 /* Frameworks */,
+				EC7A272D1937B0FD002CAB06 /* Headers */,
+				EC7A272E1937B0FD002CAB06 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PageKiteKit;
+			productName = PageKiteKit;
+			productReference = EC7A27301937B0FD002CAB06 /* PageKiteKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		EC7A27461937B0FD002CAB06 /* PageKiteKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC7A275B1937B0FD002CAB06 /* Build configuration list for PBXNativeTarget "PageKiteKitTests" */;
+			buildPhases = (
+				EC7A27431937B0FD002CAB06 /* Sources */,
+				EC7A27441937B0FD002CAB06 /* Frameworks */,
+				EC7A27451937B0FD002CAB06 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC7A274C1937B0FD002CAB06 /* PBXTargetDependency */,
+			);
+			name = PageKiteKitTests;
+			productName = PageKiteKitTests;
+			productReference = EC7A27471937B0FD002CAB06 /* PageKiteKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EC7A27271937B0FD002CAB06 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "SonicBunny Software";
+				TargetAttributes = {
+					EC7A27461937B0FD002CAB06 = {
+						TestTargetID = EC7A272F1937B0FD002CAB06;
+					};
+				};
+			};
+			buildConfigurationList = EC7A272A1937B0FD002CAB06 /* Build configuration list for PBXProject "PageKiteKit" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = EC7A27261937B0FD002CAB06;
+			productRefGroup = EC7A27311937B0FD002CAB06 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EC7A272F1937B0FD002CAB06 /* PageKiteKit */,
+				EC7A27461937B0FD002CAB06 /* PageKiteKitTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EC7A272E1937B0FD002CAB06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC7A273E1937B0FD002CAB06 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC7A27451937B0FD002CAB06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC7A27531937B0FD002CAB06 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EC7A272B1937B0FD002CAB06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC7A27F71939077B002CAB06 /* PKKDomain.m in Sources */,
+				EC7A27611937B174002CAB06 /* PKKManager.m in Sources */,
+				EC7A27651937B1BF002CAB06 /* PKKKite.m in Sources */,
+				EC7A27F31938CAE6002CAB06 /* PKKXmlRpcClient.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC7A27431937B0FD002CAB06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC7A27551937B0FD002CAB06 /* PageKiteKitTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EC7A274C1937B0FD002CAB06 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC7A272F1937B0FD002CAB06 /* PageKiteKit */;
+			targetProxy = EC7A274B1937B0FD002CAB06 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EC7A273C1937B0FD002CAB06 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC7A273D1937B0FD002CAB06 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		EC7A27511937B0FD002CAB06 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC7A27521937B0FD002CAB06 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EC7A27561937B0FD002CAB06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/../PageKiteDemo/Pods/Headers",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		EC7A27571937B0FD002CAB06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/../PageKiteDemo/Pods/Headers",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		EC7A27591937B0FD002CAB06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PageKiteKit/PageKiteKit-Prefix.pch";
+				INFOPLIST_FILE = "PageKiteKit/PageKiteKit-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		EC7A275A1937B0FD002CAB06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PageKiteKit/PageKiteKit-Prefix.pch";
+				INFOPLIST_FILE = "PageKiteKit/PageKiteKit-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+		EC7A275C1937B0FD002CAB06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PageKiteKit.framework/Versions/A/PageKiteKit";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PageKiteKit/PageKiteKit-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "PageKiteKitTests/PageKiteKitTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		EC7A275D1937B0FD002CAB06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PageKiteKit.framework/Versions/A/PageKiteKit";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PageKiteKit/PageKiteKit-Prefix.pch";
+				INFOPLIST_FILE = "PageKiteKitTests/PageKiteKitTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EC7A272A1937B0FD002CAB06 /* Build configuration list for PBXProject "PageKiteKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC7A27561937B0FD002CAB06 /* Debug */,
+				EC7A27571937B0FD002CAB06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC7A27581937B0FD002CAB06 /* Build configuration list for PBXNativeTarget "PageKiteKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC7A27591937B0FD002CAB06 /* Debug */,
+				EC7A275A1937B0FD002CAB06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC7A275B1937B0FD002CAB06 /* Build configuration list for PBXNativeTarget "PageKiteKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC7A275C1937B0FD002CAB06 /* Debug */,
+				EC7A275D1937B0FD002CAB06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EC7A27271937B0FD002CAB06 /* Project object */;
+}

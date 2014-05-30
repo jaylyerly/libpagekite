@@ -1,0 +1,10 @@
+# To update the pods, use
+#   pod install 
+# 
+
+link_with 'PageKiteDemo', 'PageKiteKit'
+
+platform :osx, '10.7' 
+workspace 'PageKiteDemo'
+
+pod 'xmlrpc', '~> 2.3.3'

@@ -1,0 +1,543 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8C8739DB6DF94E16899C1E7E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 905F463B5EED445C81E971D5 /* libPods.a */; };
+		EC7A27B51937B2B8002CAB06 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC7A27B41937B2B8002CAB06 /* Cocoa.framework */; };
+		EC7A27BF1937B2B8002CAB06 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EC7A27BD1937B2B8002CAB06 /* InfoPlist.strings */; };
+		EC7A27C11937B2B8002CAB06 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EC7A27C01937B2B8002CAB06 /* main.m */; };
+		EC7A27C51937B2B8002CAB06 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = EC7A27C31937B2B8002CAB06 /* Credits.rtf */; };
+		EC7A27C81937B2B8002CAB06 /* PKDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EC7A27C71937B2B8002CAB06 /* PKDAppDelegate.m */; };
+		EC7A27CB1937B2B8002CAB06 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC7A27C91937B2B8002CAB06 /* MainMenu.xib */; };
+		EC7A27CD1937B2B8002CAB06 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC7A27CC1937B2B8002CAB06 /* Images.xcassets */; };
+		EC7A27D41937B2B8002CAB06 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC7A27D31937B2B8002CAB06 /* XCTest.framework */; };
+		EC7A27D51937B2B8002CAB06 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC7A27B41937B2B8002CAB06 /* Cocoa.framework */; };
+		EC7A27DD1937B2B8002CAB06 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EC7A27DB1937B2B8002CAB06 /* InfoPlist.strings */; };
+		EC7A27DF1937B2B8002CAB06 /* PageKiteDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC7A27DE1937B2B8002CAB06 /* PageKiteDemoTests.m */; };
+		EC7A27E91937B309002CAB06 /* PageKiteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC7A27E81937B309002CAB06 /* PageKiteKit.framework */; };
+		EC7A27EC1937C6AC002CAB06 /* PKDDemoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EC7A27EB1937C6AC002CAB06 /* PKDDemoManager.m */; };
+		EC7A27FA19391907002CAB06 /* PKDBooleanStringTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = EC7A27F919391907002CAB06 /* PKDBooleanStringTransformer.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EC7A27D61937B2B8002CAB06 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC7A27A91937B2B8002CAB06 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC7A27B01937B2B8002CAB06;
+			remoteInfo = PageKiteDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		905F463B5EED445C81E971D5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		9947C00FAA3143BAB9F9B3D6 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		EC7A27B11937B2B8002CAB06 /* PageKiteDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PageKiteDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC7A27B41937B2B8002CAB06 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		EC7A27B71937B2B8002CAB06 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		EC7A27B81937B2B8002CAB06 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		EC7A27B91937B2B8002CAB06 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EC7A27BC1937B2B8002CAB06 /* PageKiteDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PageKiteDemo-Info.plist"; sourceTree = "<group>"; };
+		EC7A27BE1937B2B8002CAB06 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EC7A27C01937B2B8002CAB06 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EC7A27C21937B2B8002CAB06 /* PageKiteDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PageKiteDemo-Prefix.pch"; sourceTree = "<group>"; };
+		EC7A27C41937B2B8002CAB06 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		EC7A27C61937B2B8002CAB06 /* PKDAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PKDAppDelegate.h; sourceTree = "<group>"; };
+		EC7A27C71937B2B8002CAB06 /* PKDAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PKDAppDelegate.m; sourceTree = "<group>"; };
+		EC7A27CA1937B2B8002CAB06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		EC7A27CC1937B2B8002CAB06 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		EC7A27D21937B2B8002CAB06 /* PageKiteDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PageKiteDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC7A27D31937B2B8002CAB06 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		EC7A27DA1937B2B8002CAB06 /* PageKiteDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PageKiteDemoTests-Info.plist"; sourceTree = "<group>"; };
+		EC7A27DC1937B2B8002CAB06 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EC7A27DE1937B2B8002CAB06 /* PageKiteDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageKiteDemoTests.m; sourceTree = "<group>"; };
+		EC7A27E81937B309002CAB06 /* PageKiteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PageKiteKit.framework; path = ../PageKiteKit/build/Debug/PageKiteKit.framework; sourceTree = "<group>"; };
+		EC7A27EA1937C6AC002CAB06 /* PKDDemoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKDDemoManager.h; sourceTree = "<group>"; };
+		EC7A27EB1937C6AC002CAB06 /* PKDDemoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKDDemoManager.m; sourceTree = "<group>"; };
+		EC7A27F819391907002CAB06 /* PKDBooleanStringTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKDBooleanStringTransformer.h; sourceTree = "<group>"; };
+		EC7A27F919391907002CAB06 /* PKDBooleanStringTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKDBooleanStringTransformer.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EC7A27AE1937B2B8002CAB06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC7A27E91937B309002CAB06 /* PageKiteKit.framework in Frameworks */,
+				EC7A27B51937B2B8002CAB06 /* Cocoa.framework in Frameworks */,
+				8C8739DB6DF94E16899C1E7E /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC7A27CF1937B2B8002CAB06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC7A27D51937B2B8002CAB06 /* Cocoa.framework in Frameworks */,
+				EC7A27D41937B2B8002CAB06 /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EC7A27A81937B2B8002CAB06 = {
+			isa = PBXGroup;
+			children = (
+				EC7A27BA1937B2B8002CAB06 /* PageKiteDemo */,
+				EC7A27D81937B2B8002CAB06 /* PageKiteDemoTests */,
+				EC7A27B31937B2B8002CAB06 /* Frameworks */,
+				EC7A27B21937B2B8002CAB06 /* Products */,
+				9947C00FAA3143BAB9F9B3D6 /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		EC7A27B21937B2B8002CAB06 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EC7A27B11937B2B8002CAB06 /* PageKiteDemo.app */,
+				EC7A27D21937B2B8002CAB06 /* PageKiteDemoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EC7A27B31937B2B8002CAB06 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EC7A27E81937B309002CAB06 /* PageKiteKit.framework */,
+				EC7A27B41937B2B8002CAB06 /* Cocoa.framework */,
+				EC7A27D31937B2B8002CAB06 /* XCTest.framework */,
+				EC7A27B61937B2B8002CAB06 /* Other Frameworks */,
+				905F463B5EED445C81E971D5 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EC7A27B61937B2B8002CAB06 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EC7A27B71937B2B8002CAB06 /* AppKit.framework */,
+				EC7A27B81937B2B8002CAB06 /* CoreData.framework */,
+				EC7A27B91937B2B8002CAB06 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		EC7A27BA1937B2B8002CAB06 /* PageKiteDemo */ = {
+			isa = PBXGroup;
+			children = (
+				EC7A27C61937B2B8002CAB06 /* PKDAppDelegate.h */,
+				EC7A27C71937B2B8002CAB06 /* PKDAppDelegate.m */,
+				EC7A27C91937B2B8002CAB06 /* MainMenu.xib */,
+				EC7A27EA1937C6AC002CAB06 /* PKDDemoManager.h */,
+				EC7A27EB1937C6AC002CAB06 /* PKDDemoManager.m */,
+				EC7A27F819391907002CAB06 /* PKDBooleanStringTransformer.h */,
+				EC7A27F919391907002CAB06 /* PKDBooleanStringTransformer.m */,
+				EC7A27CC1937B2B8002CAB06 /* Images.xcassets */,
+				EC7A27BB1937B2B8002CAB06 /* Supporting Files */,
+			);
+			path = PageKiteDemo;
+			sourceTree = "<group>";
+		};
+		EC7A27BB1937B2B8002CAB06 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EC7A27BC1937B2B8002CAB06 /* PageKiteDemo-Info.plist */,
+				EC7A27BD1937B2B8002CAB06 /* InfoPlist.strings */,
+				EC7A27C01937B2B8002CAB06 /* main.m */,
+				EC7A27C21937B2B8002CAB06 /* PageKiteDemo-Prefix.pch */,
+				EC7A27C31937B2B8002CAB06 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EC7A27D81937B2B8002CAB06 /* PageKiteDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				EC7A27DE1937B2B8002CAB06 /* PageKiteDemoTests.m */,
+				EC7A27D91937B2B8002CAB06 /* Supporting Files */,
+			);
+			path = PageKiteDemoTests;
+			sourceTree = "<group>";
+		};
+		EC7A27D91937B2B8002CAB06 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EC7A27DA1937B2B8002CAB06 /* PageKiteDemoTests-Info.plist */,
+				EC7A27DB1937B2B8002CAB06 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EC7A27B01937B2B8002CAB06 /* PageKiteDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC7A27E21937B2B8002CAB06 /* Build configuration list for PBXNativeTarget "PageKiteDemo" */;
+			buildPhases = (
+				8651386B9CD64D43B2BC55DD /* Check Pods Manifest.lock */,
+				EC7A27AD1937B2B8002CAB06 /* Sources */,
+				EC7A27AE1937B2B8002CAB06 /* Frameworks */,
+				EC7A27AF1937B2B8002CAB06 /* Resources */,
+				54D5F3E27AFF4AE980FD9B06 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PageKiteDemo;
+			productName = PageKiteDemo;
+			productReference = EC7A27B11937B2B8002CAB06 /* PageKiteDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EC7A27D11937B2B8002CAB06 /* PageKiteDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC7A27E51937B2B8002CAB06 /* Build configuration list for PBXNativeTarget "PageKiteDemoTests" */;
+			buildPhases = (
+				EC7A27CE1937B2B8002CAB06 /* Sources */,
+				EC7A27CF1937B2B8002CAB06 /* Frameworks */,
+				EC7A27D01937B2B8002CAB06 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC7A27D71937B2B8002CAB06 /* PBXTargetDependency */,
+			);
+			name = PageKiteDemoTests;
+			productName = PageKiteDemoTests;
+			productReference = EC7A27D21937B2B8002CAB06 /* PageKiteDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EC7A27A91937B2B8002CAB06 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = PKD;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "SonicBunny Software";
+				TargetAttributes = {
+					EC7A27D11937B2B8002CAB06 = {
+						TestTargetID = EC7A27B01937B2B8002CAB06;
+					};
+				};
+			};
+			buildConfigurationList = EC7A27AC1937B2B8002CAB06 /* Build configuration list for PBXProject "PageKiteDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EC7A27A81937B2B8002CAB06;
+			productRefGroup = EC7A27B21937B2B8002CAB06 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EC7A27B01937B2B8002CAB06 /* PageKiteDemo */,
+				EC7A27D11937B2B8002CAB06 /* PageKiteDemoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EC7A27AF1937B2B8002CAB06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC7A27BF1937B2B8002CAB06 /* InfoPlist.strings in Resources */,
+				EC7A27CD1937B2B8002CAB06 /* Images.xcassets in Resources */,
+				EC7A27C51937B2B8002CAB06 /* Credits.rtf in Resources */,
+				EC7A27CB1937B2B8002CAB06 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC7A27D01937B2B8002CAB06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC7A27DD1937B2B8002CAB06 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		54D5F3E27AFF4AE980FD9B06 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8651386B9CD64D43B2BC55DD /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EC7A27AD1937B2B8002CAB06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC7A27EC1937C6AC002CAB06 /* PKDDemoManager.m in Sources */,
+				EC7A27FA19391907002CAB06 /* PKDBooleanStringTransformer.m in Sources */,
+				EC7A27C81937B2B8002CAB06 /* PKDAppDelegate.m in Sources */,
+				EC7A27C11937B2B8002CAB06 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC7A27CE1937B2B8002CAB06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC7A27DF1937B2B8002CAB06 /* PageKiteDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EC7A27D71937B2B8002CAB06 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC7A27B01937B2B8002CAB06 /* PageKiteDemo */;
+			targetProxy = EC7A27D61937B2B8002CAB06 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EC7A27BD1937B2B8002CAB06 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC7A27BE1937B2B8002CAB06 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		EC7A27C31937B2B8002CAB06 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC7A27C41937B2B8002CAB06 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		EC7A27C91937B2B8002CAB06 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC7A27CA1937B2B8002CAB06 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		EC7A27DB1937B2B8002CAB06 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC7A27DC1937B2B8002CAB06 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EC7A27E01937B2B8002CAB06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		EC7A27E11937B2B8002CAB06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		EC7A27E31937B2B8002CAB06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9947C00FAA3143BAB9F9B3D6 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PageKiteDemo/PageKiteDemo-Prefix.pch";
+				INFOPLIST_FILE = "PageKiteDemo/PageKiteDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		EC7A27E41937B2B8002CAB06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9947C00FAA3143BAB9F9B3D6 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PageKiteDemo/PageKiteDemo-Prefix.pch";
+				INFOPLIST_FILE = "PageKiteDemo/PageKiteDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		EC7A27E61937B2B8002CAB06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PageKiteDemo.app/Contents/MacOS/PageKiteDemo";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PageKiteDemo/PageKiteDemo-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "PageKiteDemoTests/PageKiteDemoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		EC7A27E71937B2B8002CAB06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PageKiteDemo.app/Contents/MacOS/PageKiteDemo";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PageKiteDemo/PageKiteDemo-Prefix.pch";
+				INFOPLIST_FILE = "PageKiteDemoTests/PageKiteDemoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EC7A27AC1937B2B8002CAB06 /* Build configuration list for PBXProject "PageKiteDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC7A27E01937B2B8002CAB06 /* Debug */,
+				EC7A27E11937B2B8002CAB06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC7A27E21937B2B8002CAB06 /* Build configuration list for PBXNativeTarget "PageKiteDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC7A27E31937B2B8002CAB06 /* Debug */,
+				EC7A27E41937B2B8002CAB06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC7A27E51937B2B8002CAB06 /* Build configuration list for PBXNativeTarget "PageKiteDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC7A27E61937B2B8002CAB06 /* Debug */,
+				EC7A27E71937B2B8002CAB06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EC7A27A91937B2B8002CAB06 /* Project object */;
+}
