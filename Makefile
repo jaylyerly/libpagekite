@@ -40,6 +40,8 @@ DEFINES=-DHAVE_IPV6=$(HAVE_IPV6) \
 
 NDK_PROJECT_PATH ?= "/home/bre/Projects/android-ndk-r8"
 
+.PHONY: clean mac android version default all libpagekite allclean
+
 default: libpagekite pagekitec
 
 all: runtests libpagekite pagekitec httpkite

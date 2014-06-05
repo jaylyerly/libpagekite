@@ -14,7 +14,7 @@
 # or you can specifiy them on the command line like:
 #
 # env PAGEKITESECRET=0123456789abcdef0123456789abcdef \
-#     PAGEKITE=kitename.pagekite.me ./test_port_80.sh 
+#     PAGEKITE=kitename.pagekite.me test_pagekitec_port_80.sh
 #
 # Both of these values can be found on your PageKite
 # 'My Account' page at https://pagekite.net/home/
