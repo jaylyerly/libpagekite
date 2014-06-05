@@ -31,7 +31,7 @@ Note: For alternate license terms, see the file COPYING.md.
 #include "pkmanager.h"
 #include "pklogging.h"
 #include "utils.h"
-
+#include <sys/utsname.h>
 
 void usage(void) {
   printf("Usage: httpkite your.kitename.com SECRET\n\n");
@@ -44,9 +44,21 @@ void usage(void) {
 void handle_request(void* data, struct pk_chunk *chunk) {
   char buffer[4096];
   char *hi = "HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\n\r\nHello World\n";
+  char msg[4096];
   struct pk_conn* pkc = data;
   int bytes;
+  struct utsname unameData;
+  int rc;
 
+  rc = uname(&unameData); 
+  if (0 == rc) {
+    sprintf(msg, "%s\nSysname: %s\nNodename: %s\nRelease: %s\nVersion: %s\nMachine: %s\n", 
+       hi, unameData.sysname, unameData.nodename, unameData.release, unameData.version, 
+       unameData.machine);
+  } else {
+    strcpy(msg, hi);
+  }
+  
   pk_log_chunk(chunk);
   if (chunk->ping) {
     bytes = pk_format_pong(buffer);
@@ -59,7 +71,7 @@ void handle_request(void* data, struct pk_chunk *chunk) {
     else if (!chunk->noop) {
 
       /* Send a reply, and close this channel right away */
-      bytes = pk_format_reply(buffer, chunk->sid, strlen(hi), hi);
+      bytes = pk_format_reply(buffer, chunk->sid, strlen(msg), msg);
       pkc_write(pkc, buffer, bytes);
 
       bytes = pk_format_eof(buffer, chunk->sid, PK_EOF);
