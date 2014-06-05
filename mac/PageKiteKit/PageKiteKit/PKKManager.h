@@ -21,6 +21,7 @@ typedef void (^PKKManagerCompletionBlock)(BOOL success);
 - (void)loginWithUser:(NSString *)user password:(NSString *)password completionBlock:(PKKManagerCompletionBlock)block;
 - (void)retrieveKitesWithCompletionBlock:(PKKManagerCompletionBlock)block;
 - (void)retrieveDomainsWithCompletionBlock:(PKKManagerCompletionBlock)block;
-- (void)addKite:(NSString*)name CompletionBlock:(PKKManagerCompletionBlock)block;
+- (void)addKite:(NSString*)name completionBlock:(PKKManagerCompletionBlock)block;
+- (void)getAccountInfoWithCompletionBlock:(PKKManagerCompletionBlock)block;
 
 @end

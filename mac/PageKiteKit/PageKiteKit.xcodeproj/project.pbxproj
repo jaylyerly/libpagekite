@@ -24,6 +24,10 @@
 		EC7A27F31938CAE6002CAB06 /* PKKXmlRpcClient.m in Sources */ = {isa = PBXBuildFile; fileRef = EC7A27F11938CAE6002CAB06 /* PKKXmlRpcClient.m */; };
 		EC7A27F61939077B002CAB06 /* PKKDomain.h in Headers */ = {isa = PBXBuildFile; fileRef = EC7A27F41939077B002CAB06 /* PKKDomain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EC7A27F71939077B002CAB06 /* PKKDomain.m in Sources */ = {isa = PBXBuildFile; fileRef = EC7A27F51939077B002CAB06 /* PKKDomain.m */; };
+		EC9412F71940E2EF00E00F42 /* PKKKite.h in Headers */ = {isa = PBXBuildFile; fileRef = EC9412F51940E2EF00E00F42 /* PKKKite.h */; };
+		EC9412F81940E2EF00E00F42 /* PKKKite.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9412F61940E2EF00E00F42 /* PKKKite.m */; };
+		EC9412FB1940EDB400E00F42 /* PKKLibPageKite.h in Headers */ = {isa = PBXBuildFile; fileRef = EC9412F91940EDB400E00F42 /* PKKLibPageKite.h */; };
+		EC9412FC1940EDB500E00F42 /* PKKLibPageKite.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9412FA1940EDB400E00F42 /* PKKLibPageKite.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +65,23 @@
 		EC7A27F41939077B002CAB06 /* PKKDomain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKKDomain.h; sourceTree = "<group>"; };
 		EC7A27F51939077B002CAB06 /* PKKDomain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKKDomain.m; sourceTree = "<group>"; };
 		EC9412F31940A93600E00F42 /* libpagekite.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libpagekite.a; path = ../../libpagekite.a; sourceTree = "<group>"; };
+		EC9412F51940E2EF00E00F42 /* PKKKite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKKKite.h; sourceTree = "<group>"; };
+		EC9412F61940E2EF00E00F42 /* PKKKite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKKKite.m; sourceTree = "<group>"; };
+		EC9412F91940EDB400E00F42 /* PKKLibPageKite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKKLibPageKite.h; sourceTree = "<group>"; };
+		EC9412FA1940EDB400E00F42 /* PKKLibPageKite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKKLibPageKite.m; sourceTree = "<group>"; };
+		EC9412FE1940FF5700E00F42 /* common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = common.h; path = ../../common.h; sourceTree = "<group>"; };
+		EC9412FF1940FF5700E00F42 /* pagekite_net.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = pagekite_net.h; path = ../../pagekite_net.h; sourceTree = "<group>"; };
+		EC9413001940FF5700E00F42 /* pd_sha1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = pd_sha1.h; path = ../../pd_sha1.h; sourceTree = "<group>"; };
+		EC9413011940FF5700E00F42 /* pkblocker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = pkblocker.h; path = ../../pkblocker.h; sourceTree = "<group>"; };
+		EC9413021940FF5700E00F42 /* pkconn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = pkconn.h; path = ../../pkconn.h; sourceTree = "<group>"; };
+		EC9413031940FF5700E00F42 /* pkerror.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = pkerror.h; path = ../../pkerror.h; sourceTree = "<group>"; };
+		EC9413041940FF5700E00F42 /* pklogging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = pklogging.h; path = ../../pklogging.h; sourceTree = "<group>"; };
+		EC9413051940FF5700E00F42 /* pkmanager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = pkmanager.h; path = ../../pkmanager.h; sourceTree = "<group>"; };
+		EC9413061940FF5700E00F42 /* pkproto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = pkproto.h; path = ../../pkproto.h; sourceTree = "<group>"; };
+		EC9413071940FF5700E00F42 /* pkstate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = pkstate.h; path = ../../pkstate.h; sourceTree = "<group>"; };
+		EC9413081940FF5700E00F42 /* pkwatchdog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = pkwatchdog.h; path = ../../pkwatchdog.h; sourceTree = "<group>"; };
+		EC9413091940FF5700E00F42 /* utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = utils.h; path = ../../utils.h; sourceTree = "<group>"; };
+		EC94130A1940FF5700E00F42 /* version.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = version.h; path = ../../version.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +110,7 @@
 		EC7A27261937B0FD002CAB06 = {
 			isa = PBXGroup;
 			children = (
+				EC9412FD1940FF2D00E00F42 /* LibPageKite */,
 				EC7A27391937B0FD002CAB06 /* PageKiteKit */,
 				EC7A274E1937B0FD002CAB06 /* PageKiteKitTests */,
 				EC7A27321937B0FD002CAB06 /* Frameworks */,
@@ -175,6 +197,8 @@
 				EC7A27631937B1BF002CAB06 /* PKKKiteStatus.m */,
 				EC7A27F41939077B002CAB06 /* PKKDomain.h */,
 				EC7A27F51939077B002CAB06 /* PKKDomain.m */,
+				EC9412F51940E2EF00E00F42 /* PKKKite.h */,
+				EC9412F61940E2EF00E00F42 /* PKKKite.m */,
 			);
 			name = Public;
 			sourceTree = "<group>";
@@ -184,8 +208,30 @@
 			children = (
 				EC7A27F01938CAE6002CAB06 /* PKKXmlRpcClient.h */,
 				EC7A27F11938CAE6002CAB06 /* PKKXmlRpcClient.m */,
+				EC9412F91940EDB400E00F42 /* PKKLibPageKite.h */,
+				EC9412FA1940EDB400E00F42 /* PKKLibPageKite.m */,
 			);
 			name = Private;
+			sourceTree = "<group>";
+		};
+		EC9412FD1940FF2D00E00F42 /* LibPageKite */ = {
+			isa = PBXGroup;
+			children = (
+				EC9412FE1940FF5700E00F42 /* common.h */,
+				EC9412FF1940FF5700E00F42 /* pagekite_net.h */,
+				EC9413001940FF5700E00F42 /* pd_sha1.h */,
+				EC9413011940FF5700E00F42 /* pkblocker.h */,
+				EC9413021940FF5700E00F42 /* pkconn.h */,
+				EC9413031940FF5700E00F42 /* pkerror.h */,
+				EC9413041940FF5700E00F42 /* pklogging.h */,
+				EC9413051940FF5700E00F42 /* pkmanager.h */,
+				EC9413061940FF5700E00F42 /* pkproto.h */,
+				EC9413071940FF5700E00F42 /* pkstate.h */,
+				EC9413081940FF5700E00F42 /* pkwatchdog.h */,
+				EC9413091940FF5700E00F42 /* utils.h */,
+				EC94130A1940FF5700E00F42 /* version.h */,
+			);
+			name = LibPageKite;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +245,8 @@
 				EC7A27641937B1BF002CAB06 /* PKKKiteStatus.h in Headers */,
 				EC7A27F61939077B002CAB06 /* PKKDomain.h in Headers */,
 				EC7A27F21938CAE6002CAB06 /* PKKXmlRpcClient.h in Headers */,
+				EC9412F71940E2EF00E00F42 /* PKKKite.h in Headers */,
+				EC9412FB1940EDB400E00F42 /* PKKLibPageKite.h in Headers */,
 				EC7A27601937B174002CAB06 /* PKKManager.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,6 +350,8 @@
 				EC7A27611937B174002CAB06 /* PKKManager.m in Sources */,
 				EC7A27651937B1BF002CAB06 /* PKKKiteStatus.m in Sources */,
 				EC7A27F31938CAE6002CAB06 /* PKKXmlRpcClient.m in Sources */,
+				EC9412FC1940EDB500E00F42 /* PKKLibPageKite.m in Sources */,
+				EC9412F81940E2EF00E00F42 /* PKKKite.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +482,12 @@
 				FRAMEWORK_VERSION = A;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PageKiteKit/PageKiteKit-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/../PageKiteDemo/Pods/Headers",
+					"$(SRCROOT)/../..",
+				);
 				INFOPLIST_FILE = "PageKiteKit/PageKiteKit-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -452,6 +508,12 @@
 				FRAMEWORK_VERSION = A;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PageKiteKit/PageKiteKit-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/../PageKiteDemo/Pods/Headers",
+					"$(SRCROOT)/../..",
+				);
 				INFOPLIST_FILE = "PageKiteKit/PageKiteKit-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

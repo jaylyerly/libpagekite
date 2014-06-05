@@ -112,7 +112,7 @@
 
 - (IBAction)handleAddKite:(id)sender{
     __weak PKKManager *manager = [PKKManager sharedManager];
-    [manager addKite:self.addKiteName CompletionBlock:^(BOOL success){
+    [manager addKite:self.addKiteName completionBlock:^(BOOL success){
         if (success){
             [self handleGetKites:self];
         }else{

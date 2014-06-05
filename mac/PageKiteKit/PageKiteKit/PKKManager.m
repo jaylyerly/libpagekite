@@ -16,6 +16,7 @@
 @property (nonatomic, strong) PKKXmlRpcClient *xmlClient;
 @property (nonatomic, copy) NSString *credential;
 @property (nonatomic, copy) NSString *accountId;
+@property (nonatomic, copy) NSString *sharedSecret;
 @property (nonatomic, strong) NSArray *kites;
 @property (nonatomic, strong) NSArray *domains;
 @property (nonatomic, strong) NSString *lastError;
@@ -106,6 +107,7 @@
                        self.credential = data[1];
                        NSLog(@"Found credential: %@", self.credential);
                        NSLog(@"Found accountId: %@", self.accountId);
+                       [self getAccountInfoWithCompletionBlock:nil];        // make sure to get the shared secret
                        if (block) { block(YES); }
                        return;
                    }
@@ -113,7 +115,7 @@
                }];
 }
 
-- (void)addKite:(NSString*)name CompletionBlock:(PKKManagerCompletionBlock)block{
+- (void)addKite:(NSString*)name completionBlock:(PKKManagerCompletionBlock)block{
     [self.xmlClient callMethod:@"add_kite"
                 withParameters:@[self.accountId, self.credential, name, @NO]
                completionBlock:^(XMLRPCResponse *resp, NSError *err){
@@ -121,6 +123,25 @@
                    NSString *data = objc_dynamic_cast(NSString, [self payloadForResponse:resp error:err]);
                    if (data){
                        NSLog(@"Added kite with response: %@", data);
+                       if (block) { block(YES); }
+                       return;
+                   }
+                   if (block) { block(NO); }
+               }];
+    
+}
+
+- (void)getAccountInfoWithCompletionBlock:(PKKManagerCompletionBlock)block{
+    NSString *version = [NSString stringWithFormat:@"%@", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]];
+
+    [self.xmlClient callMethod:@"get_account_info"
+                withParameters:@[self.accountId, self.credential, version]
+               completionBlock:^(XMLRPCResponse *resp, NSError *err){
+                   
+                   NSDictionary *data = objc_dynamic_cast(NSDictionary, [self payloadForResponse:resp error:err]);
+                   if (data){
+                       self.sharedSecret = data[@"data"][@"_ss"];
+                       NSLog(@"Account info: %@", data);
                        if (block) { block(YES); }
                        return;
                    }
