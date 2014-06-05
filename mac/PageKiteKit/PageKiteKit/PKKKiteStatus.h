@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface PKKKite : NSObject
+@interface PKKKiteStatus : NSObject
 @property (nonatomic, readonly, copy) NSString *name;
 @property (nonatomic, readonly, copy) NSString *bytes;
 

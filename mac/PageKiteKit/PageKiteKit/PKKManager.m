@@ -8,7 +8,7 @@
 
 #import "PKKManager.h"
 #import "PKKXmlRpcClient.h"
-#import "PKKKite.h"
+#import "PKKKiteStatus.h"
 #import "PKKDomain.h"
 #import <xmlrpc/XMLRPC.h>
 
@@ -18,6 +18,7 @@
 @property (nonatomic, copy) NSString *accountId;
 @property (nonatomic, strong) NSArray *kites;
 @property (nonatomic, strong) NSArray *domains;
+@property (nonatomic, strong) NSString *lastError;
 @end
 
 @implementation PKKManager
@@ -52,7 +53,7 @@
                            [kiteDicts enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop){
                                NSString *name = objc_dynamic_cast(NSString, key);
                                NSString *bytes = objc_dynamic_cast(NSString, obj);
-                               PKKKite *kite = [[PKKKite alloc] initWithName:name bytes:bytes];
+                               PKKKiteStatus *kite = [[PKKKiteStatus alloc] initWithName:name bytes:bytes];
                                [tmpArray addObject:kite];
                            }];
                            self.kites = [NSArray arrayWithArray:tmpArray];
@@ -112,6 +113,23 @@
                }];
 }
 
+- (void)addKite:(NSString*)name CompletionBlock:(PKKManagerCompletionBlock)block{
+    [self.xmlClient callMethod:@"add_kite"
+                withParameters:@[self.accountId, self.credential, name, @NO]
+               completionBlock:^(XMLRPCResponse *resp, NSError *err){
+                   
+                   NSString *data = objc_dynamic_cast(NSString, [self payloadForResponse:resp error:err]);
+                   if (data){
+                       NSLog(@"Added kite with response: %@", data);
+                       if (block) { block(YES); }
+                       return;
+                   }
+                   if (block) { block(NO); }
+               }];
+    
+}
+
+
 #pragma mark - API helper funcs
 
 - (BOOL) isResponseOk:(XMLRPCResponse *)resp error:(NSError *)err{
@@ -119,13 +137,18 @@
         NSLog(@"Error with login: %@", err);
         return NO;
     }
-    NSArray *respArray = [resp object];
-    if ([respArray count] > 0){
-        NSString *status = respArray[0];
-        if ([status isEqualToString:@"ok"]){
+    NSArray *respArray = objc_dynamic_cast(NSArray, [resp object]);
+    if (respArray && [respArray count] > 0){
+        NSString *status = objc_dynamic_cast(NSString,respArray[0]);
+        if (status && [status isEqualToString:@"ok"]){
             return YES;
         }
     }
+    NSDictionary *respDict = objc_dynamic_cast(NSDictionary, [resp object]);
+    if (respDict){
+        self.lastError = objc_dynamic_cast(NSString, respDict[@"faultString"]);
+    }
+    
     NSLog(@"status code not ok!");
     return NO;
 }

@@ -17,8 +17,8 @@
 		EC7A27551937B0FD002CAB06 /* PageKiteKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC7A27541937B0FD002CAB06 /* PageKiteKitTests.m */; };
 		EC7A27601937B174002CAB06 /* PKKManager.h in Headers */ = {isa = PBXBuildFile; fileRef = EC7A275E1937B174002CAB06 /* PKKManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EC7A27611937B174002CAB06 /* PKKManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EC7A275F1937B174002CAB06 /* PKKManager.m */; };
-		EC7A27641937B1BF002CAB06 /* PKKKite.h in Headers */ = {isa = PBXBuildFile; fileRef = EC7A27621937B1BF002CAB06 /* PKKKite.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EC7A27651937B1BF002CAB06 /* PKKKite.m in Sources */ = {isa = PBXBuildFile; fileRef = EC7A27631937B1BF002CAB06 /* PKKKite.m */; };
+		EC7A27641937B1BF002CAB06 /* PKKKiteStatus.h in Headers */ = {isa = PBXBuildFile; fileRef = EC7A27621937B1BF002CAB06 /* PKKKiteStatus.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EC7A27651937B1BF002CAB06 /* PKKKiteStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = EC7A27631937B1BF002CAB06 /* PKKKiteStatus.m */; };
 		EC7A27ED1937CCC5002CAB06 /* PageKiteKit.h in Headers */ = {isa = PBXBuildFile; fileRef = EC7A27401937B0FD002CAB06 /* PageKiteKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EC7A27F21938CAE6002CAB06 /* PKKXmlRpcClient.h in Headers */ = {isa = PBXBuildFile; fileRef = EC7A27F01938CAE6002CAB06 /* PKKXmlRpcClient.h */; };
 		EC7A27F31938CAE6002CAB06 /* PKKXmlRpcClient.m in Sources */ = {isa = PBXBuildFile; fileRef = EC7A27F11938CAE6002CAB06 /* PKKXmlRpcClient.m */; };
@@ -54,12 +54,13 @@
 		EC7A27541937B0FD002CAB06 /* PageKiteKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageKiteKitTests.m; sourceTree = "<group>"; };
 		EC7A275E1937B174002CAB06 /* PKKManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKKManager.h; sourceTree = "<group>"; };
 		EC7A275F1937B174002CAB06 /* PKKManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKKManager.m; sourceTree = "<group>"; };
-		EC7A27621937B1BF002CAB06 /* PKKKite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKKKite.h; sourceTree = "<group>"; };
-		EC7A27631937B1BF002CAB06 /* PKKKite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKKKite.m; sourceTree = "<group>"; };
+		EC7A27621937B1BF002CAB06 /* PKKKiteStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKKKiteStatus.h; sourceTree = "<group>"; };
+		EC7A27631937B1BF002CAB06 /* PKKKiteStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKKKiteStatus.m; sourceTree = "<group>"; };
 		EC7A27F01938CAE6002CAB06 /* PKKXmlRpcClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKKXmlRpcClient.h; sourceTree = "<group>"; };
 		EC7A27F11938CAE6002CAB06 /* PKKXmlRpcClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKKXmlRpcClient.m; sourceTree = "<group>"; };
 		EC7A27F41939077B002CAB06 /* PKKDomain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKKDomain.h; sourceTree = "<group>"; };
 		EC7A27F51939077B002CAB06 /* PKKDomain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKKDomain.m; sourceTree = "<group>"; };
+		EC9412F31940A93600E00F42 /* libpagekite.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libpagekite.a; path = ../../libpagekite.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +108,7 @@
 		EC7A27321937B0FD002CAB06 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EC9412F31940A93600E00F42 /* libpagekite.a */,
 				EC7A27331937B0FD002CAB06 /* Cocoa.framework */,
 				EC7A27481937B0FD002CAB06 /* XCTest.framework */,
 				EC7A27351937B0FD002CAB06 /* Other Frameworks */,
@@ -169,8 +171,8 @@
 				EC7A27401937B0FD002CAB06 /* PageKiteKit.h */,
 				EC7A275E1937B174002CAB06 /* PKKManager.h */,
 				EC7A275F1937B174002CAB06 /* PKKManager.m */,
-				EC7A27621937B1BF002CAB06 /* PKKKite.h */,
-				EC7A27631937B1BF002CAB06 /* PKKKite.m */,
+				EC7A27621937B1BF002CAB06 /* PKKKiteStatus.h */,
+				EC7A27631937B1BF002CAB06 /* PKKKiteStatus.m */,
 				EC7A27F41939077B002CAB06 /* PKKDomain.h */,
 				EC7A27F51939077B002CAB06 /* PKKDomain.m */,
 			);
@@ -194,7 +196,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC7A27ED1937CCC5002CAB06 /* PageKiteKit.h in Headers */,
-				EC7A27641937B1BF002CAB06 /* PKKKite.h in Headers */,
+				EC7A27641937B1BF002CAB06 /* PKKKiteStatus.h in Headers */,
 				EC7A27F61939077B002CAB06 /* PKKDomain.h in Headers */,
 				EC7A27F21938CAE6002CAB06 /* PKKXmlRpcClient.h in Headers */,
 				EC7A27601937B174002CAB06 /* PKKManager.h in Headers */,
@@ -298,7 +300,7 @@
 			files = (
 				EC7A27F71939077B002CAB06 /* PKKDomain.m in Sources */,
 				EC7A27611937B174002CAB06 /* PKKManager.m in Sources */,
-				EC7A27651937B1BF002CAB06 /* PKKKite.m in Sources */,
+				EC7A27651937B1BF002CAB06 /* PKKKiteStatus.m in Sources */,
 				EC7A27F31938CAE6002CAB06 /* PKKXmlRpcClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -431,6 +433,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PageKiteKit/PageKiteKit-Prefix.pch";
 				INFOPLIST_FILE = "PageKiteKit/PageKiteKit-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/jayl/git/libpagekite,
+				);
+				OTHER_LDFLAGS = "$(SRCROOT)/../../libpagekite.a";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
 			};
@@ -446,6 +453,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PageKiteKit/PageKiteKit-Prefix.pch";
 				INFOPLIST_FILE = "PageKiteKit/PageKiteKit-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/jayl/git/libpagekite,
+				);
+				OTHER_LDFLAGS = "$(SRCROOT)/../../libpagekite.a";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
 			};

@@ -14,10 +14,13 @@ typedef void (^PKKManagerCompletionBlock)(BOOL success);
 
 @property (nonatomic, readonly) NSArray *kites;
 @property (nonatomic, readonly) NSArray *domains;
+@property (nonatomic, readonly) NSString *lastError;
 
 + (instancetype) sharedManager;
 
 - (void)loginWithUser:(NSString *)user password:(NSString *)password completionBlock:(PKKManagerCompletionBlock)block;
 - (void)retrieveKitesWithCompletionBlock:(PKKManagerCompletionBlock)block;
 - (void)retrieveDomainsWithCompletionBlock:(PKKManagerCompletionBlock)block;
+- (void)addKite:(NSString*)name CompletionBlock:(PKKManagerCompletionBlock)block;
+
 @end

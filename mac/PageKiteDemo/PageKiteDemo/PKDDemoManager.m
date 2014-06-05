@@ -16,6 +16,7 @@
 @property (nonatomic, strong) NSImage         *statusImage;
 @property (nonatomic, strong) NSArray         *kiteList;
 @property (nonatomic, strong) NSArray         *domainList;
+@property (nonatomic, strong) NSString        *addKiteName;
 @end
 
 @implementation PKDDemoManager
@@ -54,11 +55,14 @@
     PKKManager *manager = [PKKManager sharedManager];
     [manager retrieveKitesWithCompletionBlock:^(BOOL success){
         if (success){
-            for (PKKKite *kite in manager.kites){
+            for (PKKKiteStatus *kite in manager.kites){
                 NSLog(@"Found kite: %@",kite);
                 [self log:[NSString stringWithFormat:@"Found kite: %@", kite]];
             }
             self.kiteList = manager.kites;
+            
+            PKKKiteStatus *kite = [self.kiteList lastObject];
+            self.addKiteName = [NSString stringWithFormat:@"foo.%@", kite.name];
         }else{
             NSLog(@"Failed to get kites!");
         }
@@ -96,7 +100,26 @@
     [self didChangeValueForKey:@"logText"];
 }
 
+- (IBAction)handleClearLog:(id)sender{
+    [self willChangeValueForKey:@"logText"];
+    self.logString = [@"" mutableCopy];
+    [self didChangeValueForKey:@"logText"];
+};
+
 - (NSAttributedString *)logText {
     return [[NSAttributedString alloc] initWithString:self.logString];
 }
+
+- (IBAction)handleAddKite:(id)sender{
+    __weak PKKManager *manager = [PKKManager sharedManager];
+    [manager addKite:self.addKiteName CompletionBlock:^(BOOL success){
+        if (success){
+            [self handleGetKites:self];
+        }else{
+            [self log:[NSString stringWithFormat:@"failed to make new kite: %@", manager.lastError]];
+        }
+    }];
+}
+
+
 @end

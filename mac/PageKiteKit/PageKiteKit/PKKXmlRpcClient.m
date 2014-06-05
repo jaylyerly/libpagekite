@@ -52,16 +52,17 @@ NSString * const PKKHttpHeaderField = @"Client-Request-ID";
 
 #pragma mark - XMLRPC delegates
 
-- (PKKXmlRpcCompletionBlock)blockForRequest:(XMLRPCRequest *)req {
+- (PKKXmlRpcCompletionBlock)popBlockForRequest:(XMLRPCRequest *)req {
     NSDictionary *headers = [[req request] allHTTPHeaderFields];
     NSString *idString = headers[PKKHttpHeaderField];
     
     PKKXmlRpcCompletionBlock block = self.blocks[idString];
+    [self.blocks removeObjectForKey:idString];
     return block;
 }
 
 - (void)request: (XMLRPCRequest *)request didReceiveResponse: (XMLRPCResponse *)response{
-    PKKXmlRpcCompletionBlock block = [self blockForRequest:request];
+    PKKXmlRpcCompletionBlock block = [self popBlockForRequest:request];
     
     if (block){
         block (response, nil);
@@ -76,7 +77,7 @@ NSString * const PKKHttpHeaderField = @"Client-Request-ID";
 //- (void)request: (XMLRPCRequest *)request didSendBodyData: (float)percent;
 
 - (void)request: (XMLRPCRequest *)request didFailWithError: (NSError *)error{
-    PKKXmlRpcCompletionBlock block = [self blockForRequest:request];
+    PKKXmlRpcCompletionBlock block = [self popBlockForRequest:request];
     
     if (block){
         block (nil, error);

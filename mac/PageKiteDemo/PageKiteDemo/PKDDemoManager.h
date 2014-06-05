@@ -14,9 +14,12 @@
 @property (nonatomic, readonly) BOOL            loggedIn;
 @property (nonatomic, readonly) NSArray         *kiteList;
 @property (nonatomic, readonly) NSArray         *domainList;
+@property (nonatomic, readonly) NSString        *addKiteName;
 
 - (IBAction)handleLogin:(id)sender;
 - (IBAction)handleGetKites:(id)sender;
 - (IBAction)handleGetDomains:(id)sender;
+- (IBAction)handleClearLog:(id)sender;
+- (IBAction)handleAddKite:(id)sender;
 
 @end

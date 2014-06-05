@@ -6,14 +6,14 @@
 //  Copyright (c) 2014 SonicBunny Software. All rights reserved.
 //
 
-#import "PKKKite.h"
+#import "PKKKiteStatus.h"
 
-@interface PKKKite ()
+@interface PKKKiteStatus ()
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *bytes;
 @end
 
-@implementation PKKKite
+@implementation PKKKiteStatus
 
 - (instancetype)initWithName:(NSString *)name bytes:(NSString *)bytes {
     self = [super init];
