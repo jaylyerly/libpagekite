@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		4062D6B69B61478282C20DDB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 69C9E08C096A4449BB02459A /* libPods.a */; };
+		EC72252A194107EA001BB934 /* libssl.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EC722529194107EA001BB934 /* libssl.dylib */; };
+		EC72252C194107EF001BB934 /* libpthread.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EC72252B194107EF001BB934 /* libpthread.dylib */; };
+		EC72252E194107F7001BB934 /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EC72252D194107F7001BB934 /* libcrypto.dylib */; };
+		EC72253019410802001BB934 /* libm.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EC72252F19410802001BB934 /* libm.dylib */; };
+		EC7225321941083A001BB934 /* libev.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC7225311941083A001BB934 /* libev.a */; };
 		EC7A27341937B0FD002CAB06 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC7A27331937B0FD002CAB06 /* Cocoa.framework */; };
 		EC7A273E1937B0FD002CAB06 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EC7A273C1937B0FD002CAB06 /* InfoPlist.strings */; };
 		EC7A27491937B0FD002CAB06 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC7A27481937B0FD002CAB06 /* XCTest.framework */; };
@@ -24,10 +29,20 @@
 		EC7A27F31938CAE6002CAB06 /* PKKXmlRpcClient.m in Sources */ = {isa = PBXBuildFile; fileRef = EC7A27F11938CAE6002CAB06 /* PKKXmlRpcClient.m */; };
 		EC7A27F61939077B002CAB06 /* PKKDomain.h in Headers */ = {isa = PBXBuildFile; fileRef = EC7A27F41939077B002CAB06 /* PKKDomain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EC7A27F71939077B002CAB06 /* PKKDomain.m in Sources */ = {isa = PBXBuildFile; fileRef = EC7A27F51939077B002CAB06 /* PKKDomain.m */; };
-		EC9412F71940E2EF00E00F42 /* PKKKite.h in Headers */ = {isa = PBXBuildFile; fileRef = EC9412F51940E2EF00E00F42 /* PKKKite.h */; };
+		EC9412F71940E2EF00E00F42 /* PKKKite.h in Headers */ = {isa = PBXBuildFile; fileRef = EC9412F51940E2EF00E00F42 /* PKKKite.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EC9412F81940E2EF00E00F42 /* PKKKite.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9412F61940E2EF00E00F42 /* PKKKite.m */; };
 		EC9412FB1940EDB400E00F42 /* PKKLibPageKite.h in Headers */ = {isa = PBXBuildFile; fileRef = EC9412F91940EDB400E00F42 /* PKKLibPageKite.h */; };
 		EC9412FC1940EDB500E00F42 /* PKKLibPageKite.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9412FA1940EDB400E00F42 /* PKKLibPageKite.m */; };
+		EC9413141941026300E00F42 /* pd_sha1.c in Sources */ = {isa = PBXBuildFile; fileRef = EC94130B1941026300E00F42 /* pd_sha1.c */; settings = {COMPILER_FLAGS = "-std=c99 -pedantic -fno-strict-aliasing -Wno-deprecated "; }; };
+		EC9413151941026300E00F42 /* pkblocker.c in Sources */ = {isa = PBXBuildFile; fileRef = EC94130C1941026300E00F42 /* pkblocker.c */; settings = {COMPILER_FLAGS = "-std=c99 -pedantic -fno-strict-aliasing -Wno-deprecated "; }; };
+		EC9413161941026300E00F42 /* pkconn.c in Sources */ = {isa = PBXBuildFile; fileRef = EC94130D1941026300E00F42 /* pkconn.c */; settings = {COMPILER_FLAGS = "-std=c99 -pedantic -fno-strict-aliasing -Wno-deprecated "; }; };
+		EC9413171941026300E00F42 /* pkerror.c in Sources */ = {isa = PBXBuildFile; fileRef = EC94130E1941026300E00F42 /* pkerror.c */; settings = {COMPILER_FLAGS = "-std=c99 -pedantic -fno-strict-aliasing -Wno-deprecated "; }; };
+		EC9413181941026300E00F42 /* pklogging.c in Sources */ = {isa = PBXBuildFile; fileRef = EC94130F1941026300E00F42 /* pklogging.c */; settings = {COMPILER_FLAGS = "-std=c99 -pedantic -fno-strict-aliasing -Wno-deprecated "; }; };
+		EC9413191941026300E00F42 /* pkmanager.c in Sources */ = {isa = PBXBuildFile; fileRef = EC9413101941026300E00F42 /* pkmanager.c */; settings = {COMPILER_FLAGS = "-std=c99 -pedantic -fno-strict-aliasing -Wno-deprecated "; }; };
+		EC94131A1941026300E00F42 /* pkproto.c in Sources */ = {isa = PBXBuildFile; fileRef = EC9413111941026300E00F42 /* pkproto.c */; settings = {COMPILER_FLAGS = "-std=c99 -pedantic -fno-strict-aliasing -Wno-deprecated "; }; };
+		EC94131B1941026300E00F42 /* pkstate.c in Sources */ = {isa = PBXBuildFile; fileRef = EC9413121941026300E00F42 /* pkstate.c */; settings = {COMPILER_FLAGS = "-std=c99 -pedantic -fno-strict-aliasing -Wno-deprecated "; }; };
+		EC94131C1941026300E00F42 /* pkwatchdog.c in Sources */ = {isa = PBXBuildFile; fileRef = EC9413131941026300E00F42 /* pkwatchdog.c */; settings = {COMPILER_FLAGS = "-std=c99 -pedantic -fno-strict-aliasing -Wno-deprecated "; }; };
+		EC94131E1941026C00E00F42 /* utils.c in Sources */ = {isa = PBXBuildFile; fileRef = EC94131D1941026C00E00F42 /* utils.c */; settings = {COMPILER_FLAGS = "-std=c99 -pedantic -fno-strict-aliasing -Wno-deprecated "; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +57,11 @@
 
 /* Begin PBXFileReference section */
 		69C9E08C096A4449BB02459A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC722529194107EA001BB934 /* libssl.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libssl.dylib; path = usr/lib/libssl.dylib; sourceTree = SDKROOT; };
+		EC72252B194107EF001BB934 /* libpthread.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpthread.dylib; path = usr/lib/libpthread.dylib; sourceTree = SDKROOT; };
+		EC72252D194107F7001BB934 /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = usr/lib/libcrypto.dylib; sourceTree = SDKROOT; };
+		EC72252F19410802001BB934 /* libm.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libm.dylib; path = usr/lib/libm.dylib; sourceTree = SDKROOT; };
+		EC7225311941083A001BB934 /* libev.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libev.a; path = "../ThirdParty/libev-4.15/.libs/libev.a"; sourceTree = "<group>"; };
 		EC7A27301937B0FD002CAB06 /* PageKiteKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PageKiteKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC7A27331937B0FD002CAB06 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		EC7A27361937B0FD002CAB06 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -82,6 +102,16 @@
 		EC9413081940FF5700E00F42 /* pkwatchdog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = pkwatchdog.h; path = ../../pkwatchdog.h; sourceTree = "<group>"; };
 		EC9413091940FF5700E00F42 /* utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = utils.h; path = ../../utils.h; sourceTree = "<group>"; };
 		EC94130A1940FF5700E00F42 /* version.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = version.h; path = ../../version.h; sourceTree = "<group>"; };
+		EC94130B1941026300E00F42 /* pd_sha1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = pd_sha1.c; path = ../../pd_sha1.c; sourceTree = "<group>"; };
+		EC94130C1941026300E00F42 /* pkblocker.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = pkblocker.c; path = ../../pkblocker.c; sourceTree = "<group>"; };
+		EC94130D1941026300E00F42 /* pkconn.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = pkconn.c; path = ../../pkconn.c; sourceTree = "<group>"; };
+		EC94130E1941026300E00F42 /* pkerror.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = pkerror.c; path = ../../pkerror.c; sourceTree = "<group>"; };
+		EC94130F1941026300E00F42 /* pklogging.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = pklogging.c; path = ../../pklogging.c; sourceTree = "<group>"; };
+		EC9413101941026300E00F42 /* pkmanager.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = pkmanager.c; path = ../../pkmanager.c; sourceTree = "<group>"; };
+		EC9413111941026300E00F42 /* pkproto.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = pkproto.c; path = ../../pkproto.c; sourceTree = "<group>"; };
+		EC9413121941026300E00F42 /* pkstate.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = pkstate.c; path = ../../pkstate.c; sourceTree = "<group>"; };
+		EC9413131941026300E00F42 /* pkwatchdog.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = pkwatchdog.c; path = ../../pkwatchdog.c; sourceTree = "<group>"; };
+		EC94131D1941026C00E00F42 /* utils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = utils.c; path = ../../utils.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +119,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC7225321941083A001BB934 /* libev.a in Frameworks */,
+				EC72253019410802001BB934 /* libm.dylib in Frameworks */,
+				EC72252E194107F7001BB934 /* libcrypto.dylib in Frameworks */,
+				EC72252C194107EF001BB934 /* libpthread.dylib in Frameworks */,
+				EC72252A194107EA001BB934 /* libssl.dylib in Frameworks */,
 				EC7A27341937B0FD002CAB06 /* Cocoa.framework in Frameworks */,
 				4062D6B69B61478282C20DDB /* libPods.a in Frameworks */,
 			);
@@ -130,6 +165,11 @@
 		EC7A27321937B0FD002CAB06 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EC7225311941083A001BB934 /* libev.a */,
+				EC72252F19410802001BB934 /* libm.dylib */,
+				EC72252D194107F7001BB934 /* libcrypto.dylib */,
+				EC72252B194107EF001BB934 /* libpthread.dylib */,
+				EC722529194107EA001BB934 /* libssl.dylib */,
 				EC9412F31940A93600E00F42 /* libpagekite.a */,
 				EC7A27331937B0FD002CAB06 /* Cocoa.framework */,
 				EC7A27481937B0FD002CAB06 /* XCTest.framework */,
@@ -230,6 +270,16 @@
 				EC9413081940FF5700E00F42 /* pkwatchdog.h */,
 				EC9413091940FF5700E00F42 /* utils.h */,
 				EC94130A1940FF5700E00F42 /* version.h */,
+				EC94130B1941026300E00F42 /* pd_sha1.c */,
+				EC94130C1941026300E00F42 /* pkblocker.c */,
+				EC94130D1941026300E00F42 /* pkconn.c */,
+				EC94130E1941026300E00F42 /* pkerror.c */,
+				EC94130F1941026300E00F42 /* pklogging.c */,
+				EC9413101941026300E00F42 /* pkmanager.c */,
+				EC9413111941026300E00F42 /* pkproto.c */,
+				EC9413121941026300E00F42 /* pkstate.c */,
+				EC9413131941026300E00F42 /* pkwatchdog.c */,
+				EC94131D1941026C00E00F42 /* utils.c */,
 			);
 			name = LibPageKite;
 			sourceTree = "<group>";
@@ -346,12 +396,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC9413141941026300E00F42 /* pd_sha1.c in Sources */,
+				EC9413151941026300E00F42 /* pkblocker.c in Sources */,
 				EC7A27F71939077B002CAB06 /* PKKDomain.m in Sources */,
+				EC94131A1941026300E00F42 /* pkproto.c in Sources */,
+				EC94131C1941026300E00F42 /* pkwatchdog.c in Sources */,
 				EC7A27611937B174002CAB06 /* PKKManager.m in Sources */,
 				EC7A27651937B1BF002CAB06 /* PKKKiteStatus.m in Sources */,
+				EC9413181941026300E00F42 /* pklogging.c in Sources */,
 				EC7A27F31938CAE6002CAB06 /* PKKXmlRpcClient.m in Sources */,
+				EC94131E1941026C00E00F42 /* utils.c in Sources */,
 				EC9412FC1940EDB500E00F42 /* PKKLibPageKite.m in Sources */,
 				EC9412F81940E2EF00E00F42 /* PKKKite.m in Sources */,
+				EC94131B1941026300E00F42 /* pkstate.c in Sources */,
+				EC9413161941026300E00F42 /* pkconn.c in Sources */,
+				EC9413191941026300E00F42 /* pkmanager.c in Sources */,
+				EC9413171941026300E00F42 /* pkerror.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,15 +546,28 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../PageKiteDemo/Pods/Headers",
-					"$(SRCROOT)/../..",
+					"$(SRCROOT)/../ThirdParty/libev-4.15",
 				);
 				INFOPLIST_FILE = "PageKiteKit/PageKiteKit-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/jayl/git/libpagekite,
+					"/Users/jayl/git/libpagekite/mac/ThirdParty/libev-4.15/.libs",
+				);
+				OTHER_CFLAGS = (
+					"-DHAVE_IPV6=1",
+					"-DHAVE_OPENSSL=1",
+					"-DPK_TRACE=0",
 				);
 				OTHER_LDFLAGS = "$(SRCROOT)/../../libpagekite.a";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				WARNING_CFLAGS = (
+					"-Wno-empty-translation-unit",
+					"-Wno-deprecated",
+					"-Wno-format",
+					"-Wno-shorten-64-to-32",
+					"-Wno-visibility",
+				);
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Debug;
@@ -512,15 +585,28 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../PageKiteDemo/Pods/Headers",
-					"$(SRCROOT)/../..",
+					"$(SRCROOT)/../ThirdParty/libev-4.15",
 				);
 				INFOPLIST_FILE = "PageKiteKit/PageKiteKit-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/jayl/git/libpagekite,
+					"/Users/jayl/git/libpagekite/mac/ThirdParty/libev-4.15/.libs",
+				);
+				OTHER_CFLAGS = (
+					"-DHAVE_IPV6=1",
+					"-DHAVE_OPENSSL=1",
+					"-DPK_TRACE=0",
 				);
 				OTHER_LDFLAGS = "$(SRCROOT)/../../libpagekite.a";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				WARNING_CFLAGS = (
+					"-Wno-empty-translation-unit",
+					"-Wno-deprecated",
+					"-Wno-format",
+					"-Wno-shorten-64-to-32",
+					"-Wno-visibility",
+				);
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Release;

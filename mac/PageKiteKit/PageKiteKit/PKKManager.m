@@ -10,7 +10,21 @@
 #import "PKKXmlRpcClient.h"
 #import "PKKKiteStatus.h"
 #import "PKKDomain.h"
+#import "PKKKite.h"
+#import "PKKLibPageKite.h"
+
 #import <xmlrpc/XMLRPC.h>
+
+@interface PKKKite ()
+- (instancetype) initWithName:(NSString *)name
+                       secret:(NSString *)secret
+                     protocol:(NSString *)protocol
+                     remoteIp:(NSString *)remoteIp
+                   remotePort:(NSNumber *)remotePort
+                      localIp:(NSString *)localIp
+                    localPort:(NSNumber *)localPort;
+
+@end
 
 @interface PKKManager ()
 @property (nonatomic, strong) PKKXmlRpcClient *xmlClient;
@@ -20,6 +34,8 @@
 @property (nonatomic, strong) NSArray *kites;
 @property (nonatomic, strong) NSArray *domains;
 @property (nonatomic, strong) NSString *lastError;
+@property (nonatomic, strong) NSString *log;
+
 @end
 
 @implementation PKKManager
@@ -38,8 +54,17 @@
     self = [super init];
     if (self){
         _xmlClient = [[PKKXmlRpcClient alloc] init];
+        [[PKKLibPageKite sharedLibManager] addObserver:self
+                                            forKeyPath:@"log"
+                                               options:0
+                                               context:nil];
     }
     return self;
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    // The library log changed, so get a copy to expose it to the world.
+    self.log = [[PKKLibPageKite sharedLibManager] log];
 }
 
 - (void)retrieveKitesWithCompletionBlock:(PKKManagerCompletionBlock)block {
@@ -115,7 +140,7 @@
                }];
 }
 
-- (void)addKite:(NSString*)name completionBlock:(PKKManagerCompletionBlock)block{
+- (void)addDomainName:(NSString*)name completionBlock:(PKKManagerCompletionBlock)block{
     [self.xmlClient callMethod:@"add_kite"
                 withParameters:@[self.accountId, self.credential, name, @NO]
                completionBlock:^(XMLRPCResponse *resp, NSError *err){
@@ -150,6 +175,23 @@
     
 }
 
+- (PKKKite *) addKiteWithName:(NSString *)name
+                     protocol:(NSString *)protocol
+                     remoteIp:(NSString *)remoteIp
+                   remotePort:(NSNumber *)remotePort
+                      localIp:(NSString *)localIp
+                    localPort:(NSNumber *)localPort{
+    
+    PKKKite *newKite = [[PKKKite alloc] initWithName:name
+                                              secret:self.sharedSecret
+                                            protocol:protocol
+                                            remoteIp:remoteIp
+                                          remotePort:remotePort
+                                             localIp:localIp
+                                           localPort:localPort];
+    return newKite;
+}
+
 
 #pragma mark - API helper funcs
 
@@ -182,5 +224,33 @@
         }
     }
     return nil;
+}
+
+- (NSArray *)protocols {
+    return @[
+             @(PKKProtocolHttp),
+             @(PKKProtocolHttps),
+             @(PKKProtocolSsh),
+             @(PKKProtocolRaw),
+             ];
+}
+
+- (NSDictionary *)protocolNames {
+    return @{
+             @(PKKProtocolHttp)  : @"http",
+             @(PKKProtocolHttps) : @"https",
+             @(PKKProtocolSsh)   : @"ssh",
+             @(PKKProtocolRaw)   : @"raw",
+             };
+}
+
+
+- (NSDictionary *)protocolPorts {
+    return @{
+             @(PKKProtocolHttp)  : @80,
+             @(PKKProtocolHttps) : @443,
+             @(PKKProtocolSsh)   : @22,
+             @(PKKProtocolRaw)   : @-1,
+             };
 }
 @end

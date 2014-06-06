@@ -7,8 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "common.h"
 
 @interface PKKLibPageKite : NSObject
+@property (nonatomic, readonly, assign) SSL_CTX* ssl_ctx;
+@property (nonatomic, readonly)  NSString *log;
 
 + (instancetype) sharedLibManager;
 

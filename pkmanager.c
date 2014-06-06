@@ -1123,7 +1123,7 @@ struct pk_pagekite* pkm_add_kite(struct pk_manager* pkm,
 {
   int which;
   char *pp;
-  struct pk_pagekite* kite;
+  struct pk_pagekite* kite = NULL;
 
   PK_TRACE_FUNCTION;
 

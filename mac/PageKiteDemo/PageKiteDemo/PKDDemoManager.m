@@ -11,12 +11,18 @@
 
 @interface PKDDemoManager ()
 
-@property (nonatomic, strong) NSMutableString *logString;
-@property (nonatomic, assign) BOOL            loggedIn;
-@property (nonatomic, strong) NSImage         *statusImage;
-@property (nonatomic, strong) NSArray         *kiteList;
-@property (nonatomic, strong) NSArray         *domainList;
-@property (nonatomic, strong) NSString        *addKiteName;
+@property (nonatomic, strong) NSMutableString    *logString;
+@property (nonatomic, assign) BOOL               loggedIn;
+@property (nonatomic, strong) NSImage            *statusImage;
+@property (nonatomic, strong) NSArray            *kiteStatusList;
+@property (nonatomic, strong) NSMutableArray     *kiteList;
+@property (nonatomic, strong) NSArray            *domainList;
+@property (nonatomic, strong) NSDictionary       *services;
+@property (nonatomic, strong) NSString           *addKiteName;
+@property (nonatomic, strong) NSString           *addDomainName;
+@property (nonatomic, strong) NSString           *portName;
+@property (nonatomic, strong) NSAttributedString *libraryLogText;
+
 @end
 
 @implementation PKDDemoManager
@@ -27,9 +33,38 @@
         _logString = [@"Demo Manager Initialized...\n" mutableCopy];
         _loggedIn = NO;
         _statusImage = [NSImage imageNamed:@"NSStatusUnavailable"];
+        [self prepareServicesDictionary];
+        _portName = [[self.services allKeys] lastObject];
+        _addKiteName = @"MyNewKite";
+        _kiteList = [@[] mutableCopy];
+        [[PKKManager sharedManager] addObserver:self
+                                     forKeyPath:@"log"
+                                        options:0
+                                        context:nil];
+
     }
     return self;
 }
+
+- (void)prepareServicesDictionary {
+    
+    NSMutableDictionary *tmpDict = [@{} mutableCopy];
+    
+    PKKManager *mgr = [PKKManager sharedManager];
+    
+    for (NSNumber *protocol in mgr.protocols){
+        tmpDict[mgr.protocolNames[protocol]] = mgr.protocolPorts[protocol];
+    }
+    
+    self.services = [NSDictionary dictionaryWithDictionary:tmpDict];
+}
+
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    // The library log changed, so get a copy to expose it to the world.
+    self.libraryLogText = [[NSAttributedString alloc] initWithString:[PKKManager sharedManager].log];
+}
+
 
 - (IBAction)handleLogin:(id)sender {
     __weak PKDDemoManager* weakSelf = self;
@@ -59,10 +94,10 @@
                 NSLog(@"Found kite: %@",kite);
                 [self log:[NSString stringWithFormat:@"Found kite: %@", kite]];
             }
-            self.kiteList = manager.kites;
+            self.kiteStatusList = manager.kites;
             
-            PKKKiteStatus *kite = [self.kiteList lastObject];
-            self.addKiteName = [NSString stringWithFormat:@"foo.%@", kite.name];
+            PKKKiteStatus *kite = [self.kiteStatusList lastObject];
+            self.addDomainName = [NSString stringWithFormat:@"foo.%@", kite.name];
         }else{
             NSLog(@"Failed to get kites!");
         }
@@ -110,9 +145,9 @@
     return [[NSAttributedString alloc] initWithString:self.logString];
 }
 
-- (IBAction)handleAddKite:(id)sender{
+- (IBAction)handleAddKiteName:(id)sender{
     __weak PKKManager *manager = [PKKManager sharedManager];
-    [manager addKite:self.addKiteName completionBlock:^(BOOL success){
+    [manager addDomainName:self.addKiteName completionBlock:^(BOOL success){
         if (success){
             [self handleGetKites:self];
         }else{
@@ -122,4 +157,38 @@
 }
 
 
+- (IBAction)handleAddKite:(id)sender{
+    
+//    PKKDomain *remoteDomain = objc_dynamic_cast(PKKDomain, [[self.domainListController selectedObjects] firstObject]);
+    NSLog(@"Add kite -> name: %@, protocol: %@, remote IP: %@, remote port: %@, local IP: %@, local port: %@",
+          self.addKiteName,
+          self.portName,
+          self.addKiteDomain,
+          self.remotePort,
+          @"127.0.0.1",
+          self.localPort
+          );
+    
+    PKKKite *kite = [[PKKManager sharedManager]addKiteWithName:self.addKiteName
+                                                      protocol:self.portName
+                                                      remoteIp:self.addKiteDomain
+                                                    remotePort:self.remotePort
+                                                       localIp:@"127.0.0.1"
+                                                     localPort:self.localPort];
+    [self willChangeValueForKey:@"kiteList"];
+    [self.kiteList addObject:kite];
+    [self didChangeValueForKey:@"kiteList"];
+    NSLog(@"Created kite: %@", kite);
+}
+
+- (IBAction)handleFlyKite:(id)sender {
+    PKKKite *kite = objc_dynamic_cast(PKKKite, [[self.kiteListController selectedObjects] lastObject]);
+    NSLog(@"Toggle kite flying status on kite: %@", kite);
+    
+    if (kite.isFlying){
+        [kite land];
+    } else {
+        [kite fly];
+    }
+}
 @end

@@ -11,17 +11,14 @@
 @interface PKKKite : NSObject
 
 @property (nonatomic, readonly, copy) NSString *name;
+@property (nonatomic, readonly, copy) NSString *protocol;
 @property (nonatomic, readonly, copy) NSString *remoteIp;
 @property (nonatomic, readonly)       NSNumber *remotePort;
 @property (nonatomic, readonly, copy) NSString *localIp;
 @property (nonatomic, readonly)       NSNumber *localPort;
+@property (nonatomic, readonly)       BOOL     isFlying;
 
-- (instancetype) initWithName:(NSString *)name
-                       secret:(NSString *)secret
-                     remoteIp:(NSString *)remoteIp
-                   remotePort:(NSNumber *)remotePort
-                      localIp:(NSString *)localIp
-                    localPort:(NSNumber *)localPort;
-
+-(void) fly;
+-(void) land;
 
 @end
