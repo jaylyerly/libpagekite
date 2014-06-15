@@ -9,3 +9,4 @@
 #import <PageKiteKit/PKKKite.h>
 #import <PageKiteKit/PKKKiteStatus.h>
 #import <PageKiteKit/PKKDomain.h>
+#import <PageKiteKit/PKKProtocols.h>

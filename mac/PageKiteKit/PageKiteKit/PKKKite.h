@@ -16,9 +16,5 @@
 @property (nonatomic, readonly)       NSNumber *remotePort;
 @property (nonatomic, readonly, copy) NSString *localIp;
 @property (nonatomic, readonly)       NSNumber *localPort;
-@property (nonatomic, readonly)       BOOL     isFlying;
-
--(void) fly;
--(void) land;
 
 @end

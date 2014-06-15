@@ -10,33 +10,28 @@
 typedef void (^PKKManagerCompletionBlock)(BOOL success);
 
 @class PKKKite;
+@class PKKManager;
 
-typedef NS_ENUM(NSUInteger, PKKProtocol) {
-    PKKProtocolHttp,
-    PKKProtocolHttps,
-    PKKProtocolSsh,
-    PKKProtocolRaw,
-};
+@protocol PKKManagerLogWatcher <NSObject>
+- (void) pageKiteManager:(PKKManager*)manager newLogMessage:(NSString *)message;
+@end
 
 @interface PKKManager : NSObject
 
-@property (nonatomic, readonly) NSArray *kites;
-@property (nonatomic, readonly) NSArray *domains;
-@property (nonatomic, readonly) NSString *lastError;
+@property (nonatomic, readonly)       NSArray *kites;
+@property (nonatomic, readonly)       NSArray *domains;
+@property (nonatomic, readonly, copy) NSString *lastError;
+@property (nonatomic, readonly, copy) NSString *log;
 
-@property (nonatomic, readonly) NSString *log;
-
-@property (nonatomic, readonly) NSArray *protocols;
-@property (nonatomic, readonly) NSDictionary *protocolNames;
-@property (nonatomic, readonly) NSDictionary *protocolPorts;
+@property (nonatomic, readonly) BOOL kitesAreFlying;
 
 + (instancetype) sharedManager;
 
 - (void)loginWithUser:(NSString *)user password:(NSString *)password completionBlock:(PKKManagerCompletionBlock)block;
-- (void)retrieveKitesWithCompletionBlock:(PKKManagerCompletionBlock)block;
+- (void)retrieveKitesStatusWithCompletionBlock:(PKKManagerCompletionBlock)block;
 - (void)retrieveDomainsWithCompletionBlock:(PKKManagerCompletionBlock)block;
 - (void)addDomainName:(NSString*)name completionBlock:(PKKManagerCompletionBlock)block;
-- (void)getAccountInfoWithCompletionBlock:(PKKManagerCompletionBlock)block;
+//- (void)getAccountInfoWithCompletionBlock:(PKKManagerCompletionBlock)block;
 
 - (PKKKite *) addKiteWithName:(NSString *)name
                      protocol:(NSString *)protocol
@@ -45,5 +40,10 @@ typedef NS_ENUM(NSUInteger, PKKProtocol) {
                       localIp:(NSString *)localIp
                     localPort:(NSNumber *)localPort;
 
+- (void)flyKites;
+- (void)landKites;
+
+- (void)addLogMessage:(NSString *)message;
+- (void)addLogWacher:(id<PKKManagerLogWatcher>)watcher;
 
 @end

@@ -8,8 +8,10 @@
 
 #import "PKDDemoManager.h"
 #import <PageKiteKit/PageKiteKit.h>
+#import "PKKKite+WebServer.h"
+#import "PKKManager+WebServer.h"
 
-@interface PKDDemoManager ()
+@interface PKDDemoManager () <PKKManagerLogWatcher>
 
 @property (nonatomic, strong) NSMutableString    *logString;
 @property (nonatomic, assign) BOOL               loggedIn;
@@ -17,11 +19,13 @@
 @property (nonatomic, strong) NSArray            *kiteStatusList;
 @property (nonatomic, strong) NSMutableArray     *kiteList;
 @property (nonatomic, strong) NSArray            *domainList;
-@property (nonatomic, strong) NSDictionary       *services;
+@property (nonatomic, strong) NSArray            *services;
 @property (nonatomic, strong) NSString           *addKiteName;
 @property (nonatomic, strong) NSString           *addDomainName;
-@property (nonatomic, strong) NSString           *portName;
-@property (nonatomic, strong) NSAttributedString *libraryLogText;
+@property (nonatomic, strong) NSString           *serviceName;
+@property (nonatomic, strong) NSString           *addKiteDomain;
+@property (nonatomic, assign) BOOL               kitesAreFlying;
+@property (nonatomic, strong) NSString           *localHost;
 
 @end
 
@@ -33,36 +37,30 @@
         _logString = [@"Demo Manager Initialized...\n" mutableCopy];
         _loggedIn = NO;
         _statusImage = [NSImage imageNamed:@"NSStatusUnavailable"];
-        [self prepareServicesDictionary];
-        _portName = [[self.services allKeys] lastObject];
+        _services = [[PKKProtocols protocolNames] allValues];
+        _serviceName = [PKKProtocols protocolNames][@(PKKProtocolHttp)];
         _addKiteName = @"MyNewKite";
         _kiteList = [@[] mutableCopy];
+        _localHost = @"127.0.0.1";
+        [[PKKManager sharedManager] addLogWacher:self];
         [[PKKManager sharedManager] addObserver:self
-                                     forKeyPath:@"log"
+                                     forKeyPath:@"kitesAreFlying"
                                         options:0
                                         context:nil];
+        
 
     }
     return self;
 }
 
-- (void)prepareServicesDictionary {
-    
-    NSMutableDictionary *tmpDict = [@{} mutableCopy];
-    
-    PKKManager *mgr = [PKKManager sharedManager];
-    
-    for (NSNumber *protocol in mgr.protocols){
-        tmpDict[mgr.protocolNames[protocol]] = mgr.protocolPorts[protocol];
-    }
-    
-    self.services = [NSDictionary dictionaryWithDictionary:tmpDict];
+- (void) pageKiteManager:(PKKManager *)manager newLogMessage:(NSString *)message{
+    [self log:message];
 }
 
-
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    // The library log changed, so get a copy to expose it to the world.
-    self.libraryLogText = [[NSAttributedString alloc] initWithString:[PKKManager sharedManager].log];
+    if ([keyPath isEqualToString:@"kitesAreFlying"]){
+        self.kitesAreFlying = [[PKKManager sharedManager] kitesAreFlying];
+    }
 }
 
 
@@ -88,7 +86,7 @@
 
 - (IBAction)handleGetKites:(id)sender {
     PKKManager *manager = [PKKManager sharedManager];
-    [manager retrieveKitesWithCompletionBlock:^(BOOL success){
+    [manager retrieveKitesStatusWithCompletionBlock:^(BOOL success){
         if (success){
             for (PKKKiteStatus *kite in manager.kites){
                 NSLog(@"Found kite: %@",kite);
@@ -113,6 +111,8 @@
                 [self log:[NSString stringWithFormat:@"Found domain: %@", domain]];
             }
             self.domainList = manager.domains;
+            PKKDomain *domain = [self.domainList lastObject];
+            self.addKiteDomain = domain.name; // prime the list selection
         }else{
             NSLog(@"Failed to get domains!");
         }
@@ -130,8 +130,15 @@
 }
 
 - (void) log:(NSString *)aString {
+    NSString *newString = aString;
+    
+    NSString *lastChar = [aString substringFromIndex:([aString length]-1)];
+    if (! [lastChar isEqualToString:@"\n"]){
+        newString = [NSString stringWithFormat:@"%@\n", aString];
+    }
+
     [self willChangeValueForKey:@"logText"];
-    [self.logString appendFormat:@"%@\n",aString];
+    [self.logString appendString:newString];
     [self didChangeValueForKey:@"logText"];
 }
 
@@ -160,35 +167,46 @@
 - (IBAction)handleAddKite:(id)sender{
     
 //    PKKDomain *remoteDomain = objc_dynamic_cast(PKKDomain, [[self.domainListController selectedObjects] firstObject]);
+    
+    // FIXME -- this is a little gross
+    NSNumber *protocolId = [[[PKKProtocols protocolNames] allKeysForObject:self.serviceName] lastObject];
+    NSString *protocol = [PKKProtocols protocolServiceNames][protocolId];
+    
     NSLog(@"Add kite -> name: %@, protocol: %@, remote IP: %@, remote port: %@, local IP: %@, local port: %@",
           self.addKiteName,
-          self.portName,
+          protocol,
           self.addKiteDomain,
           self.remotePort,
-          @"127.0.0.1",
+          self.localHost,
           self.localPort
           );
     
     PKKKite *kite = [[PKKManager sharedManager]addKiteWithName:self.addKiteName
-                                                      protocol:self.portName
+                                                      protocol:protocol
                                                       remoteIp:self.addKiteDomain
                                                     remotePort:self.remotePort
-                                                       localIp:@"127.0.0.1"
+                                                       localIp:self.localHost
                                                      localPort:self.localPort];
+    if ([self.localPort integerValue]==8080){
+        kite.webDocumentDirectory = @"/Users/jayl/Sites/images";
+    }
     [self willChangeValueForKey:@"kiteList"];
     [self.kiteList addObject:kite];
     [self didChangeValueForKey:@"kiteList"];
     NSLog(@"Created kite: %@", kite);
 }
 
-- (IBAction)handleFlyKite:(id)sender {
-    PKKKite *kite = objc_dynamic_cast(PKKKite, [[self.kiteListController selectedObjects] lastObject]);
-    NSLog(@"Toggle kite flying status on kite: %@", kite);
-    
-    if (kite.isFlying){
-        [kite land];
-    } else {
-        [kite fly];
-    }
+- (IBAction)handleRemoveKite:(id)sender{
+    [self.kiteListController removeObjectsAtArrangedObjectIndexes:[self.kiteListController selectionIndexes]];
 }
+
+
+- (IBAction)handleFlyKites:(id)sender {
+    [[PKKManager sharedManager] flyKitesWithWebServers];
+}
+
+- (IBAction)handleLandKites:(id)sender{
+    [[PKKManager sharedManager] landKitesWithWebServers];
+}
+
 @end

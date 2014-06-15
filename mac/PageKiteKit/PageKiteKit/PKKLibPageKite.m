@@ -7,18 +7,22 @@
 //
 
 #import "PKKLibPageKite.h"
+#import "PKKKite.h"
+#import "PKKManager.h"
 
-// LibPageKite Includes
-#import "pkstate.h"
-#import "pklogging.h"
-#import "common.h"
+@interface PKKManager ()
+@property (nonatomic, readonly) NSString *sharedSecret;
+@end
+
 
 @interface PKKLibPageKite ()
 
-@property (nonatomic, assign) BOOL       isInitialized;
-@property (nonatomic, assign) SSL_CTX    *ssl_ctx;
-@property (nonatomic, strong) NSString   *log;
-@property (nonatomic, assign) size_t     logCount;
+@property (nonatomic, assign) BOOL                                isInitialized;
+@property (nonatomic, assign) SSL_CTX                             *ssl_ctx;
+@property (nonatomic, strong) NSString                            *log;
+@property (nonatomic, assign) size_t                              logCount;
+@property (nonatomic, assign) struct pk_manager                   *manager;
+@property (nonatomic, assign, getter = isManagerRunning) BOOL     managerRunning;
 
 @end
 
@@ -38,6 +42,7 @@
     self = [super init];
     if (self){
         _isInitialized = NO;
+        _managerRunning = NO;
         [self initializeLibrary];
     }
     return self;
@@ -69,5 +74,78 @@
     }
     
 }
+
+- (void) startManager{
+    if (self.isManagerRunning){
+        return;
+    }
+    
+    self.manager = pkm_manager_init(NULL, 0, NULL,
+                                    1, /* Kites */
+                                    PAGEKITE_NET_FE_MAX,
+                                    25,     // max connections
+                                    PAGEKITE_NET_DDNS,
+                                    self.ssl_ctx
+                                    );
+
+    
+    /*
+     struct pk_pagekite* pkm_add_kite(struct pk_manager* pkm,
+     const char* protocol,
+     const char* public_domain, int public_port,
+     const char* auth_secret,
+     const char* local_domain, int local_port)
+     */
+    NSString *errorHeader = [NSString stringWithFormat:@"Error in PKKLibPageKite starting manager"];
+    const char *errorHeaderC = [errorHeader UTF8String];
+    
+    for (PKKKite *kite in [[PKKManager sharedManager] kites]){
+        struct pk_pagekite *pagekite = pkm_add_kite(self.manager,
+                                                    [kite.protocol UTF8String],
+                                                    [kite.remoteIp UTF8String], [kite.remotePort integerValue],
+                                                    [[PKKManager sharedManager].sharedSecret UTF8String],
+                                                    [kite.localIp UTF8String], [kite.localPort integerValue]);
+        
+        if (! pagekite) {
+            return;
+        }
+    }
+    int fes_v4 = 0;
+    
+    fes_v4 = pkm_add_frontend(self.manager, PAGEKITE_NET_V4FRONTENDS, FE_STATUS_AUTO);
+    if (fes_v4 == 0){
+        pk_error = ERR_NO_FRONTENDS;
+        pk_perror(errorHeaderC);
+        return;
+    }
+    
+    if (0 > pkm_run_in_thread(self.manager)) {
+        pk_perror(errorHeaderC);
+        return;
+    }
+    
+    self.managerRunning = YES;
+
+}
+
+- (void) stopManager{
+    if (! self.isManagerRunning){
+        return;
+    }
+    pkm_stop_thread(self.manager);
+    free(self.manager);
+    self.manager = nil;
+    self.managerRunning = NO;
+}
+
+
+- (void) flyKite:(PKKKite *)kite{
+}
+
+
+- (void) landKite:(PKKKite *)kite{
+
+}
+
 
 @end

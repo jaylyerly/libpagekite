@@ -2,9 +2,26 @@
 #   pod install 
 # 
 
-link_with 'PageKiteDemo', 'PageKiteKit'
-
-platform :osx, '10.7' 
 workspace 'PageKiteDemo'
 
-pod 'xmlrpc', '~> 2.3.3', :inhibit_warnings => true
+link_with 'PageKiteDemo', 'PageKiteKit', 'PageKiteKitIOS'
+
+target :PageKiteDemo, :exclusive => true do
+  xcodeproj 'PageKiteDemo'
+  platform :osx, '10.7'
+  pod 'GCDWebServer',       '~> 2.4',    :inhibit_warnings => true
+end
+
+target :PageKiteKit, :exclusive => true do
+  xcodeproj '../PageKiteKit/PageKiteKit'
+  platform :osx, '10.7'
+  pod 'xmlrpc',             '~> 2.3.3',  :inhibit_warnings => true
+end
+
+target :PageKiteKitIOS, :exclusive => true do
+  xcodeproj '../PageKiteKit/PageKiteKit'
+  platform :ios, '6.0'
+  pod 'xmlrpc',             '~> 2.3.3',  :inhibit_warnings => true
+  pod 'OpenSSL',            '~> 1.0.1',  :inhibit_warnings => true
+end
+

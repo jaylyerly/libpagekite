@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8C8739DB6DF94E16899C1E7E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 905F463B5EED445C81E971D5 /* libPods.a */; };
+		13CDD82155B14DBAA584226E /* libPods-PageKiteDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F04E670C302E4BA9B4B4C6AA /* libPods-PageKiteDemo.a */; };
+		EC0B871E194BA13500EA9B65 /* PKKKite+WebServer.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0B871D194BA13500EA9B65 /* PKKKite+WebServer.m */; };
+		EC0B8721194BA15100EA9B65 /* PKKManager+WebServer.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0B8720194BA15100EA9B65 /* PKKManager+WebServer.m */; };
+		EC0B8776194E2E0D00EA9B65 /* PageKiteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC0B8775194E2E0D00EA9B65 /* PageKiteKit.framework */; };
+		EC0B8778194E2E7A00EA9B65 /* PageKiteKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = EC0B8775194E2E0D00EA9B65 /* PageKiteKit.framework */; };
 		EC7A27B51937B2B8002CAB06 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC7A27B41937B2B8002CAB06 /* Cocoa.framework */; };
 		EC7A27BF1937B2B8002CAB06 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EC7A27BD1937B2B8002CAB06 /* InfoPlist.strings */; };
 		EC7A27C11937B2B8002CAB06 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EC7A27C01937B2B8002CAB06 /* main.m */; };
@@ -19,7 +23,6 @@
 		EC7A27D51937B2B8002CAB06 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC7A27B41937B2B8002CAB06 /* Cocoa.framework */; };
 		EC7A27DD1937B2B8002CAB06 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EC7A27DB1937B2B8002CAB06 /* InfoPlist.strings */; };
 		EC7A27DF1937B2B8002CAB06 /* PageKiteDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC7A27DE1937B2B8002CAB06 /* PageKiteDemoTests.m */; };
-		EC7A27E91937B309002CAB06 /* PageKiteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC7A27E81937B309002CAB06 /* PageKiteKit.framework */; };
 		EC7A27EC1937C6AC002CAB06 /* PKDDemoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EC7A27EB1937C6AC002CAB06 /* PKDDemoManager.m */; };
 		EC7A27FA19391907002CAB06 /* PKDBooleanStringTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = EC7A27F919391907002CAB06 /* PKDBooleanStringTransformer.m */; };
 /* End PBXBuildFile section */
@@ -34,9 +37,26 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		EC0B8777194E2E5B00EA9B65 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				EC0B8778194E2E7A00EA9B65 /* PageKiteKit.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		905F463B5EED445C81E971D5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		9947C00FAA3143BAB9F9B3D6 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		A9807A1D7B514B529E8EB42C /* Pods-PageKiteDemo.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PageKiteDemo.xcconfig"; path = "Pods/Pods-PageKiteDemo.xcconfig"; sourceTree = "<group>"; };
+		EC0B871C194BA13500EA9B65 /* PKKKite+WebServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PKKKite+WebServer.h"; sourceTree = "<group>"; };
+		EC0B871D194BA13500EA9B65 /* PKKKite+WebServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PKKKite+WebServer.m"; sourceTree = "<group>"; };
+		EC0B871F194BA15100EA9B65 /* PKKManager+WebServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PKKManager+WebServer.h"; sourceTree = "<group>"; };
+		EC0B8720194BA15100EA9B65 /* PKKManager+WebServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PKKManager+WebServer.m"; sourceTree = "<group>"; };
+		EC0B8775194E2E0D00EA9B65 /* PageKiteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PageKiteKit.framework; path = "../../../../Library/Developer/Xcode/DerivedData/PageKiteDemo-dutraibrojqtjddikseqkzvfklfp/Build/Products/Debug/PageKiteKit.framework"; sourceTree = "<group>"; };
 		EC7A27B11937B2B8002CAB06 /* PageKiteDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PageKiteDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC7A27B41937B2B8002CAB06 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		EC7A27B71937B2B8002CAB06 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -56,11 +76,11 @@
 		EC7A27DA1937B2B8002CAB06 /* PageKiteDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PageKiteDemoTests-Info.plist"; sourceTree = "<group>"; };
 		EC7A27DC1937B2B8002CAB06 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EC7A27DE1937B2B8002CAB06 /* PageKiteDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageKiteDemoTests.m; sourceTree = "<group>"; };
-		EC7A27E81937B309002CAB06 /* PageKiteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PageKiteKit.framework; path = ../PageKiteKit/build/Debug/PageKiteKit.framework; sourceTree = "<group>"; };
 		EC7A27EA1937C6AC002CAB06 /* PKDDemoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKDDemoManager.h; sourceTree = "<group>"; };
 		EC7A27EB1937C6AC002CAB06 /* PKDDemoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKDDemoManager.m; sourceTree = "<group>"; };
 		EC7A27F819391907002CAB06 /* PKDBooleanStringTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKDBooleanStringTransformer.h; sourceTree = "<group>"; };
 		EC7A27F919391907002CAB06 /* PKDBooleanStringTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKDBooleanStringTransformer.m; sourceTree = "<group>"; };
+		F04E670C302E4BA9B4B4C6AA /* libPods-PageKiteDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PageKiteDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,9 +88,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC7A27E91937B309002CAB06 /* PageKiteKit.framework in Frameworks */,
+				EC0B8776194E2E0D00EA9B65 /* PageKiteKit.framework in Frameworks */,
 				EC7A27B51937B2B8002CAB06 /* Cocoa.framework in Frameworks */,
-				8C8739DB6DF94E16899C1E7E /* libPods.a in Frameworks */,
+				13CDD82155B14DBAA584226E /* libPods-PageKiteDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +106,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EC0B8722194BA15900EA9B65 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				EC0B871C194BA13500EA9B65 /* PKKKite+WebServer.h */,
+				EC0B871D194BA13500EA9B65 /* PKKKite+WebServer.m */,
+				EC0B871F194BA15100EA9B65 /* PKKManager+WebServer.h */,
+				EC0B8720194BA15100EA9B65 /* PKKManager+WebServer.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		EC7A27A81937B2B8002CAB06 = {
 			isa = PBXGroup;
 			children = (
@@ -93,7 +124,7 @@
 				EC7A27D81937B2B8002CAB06 /* PageKiteDemoTests */,
 				EC7A27B31937B2B8002CAB06 /* Frameworks */,
 				EC7A27B21937B2B8002CAB06 /* Products */,
-				9947C00FAA3143BAB9F9B3D6 /* Pods.xcconfig */,
+				A9807A1D7B514B529E8EB42C /* Pods-PageKiteDemo.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,11 +140,11 @@
 		EC7A27B31937B2B8002CAB06 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EC7A27E81937B309002CAB06 /* PageKiteKit.framework */,
+				EC0B8775194E2E0D00EA9B65 /* PageKiteKit.framework */,
 				EC7A27B41937B2B8002CAB06 /* Cocoa.framework */,
 				EC7A27D31937B2B8002CAB06 /* XCTest.framework */,
 				EC7A27B61937B2B8002CAB06 /* Other Frameworks */,
-				905F463B5EED445C81E971D5 /* libPods.a */,
+				F04E670C302E4BA9B4B4C6AA /* libPods-PageKiteDemo.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -138,6 +169,7 @@
 				EC7A27EB1937C6AC002CAB06 /* PKDDemoManager.m */,
 				EC7A27F819391907002CAB06 /* PKDBooleanStringTransformer.h */,
 				EC7A27F919391907002CAB06 /* PKDBooleanStringTransformer.m */,
+				EC0B8722194BA15900EA9B65 /* Categories */,
 				EC7A27CC1937B2B8002CAB06 /* Images.xcassets */,
 				EC7A27BB1937B2B8002CAB06 /* Supporting Files */,
 			);
@@ -186,6 +218,7 @@
 				EC7A27AE1937B2B8002CAB06 /* Frameworks */,
 				EC7A27AF1937B2B8002CAB06 /* Resources */,
 				54D5F3E27AFF4AE980FD9B06 /* Copy Pods Resources */,
+				EC0B8777194E2E5B00EA9B65 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -283,7 +316,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Pods-PageKiteDemo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8651386B9CD64D43B2BC55DD /* Check Pods Manifest.lock */ = {
@@ -312,6 +345,8 @@
 				EC7A27FA19391907002CAB06 /* PKDBooleanStringTransformer.m in Sources */,
 				EC7A27C81937B2B8002CAB06 /* PKDAppDelegate.m in Sources */,
 				EC7A27C11937B2B8002CAB06 /* main.m in Sources */,
+				EC0B8721194BA15100EA9B65 /* PKKManager+WebServer.m in Sources */,
+				EC0B871E194BA13500EA9B65 /* PKKKite+WebServer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,10 +476,14 @@
 		};
 		EC7A27E31937B2B8002CAB06 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9947C00FAA3143BAB9F9B3D6 /* Pods.xcconfig */;
+			baseConfigurationReference = A9807A1D7B514B529E8EB42C /* Pods-PageKiteDemo.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/PageKiteDemo-dutraibrojqtjddikseqkzvfklfp/Build/Products/Debug",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PageKiteDemo/PageKiteDemo-Prefix.pch";
 				INFOPLIST_FILE = "PageKiteDemo/PageKiteDemo-Info.plist";
@@ -455,10 +494,14 @@
 		};
 		EC7A27E41937B2B8002CAB06 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9947C00FAA3143BAB9F9B3D6 /* Pods.xcconfig */;
+			baseConfigurationReference = A9807A1D7B514B529E8EB42C /* Pods-PageKiteDemo.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/PageKiteDemo-dutraibrojqtjddikseqkzvfklfp/Build/Products/Debug",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PageKiteDemo/PageKiteDemo-Prefix.pch";
 				INFOPLIST_FILE = "PageKiteDemo/PageKiteDemo-Info.plist";

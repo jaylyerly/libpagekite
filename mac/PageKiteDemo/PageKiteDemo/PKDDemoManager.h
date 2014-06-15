@@ -11,18 +11,20 @@
 @interface PKDDemoManager : NSObject
 @property (nonatomic, readonly) NSImage            *statusImage;
 @property (nonatomic, readonly) NSAttributedString *logText;
-@property (nonatomic, readonly) NSAttributedString *libraryLogText;
 @property (nonatomic, readonly) BOOL               loggedIn;
 @property (nonatomic, readonly) NSArray            *kiteStatusList;
 @property (nonatomic, readonly) NSMutableArray     *kiteList;
 @property (nonatomic, readonly) NSArray            *domainList;
-@property (nonatomic, readonly) NSDictionary       *services;
+@property (nonatomic, readonly) NSArray            *services;
 @property (nonatomic, readonly) NSString           *addDomainName;
-@property (nonatomic, readonly) NSString           *portName;
+@property (nonatomic, readonly) NSString           *serviceName;
 @property (nonatomic, readonly) NSString           *addKiteName;
 @property (nonatomic, readonly) NSNumber           *remotePort;
 @property (nonatomic, readonly) NSNumber           *localPort;
+@property (nonatomic, readonly) NSString           *localHost;
 @property (nonatomic, readonly) NSString           *addKiteDomain;
+
+@property (nonatomic, readonly) BOOL               kitesAreFlying;
 
 @property (nonatomic, strong) IBOutlet NSArrayController *domainListController;
 @property (nonatomic, strong) IBOutlet NSArrayController *kiteListController;
@@ -33,6 +35,8 @@
 - (IBAction)handleClearLog:(id)sender;
 - (IBAction)handleAddKiteName:(id)sender;
 - (IBAction)handleAddKite:(id)sender;
-- (IBAction)handleFlyKite:(id)sender;
+- (IBAction)handleRemoveKite:(id)sender;
+- (IBAction)handleFlyKites:(id)sender;
+- (IBAction)handleLandKites:(id)sender;
 
 @end

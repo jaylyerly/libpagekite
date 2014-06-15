@@ -15,9 +15,9 @@
 
 #import <xmlrpc/XMLRPC.h>
 
+
 @interface PKKKite ()
 - (instancetype) initWithName:(NSString *)name
-                       secret:(NSString *)secret
                      protocol:(NSString *)protocol
                      remoteIp:(NSString *)remoteIp
                    remotePort:(NSNumber *)remotePort
@@ -28,13 +28,16 @@
 
 @interface PKKManager ()
 @property (nonatomic, strong) PKKXmlRpcClient *xmlClient;
-@property (nonatomic, copy) NSString *credential;
-@property (nonatomic, copy) NSString *accountId;
-@property (nonatomic, copy) NSString *sharedSecret;
-@property (nonatomic, strong) NSArray *kites;
-@property (nonatomic, strong) NSArray *domains;
-@property (nonatomic, strong) NSString *lastError;
-@property (nonatomic, strong) NSString *log;
+@property (nonatomic, copy)   NSString        *credential;
+@property (nonatomic, copy)   NSString        *accountId;
+@property (nonatomic, copy)   NSString        *sharedSecret;
+@property (nonatomic, strong) NSMutableArray  *mutableKites;
+@property (nonatomic, strong) NSMutableArray  *logWatchers;
+@property (nonatomic, strong) NSArray         *domains;
+@property (nonatomic, copy)   NSString        *lastError;
+@property (nonatomic, copy)   NSMutableString *logString;
+
+@property (nonatomic, assign) BOOL kitesAreFlying;
 
 @end
 
@@ -56,18 +59,21 @@
         _xmlClient = [[PKKXmlRpcClient alloc] init];
         [[PKKLibPageKite sharedLibManager] addObserver:self
                                             forKeyPath:@"log"
+                                               options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld
+                                               context:nil];
+        [[PKKLibPageKite sharedLibManager] addObserver:self
+                                            forKeyPath:@"managerRunning"
                                                options:0
                                                context:nil];
+        _mutableKites = [@[] mutableCopy];
+        _logString = [@"" mutableCopy];
+        _logWatchers = [@[] mutableCopy];
     }
     return self;
 }
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    // The library log changed, so get a copy to expose it to the world.
-    self.log = [[PKKLibPageKite sharedLibManager] log];
-}
 
-- (void)retrieveKitesWithCompletionBlock:(PKKManagerCompletionBlock)block {
+- (void)retrieveKitesStatusWithCompletionBlock:(PKKManagerCompletionBlock)block {
     if (self.credential && self.accountId){
         [self.xmlClient callMethod:@"get_kite_stats"
                     withParameters:@[self.accountId, self.credential]
@@ -82,7 +88,8 @@
                                PKKKiteStatus *kite = [[PKKKiteStatus alloc] initWithName:name bytes:bytes];
                                [tmpArray addObject:kite];
                            }];
-                           self.kites = [NSArray arrayWithArray:tmpArray];
+                           //self.kites = [NSArray arrayWithArray:tmpArray];
+                           // FIXME -- update status for individual kites with contents of tmpArray
                            if (block) { block(YES); }
                            return;
                        }
@@ -132,8 +139,9 @@
                        self.credential = data[1];
                        NSLog(@"Found credential: %@", self.credential);
                        NSLog(@"Found accountId: %@", self.accountId);
-                       [self getAccountInfoWithCompletionBlock:nil];        // make sure to get the shared secret
-                       if (block) { block(YES); }
+                       [self getAccountInfoWithCompletionBlock:^(BOOL success){        // make sure to get the shared secret
+                           if (block) { block(success); }
+                        }];
                        return;
                    }
                    if (block) { block(NO); }                   
@@ -182,16 +190,86 @@
                       localIp:(NSString *)localIp
                     localPort:(NSNumber *)localPort{
     
-    PKKKite *newKite = [[PKKKite alloc] initWithName:name
-                                              secret:self.sharedSecret
+    PKKKite *kite = [[PKKKite alloc] initWithName:name
                                             protocol:protocol
                                             remoteIp:remoteIp
                                           remotePort:remotePort
                                              localIp:localIp
                                            localPort:localPort];
-    return newKite;
+    [self willChangeValueForKey:@"kites"];
+    [self.mutableKites addObject:kite];
+    [self didChangeValueForKey:@"kites"];
+    return kite;
 }
 
+
+- (NSArray *)kites {
+    return [NSArray arrayWithArray:self.mutableKites];
+}
+
+- (void)addLogMessage:(NSString *)message {
+    NSString *realMessage = message;
+
+    NSString *lastChar = [message substringFromIndex:([message length]-1)];
+    if (! [lastChar isEqualToString:@"\n"]){
+        realMessage = [NSString stringWithFormat:@"%@\n", message];
+    }
+    
+    for (id<PKKManagerLogWatcher> watcher in self.logWatchers){
+        [watcher pageKiteManager:self newLogMessage:realMessage];
+    }
+
+    [self willChangeValueForKey:@"log"];
+    [self.logString appendString:realMessage];
+    [self didChangeValueForKey:@"log"];
+}
+
+- (NSString *)log{
+    return [NSString stringWithString:self.logString];
+}
+
+- (void)addLogWacher:(id<PKKManagerLogWatcher>)watcher{
+    if (watcher){
+        [self.logWatchers addObject:watcher];
+    }
+}
+
+- (void)removeLogWatcher:(id<PKKManagerLogWatcher>)watcher{
+    if (watcher){
+        [self.logWatchers removeObject:watcher];
+    }
+}
+
+
+
+#pragma mark - PKKLibPageKite interface
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    if ([keyPath isEqualToString:@"log"]){
+        // The library log changed, so get a copy to expose it to the world.
+        NSString *new = change[@"new"];
+        NSString *old = change[@"old"];
+        NSString *delta = [new stringByReplacingOccurrencesOfString:old withString:@""];
+        if ([delta length] > 0) {  //avoid initialization issue, nil -> @""
+            [self addLogMessage:[NSString stringWithFormat:@"<libpagekite> %@", delta]];
+        }
+    }
+    if ([keyPath isEqualToString:@"managerRunning"]){
+        self.kitesAreFlying = [[PKKLibPageKite sharedLibManager] isManagerRunning];
+    }
+}
+
+- (void) flyKites {
+    [[PKKLibPageKite sharedLibManager] startManager];
+}
+
+- (void) landKites{
+    [[PKKLibPageKite sharedLibManager] stopManager];
+}
+
+- (BOOL) kitesAreFlying{
+    return [[PKKLibPageKite sharedLibManager] isManagerRunning];
+}
 
 #pragma mark - API helper funcs
 
@@ -226,31 +304,5 @@
     return nil;
 }
 
-- (NSArray *)protocols {
-    return @[
-             @(PKKProtocolHttp),
-             @(PKKProtocolHttps),
-             @(PKKProtocolSsh),
-             @(PKKProtocolRaw),
-             ];
-}
 
-- (NSDictionary *)protocolNames {
-    return @{
-             @(PKKProtocolHttp)  : @"http",
-             @(PKKProtocolHttps) : @"https",
-             @(PKKProtocolSsh)   : @"ssh",
-             @(PKKProtocolRaw)   : @"raw",
-             };
-}
-
-
-- (NSDictionary *)protocolPorts {
-    return @{
-             @(PKKProtocolHttp)  : @80,
-             @(PKKProtocolHttps) : @443,
-             @(PKKProtocolSsh)   : @22,
-             @(PKKProtocolRaw)   : @-1,
-             };
-}
 @end
