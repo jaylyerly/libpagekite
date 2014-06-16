@@ -32,7 +32,9 @@
 		EC0B8801194E3E8A00EA9B65 /* PKDDomainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0B8800194E3E8A00EA9B65 /* PKDDomainTableViewController.m */; };
 		EC0B8804194E471600EA9B65 /* PKDTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0B8803194E471600EA9B65 /* PKDTabBarController.m */; };
 		EC0B8807194E48DA00EA9B65 /* PKDKiteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0B8806194E48DA00EA9B65 /* PKDKiteViewController.m */; };
-		EC0B880A194E493200EA9B65 /* PKDKiteTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0B8809194E493200EA9B65 /* PKDKiteTableViewController.m */; };
+		EC0B8811194EC3AD00EA9B65 /* PKDWebServer.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0B8810194EC3AD00EA9B65 /* PKDWebServer.m */; };
+		EC0B8814194EC7F700EA9B65 /* PKDLocationMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0B8813194EC7F700EA9B65 /* PKDLocationMgr.m */; };
+		EC0B8816194EC82800EA9B65 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC0B8815194EC82800EA9B65 /* CoreLocation.framework */; };
 		EC7A27B51937B2B8002CAB06 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC7A27B41937B2B8002CAB06 /* Cocoa.framework */; };
 		EC7A27BF1937B2B8002CAB06 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EC7A27BD1937B2B8002CAB06 /* InfoPlist.strings */; };
 		EC7A27C11937B2B8002CAB06 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EC7A27C01937B2B8002CAB06 /* main.m */; };
@@ -114,8 +116,11 @@
 		EC0B8803194E471600EA9B65 /* PKDTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKDTabBarController.m; sourceTree = "<group>"; };
 		EC0B8805194E48DA00EA9B65 /* PKDKiteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKDKiteViewController.h; sourceTree = "<group>"; };
 		EC0B8806194E48DA00EA9B65 /* PKDKiteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKDKiteViewController.m; sourceTree = "<group>"; };
-		EC0B8808194E493200EA9B65 /* PKDKiteTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKDKiteTableViewController.h; sourceTree = "<group>"; };
-		EC0B8809194E493200EA9B65 /* PKDKiteTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKDKiteTableViewController.m; sourceTree = "<group>"; };
+		EC0B880F194EC3AD00EA9B65 /* PKDWebServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKDWebServer.h; sourceTree = "<group>"; };
+		EC0B8810194EC3AD00EA9B65 /* PKDWebServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKDWebServer.m; sourceTree = "<group>"; };
+		EC0B8812194EC7F700EA9B65 /* PKDLocationMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKDLocationMgr.h; sourceTree = "<group>"; };
+		EC0B8813194EC7F700EA9B65 /* PKDLocationMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKDLocationMgr.m; sourceTree = "<group>"; };
+		EC0B8815194EC82800EA9B65 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
 		EC7A27B11937B2B8002CAB06 /* PageKiteDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PageKiteDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC7A27B41937B2B8002CAB06 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		EC7A27B71937B2B8002CAB06 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -147,6 +152,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC0B8816194EC82800EA9B65 /* CoreLocation.framework in Frameworks */,
 				EC0B87FE194E38D800EA9B65 /* libPageKiteKitIOS.a in Frameworks */,
 				EC0B87C5194E32AE00EA9B65 /* CoreGraphics.framework in Frameworks */,
 				EC0B87C7194E32AE00EA9B65 /* UIKit.framework in Frameworks */,
@@ -214,8 +220,10 @@
 				EC0B8800194E3E8A00EA9B65 /* PKDDomainTableViewController.m */,
 				EC0B8805194E48DA00EA9B65 /* PKDKiteViewController.h */,
 				EC0B8806194E48DA00EA9B65 /* PKDKiteViewController.m */,
-				EC0B8808194E493200EA9B65 /* PKDKiteTableViewController.h */,
-				EC0B8809194E493200EA9B65 /* PKDKiteTableViewController.m */,
+				EC0B880F194EC3AD00EA9B65 /* PKDWebServer.h */,
+				EC0B8810194EC3AD00EA9B65 /* PKDWebServer.m */,
+				EC0B8812194EC7F700EA9B65 /* PKDLocationMgr.h */,
+				EC0B8813194EC7F700EA9B65 /* PKDLocationMgr.m */,
 				EC0B87DD194E32AF00EA9B65 /* Images.xcassets */,
 				EC0B87C9194E32AF00EA9B65 /* Supporting Files */,
 			);
@@ -279,6 +287,7 @@
 		EC7A27B31937B2B8002CAB06 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EC0B8815194EC82800EA9B65 /* CoreLocation.framework */,
 				EC0B87FD194E38D800EA9B65 /* libPageKiteKitIOS.a */,
 				EC0B8775194E2E0D00EA9B65 /* PageKiteKit.framework */,
 				EC7A27B41937B2B8002CAB06 /* Cocoa.framework */,
@@ -575,12 +584,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC0B8814194EC7F700EA9B65 /* PKDLocationMgr.m in Sources */,
 				EC0B87D3194E32AF00EA9B65 /* PKDAppDelegate.m in Sources */,
 				EC0B8807194E48DA00EA9B65 /* PKDKiteViewController.m in Sources */,
-				EC0B880A194E493200EA9B65 /* PKDKiteTableViewController.m in Sources */,
 				EC0B87FC194E37AC00EA9B65 /* PKDLogViewController.m in Sources */,
 				EC0B8801194E3E8A00EA9B65 /* PKDDomainTableViewController.m in Sources */,
 				EC0B8804194E471600EA9B65 /* PKDTabBarController.m in Sources */,
+				EC0B8811194EC3AD00EA9B65 /* PKDWebServer.m in Sources */,
 				EC0B87CF194E32AF00EA9B65 /* main.m in Sources */,
 				EC0B87F9194E369000EA9B65 /* PKDLoginViewController.m in Sources */,
 			);

@@ -9,14 +9,13 @@
 #import "PKDKiteViewController.h"
 #import "RMPickerViewController.h"
 #import <PageKiteKit/PageKiteKit.h>
-#import "GCDWebServer.h"
-#import "GCDWebServerDataResponse.h"
+#import "PKDWebServer.h"
 
 @interface PKDKiteViewController () <RMPickerViewControllerDelegate>
 
 @property (nonatomic, strong) RMPickerViewController *domainPicker;
 @property (nonatomic, strong) PKKDomain              *selectedDomain;
-@property (nonatomic, strong) GCDWebServer           *webServer;
+@property (nonatomic, strong) PKDWebServer           *webServer;
 
 @property (nonatomic, assign, getter = isFlying)          BOOL     flying;
 
@@ -68,25 +67,12 @@
 }
 
 - (void) startWebServer {
-    self.webServer = [[GCDWebServer alloc] init];
-    
-    [self.webServer addDefaultHandlerForMethod:@"GET"
-                                  requestClass:[GCDWebServerRequest class]
-                                  processBlock:^GCDWebServerResponse *(GCDWebServerRequest* request) {
-                                 
-                        return [GCDWebServerDataResponse responseWithHTML:@"<html><body><p>Hello World from iPhone</p></body></html>"];
-                                 
-                                  }];
-    
-    BOOL status = [self.webServer startWithPort:8123 bonjourName:nil];
-    if (! status) {
-        [[PKKManager sharedManager] addLogMessage:@"Failed to start webserver on port:8123"];
-    }
-
+    self.webServer = [[PKDWebServer alloc] init];
+    [self.webServer enable];
 }
 
 - (void) stopWebServer {
-    [self.webServer stop];
+    [self.webServer disable];
     self.webServer = nil;
 }
 
