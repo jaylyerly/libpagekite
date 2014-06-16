@@ -165,10 +165,8 @@
 }
 
 - (void)getAccountInfoWithCompletionBlock:(PKKManagerCompletionBlock)block{
-    NSString *version = [NSString stringWithFormat:@"%@", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]];
-
     [self.xmlClient callMethod:@"get_account_info"
-                withParameters:@[self.accountId, self.credential, version]
+                withParameters:@[self.accountId, self.credential, @0]
                completionBlock:^(XMLRPCResponse *resp, NSError *err){
                    
                    NSDictionary *data = objc_dynamic_cast(NSDictionary, [self payloadForResponse:resp error:err]);
@@ -205,6 +203,10 @@
 
 - (NSArray *)kites {
     return [NSArray arrayWithArray:self.mutableKites];
+}
+
+- (void) destroyAllKites {
+    self.mutableKites = [@[] mutableCopy];
 }
 
 - (void)addLogMessage:(NSString *)message {

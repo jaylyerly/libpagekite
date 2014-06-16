@@ -8,10 +8,31 @@
 
 /* Begin PBXBuildFile section */
 		13CDD82155B14DBAA584226E /* libPods-PageKiteDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F04E670C302E4BA9B4B4C6AA /* libPods-PageKiteDemo.a */; };
+		CC56CA06B6854F6FA5359A26 /* libPods-PocketPageKiteDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7648199D2A13492BBFC85BC2 /* libPods-PocketPageKiteDemo.a */; };
 		EC0B871E194BA13500EA9B65 /* PKKKite+WebServer.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0B871D194BA13500EA9B65 /* PKKKite+WebServer.m */; };
 		EC0B8721194BA15100EA9B65 /* PKKManager+WebServer.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0B8720194BA15100EA9B65 /* PKKManager+WebServer.m */; };
 		EC0B8776194E2E0D00EA9B65 /* PageKiteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC0B8775194E2E0D00EA9B65 /* PageKiteKit.framework */; };
 		EC0B8778194E2E7A00EA9B65 /* PageKiteKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = EC0B8775194E2E0D00EA9B65 /* PageKiteKit.framework */; };
+		EC0B87C3194E32AE00EA9B65 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC0B87C2194E32AE00EA9B65 /* Foundation.framework */; };
+		EC0B87C5194E32AE00EA9B65 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC0B87C4194E32AE00EA9B65 /* CoreGraphics.framework */; };
+		EC0B87C7194E32AE00EA9B65 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC0B87C6194E32AE00EA9B65 /* UIKit.framework */; };
+		EC0B87CD194E32AF00EA9B65 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EC0B87CB194E32AF00EA9B65 /* InfoPlist.strings */; };
+		EC0B87CF194E32AF00EA9B65 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0B87CE194E32AF00EA9B65 /* main.m */; };
+		EC0B87D3194E32AF00EA9B65 /* PKDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0B87D2194E32AF00EA9B65 /* PKDAppDelegate.m */; };
+		EC0B87D6194E32AF00EA9B65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC0B87D4194E32AF00EA9B65 /* Main.storyboard */; };
+		EC0B87DE194E32AF00EA9B65 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC0B87DD194E32AF00EA9B65 /* Images.xcassets */; };
+		EC0B87E4194E32AF00EA9B65 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC7A27D31937B2B8002CAB06 /* XCTest.framework */; };
+		EC0B87E5194E32AF00EA9B65 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC0B87C2194E32AE00EA9B65 /* Foundation.framework */; };
+		EC0B87E6194E32AF00EA9B65 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC0B87C6194E32AE00EA9B65 /* UIKit.framework */; };
+		EC0B87EE194E32AF00EA9B65 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EC0B87EC194E32AF00EA9B65 /* InfoPlist.strings */; };
+		EC0B87F0194E32AF00EA9B65 /* PocketPageKiteDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0B87EF194E32AF00EA9B65 /* PocketPageKiteDemoTests.m */; };
+		EC0B87F9194E369000EA9B65 /* PKDLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0B87F8194E369000EA9B65 /* PKDLoginViewController.m */; };
+		EC0B87FC194E37AC00EA9B65 /* PKDLogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0B87FB194E37AC00EA9B65 /* PKDLogViewController.m */; };
+		EC0B87FE194E38D800EA9B65 /* libPageKiteKitIOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC0B87FD194E38D800EA9B65 /* libPageKiteKitIOS.a */; };
+		EC0B8801194E3E8A00EA9B65 /* PKDDomainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0B8800194E3E8A00EA9B65 /* PKDDomainTableViewController.m */; };
+		EC0B8804194E471600EA9B65 /* PKDTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0B8803194E471600EA9B65 /* PKDTabBarController.m */; };
+		EC0B8807194E48DA00EA9B65 /* PKDKiteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0B8806194E48DA00EA9B65 /* PKDKiteViewController.m */; };
+		EC0B880A194E493200EA9B65 /* PKDKiteTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0B8809194E493200EA9B65 /* PKDKiteTableViewController.m */; };
 		EC7A27B51937B2B8002CAB06 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC7A27B41937B2B8002CAB06 /* Cocoa.framework */; };
 		EC7A27BF1937B2B8002CAB06 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EC7A27BD1937B2B8002CAB06 /* InfoPlist.strings */; };
 		EC7A27C11937B2B8002CAB06 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EC7A27C01937B2B8002CAB06 /* main.m */; };
@@ -28,6 +49,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		EC0B87E7194E32AF00EA9B65 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC7A27A91937B2B8002CAB06 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC0B87C0194E32AE00EA9B65;
+			remoteInfo = PocketPageKiteDemo;
+		};
 		EC7A27D61937B2B8002CAB06 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EC7A27A91937B2B8002CAB06 /* Project object */;
@@ -51,12 +79,43 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7648199D2A13492BBFC85BC2 /* libPods-PocketPageKiteDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PocketPageKiteDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9807A1D7B514B529E8EB42C /* Pods-PageKiteDemo.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PageKiteDemo.xcconfig"; path = "Pods/Pods-PageKiteDemo.xcconfig"; sourceTree = "<group>"; };
+		AC7B00B8273741AABC32ED3A /* Pods-PocketPageKiteDemo.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketPageKiteDemo.xcconfig"; path = "Pods/Pods-PocketPageKiteDemo.xcconfig"; sourceTree = "<group>"; };
 		EC0B871C194BA13500EA9B65 /* PKKKite+WebServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PKKKite+WebServer.h"; sourceTree = "<group>"; };
 		EC0B871D194BA13500EA9B65 /* PKKKite+WebServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PKKKite+WebServer.m"; sourceTree = "<group>"; };
 		EC0B871F194BA15100EA9B65 /* PKKManager+WebServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PKKManager+WebServer.h"; sourceTree = "<group>"; };
 		EC0B8720194BA15100EA9B65 /* PKKManager+WebServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PKKManager+WebServer.m"; sourceTree = "<group>"; };
 		EC0B8775194E2E0D00EA9B65 /* PageKiteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PageKiteKit.framework; path = "../../../../Library/Developer/Xcode/DerivedData/PageKiteDemo-dutraibrojqtjddikseqkzvfklfp/Build/Products/Debug/PageKiteKit.framework"; sourceTree = "<group>"; };
+		EC0B87C1194E32AE00EA9B65 /* PocketPageKiteDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketPageKiteDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC0B87C2194E32AE00EA9B65 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EC0B87C4194E32AE00EA9B65 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		EC0B87C6194E32AE00EA9B65 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		EC0B87CA194E32AF00EA9B65 /* PocketPageKiteDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PocketPageKiteDemo-Info.plist"; sourceTree = "<group>"; };
+		EC0B87CC194E32AF00EA9B65 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EC0B87CE194E32AF00EA9B65 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EC0B87D0194E32AF00EA9B65 /* PocketPageKiteDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PocketPageKiteDemo-Prefix.pch"; sourceTree = "<group>"; };
+		EC0B87D1194E32AF00EA9B65 /* PKDAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PKDAppDelegate.h; sourceTree = "<group>"; };
+		EC0B87D2194E32AF00EA9B65 /* PKDAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PKDAppDelegate.m; sourceTree = "<group>"; };
+		EC0B87D5194E32AF00EA9B65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EC0B87DD194E32AF00EA9B65 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		EC0B87E3194E32AF00EA9B65 /* PocketPageKiteDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PocketPageKiteDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC0B87EB194E32AF00EA9B65 /* PocketPageKiteDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PocketPageKiteDemoTests-Info.plist"; sourceTree = "<group>"; };
+		EC0B87ED194E32AF00EA9B65 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EC0B87EF194E32AF00EA9B65 /* PocketPageKiteDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PocketPageKiteDemoTests.m; sourceTree = "<group>"; };
+		EC0B87F7194E369000EA9B65 /* PKDLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKDLoginViewController.h; sourceTree = "<group>"; };
+		EC0B87F8194E369000EA9B65 /* PKDLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKDLoginViewController.m; sourceTree = "<group>"; };
+		EC0B87FA194E37AC00EA9B65 /* PKDLogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKDLogViewController.h; sourceTree = "<group>"; };
+		EC0B87FB194E37AC00EA9B65 /* PKDLogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKDLogViewController.m; sourceTree = "<group>"; };
+		EC0B87FD194E38D800EA9B65 /* libPageKiteKitIOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPageKiteKitIOS.a; path = "../PageKiteKit/build/Debug-iphoneos/libPageKiteKitIOS.a"; sourceTree = "<group>"; };
+		EC0B87FF194E3E8A00EA9B65 /* PKDDomainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKDDomainTableViewController.h; sourceTree = "<group>"; };
+		EC0B8800194E3E8A00EA9B65 /* PKDDomainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKDDomainTableViewController.m; sourceTree = "<group>"; };
+		EC0B8802194E471600EA9B65 /* PKDTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKDTabBarController.h; sourceTree = "<group>"; };
+		EC0B8803194E471600EA9B65 /* PKDTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKDTabBarController.m; sourceTree = "<group>"; };
+		EC0B8805194E48DA00EA9B65 /* PKDKiteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKDKiteViewController.h; sourceTree = "<group>"; };
+		EC0B8806194E48DA00EA9B65 /* PKDKiteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKDKiteViewController.m; sourceTree = "<group>"; };
+		EC0B8808194E493200EA9B65 /* PKDKiteTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKDKiteTableViewController.h; sourceTree = "<group>"; };
+		EC0B8809194E493200EA9B65 /* PKDKiteTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKDKiteTableViewController.m; sourceTree = "<group>"; };
 		EC7A27B11937B2B8002CAB06 /* PageKiteDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PageKiteDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC7A27B41937B2B8002CAB06 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		EC7A27B71937B2B8002CAB06 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -84,6 +143,28 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		EC0B87BE194E32AE00EA9B65 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC0B87FE194E38D800EA9B65 /* libPageKiteKitIOS.a in Frameworks */,
+				EC0B87C5194E32AE00EA9B65 /* CoreGraphics.framework in Frameworks */,
+				EC0B87C7194E32AE00EA9B65 /* UIKit.framework in Frameworks */,
+				EC0B87C3194E32AE00EA9B65 /* Foundation.framework in Frameworks */,
+				CC56CA06B6854F6FA5359A26 /* libPods-PocketPageKiteDemo.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC0B87E0194E32AF00EA9B65 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC0B87E4194E32AF00EA9B65 /* XCTest.framework in Frameworks */,
+				EC0B87E6194E32AF00EA9B65 /* UIKit.framework in Frameworks */,
+				EC0B87E5194E32AF00EA9B65 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EC7A27AE1937B2B8002CAB06 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -117,14 +198,70 @@
 			name = Categories;
 			sourceTree = "<group>";
 		};
+		EC0B87C8194E32AF00EA9B65 /* PocketPageKiteDemo */ = {
+			isa = PBXGroup;
+			children = (
+				EC0B87D1194E32AF00EA9B65 /* PKDAppDelegate.h */,
+				EC0B87D2194E32AF00EA9B65 /* PKDAppDelegate.m */,
+				EC0B87D4194E32AF00EA9B65 /* Main.storyboard */,
+				EC0B8802194E471600EA9B65 /* PKDTabBarController.h */,
+				EC0B8803194E471600EA9B65 /* PKDTabBarController.m */,
+				EC0B87F7194E369000EA9B65 /* PKDLoginViewController.h */,
+				EC0B87F8194E369000EA9B65 /* PKDLoginViewController.m */,
+				EC0B87FA194E37AC00EA9B65 /* PKDLogViewController.h */,
+				EC0B87FB194E37AC00EA9B65 /* PKDLogViewController.m */,
+				EC0B87FF194E3E8A00EA9B65 /* PKDDomainTableViewController.h */,
+				EC0B8800194E3E8A00EA9B65 /* PKDDomainTableViewController.m */,
+				EC0B8805194E48DA00EA9B65 /* PKDKiteViewController.h */,
+				EC0B8806194E48DA00EA9B65 /* PKDKiteViewController.m */,
+				EC0B8808194E493200EA9B65 /* PKDKiteTableViewController.h */,
+				EC0B8809194E493200EA9B65 /* PKDKiteTableViewController.m */,
+				EC0B87DD194E32AF00EA9B65 /* Images.xcassets */,
+				EC0B87C9194E32AF00EA9B65 /* Supporting Files */,
+			);
+			path = PocketPageKiteDemo;
+			sourceTree = "<group>";
+		};
+		EC0B87C9194E32AF00EA9B65 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EC0B87CA194E32AF00EA9B65 /* PocketPageKiteDemo-Info.plist */,
+				EC0B87CB194E32AF00EA9B65 /* InfoPlist.strings */,
+				EC0B87CE194E32AF00EA9B65 /* main.m */,
+				EC0B87D0194E32AF00EA9B65 /* PocketPageKiteDemo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EC0B87E9194E32AF00EA9B65 /* PocketPageKiteDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				EC0B87EF194E32AF00EA9B65 /* PocketPageKiteDemoTests.m */,
+				EC0B87EA194E32AF00EA9B65 /* Supporting Files */,
+			);
+			path = PocketPageKiteDemoTests;
+			sourceTree = "<group>";
+		};
+		EC0B87EA194E32AF00EA9B65 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EC0B87EB194E32AF00EA9B65 /* PocketPageKiteDemoTests-Info.plist */,
+				EC0B87EC194E32AF00EA9B65 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		EC7A27A81937B2B8002CAB06 = {
 			isa = PBXGroup;
 			children = (
 				EC7A27BA1937B2B8002CAB06 /* PageKiteDemo */,
 				EC7A27D81937B2B8002CAB06 /* PageKiteDemoTests */,
+				EC0B87C8194E32AF00EA9B65 /* PocketPageKiteDemo */,
+				EC0B87E9194E32AF00EA9B65 /* PocketPageKiteDemoTests */,
 				EC7A27B31937B2B8002CAB06 /* Frameworks */,
 				EC7A27B21937B2B8002CAB06 /* Products */,
 				A9807A1D7B514B529E8EB42C /* Pods-PageKiteDemo.xcconfig */,
+				AC7B00B8273741AABC32ED3A /* Pods-PocketPageKiteDemo.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -133,6 +270,8 @@
 			children = (
 				EC7A27B11937B2B8002CAB06 /* PageKiteDemo.app */,
 				EC7A27D21937B2B8002CAB06 /* PageKiteDemoTests.xctest */,
+				EC0B87C1194E32AE00EA9B65 /* PocketPageKiteDemo.app */,
+				EC0B87E3194E32AF00EA9B65 /* PocketPageKiteDemoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -140,11 +279,16 @@
 		EC7A27B31937B2B8002CAB06 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EC0B87FD194E38D800EA9B65 /* libPageKiteKitIOS.a */,
 				EC0B8775194E2E0D00EA9B65 /* PageKiteKit.framework */,
 				EC7A27B41937B2B8002CAB06 /* Cocoa.framework */,
 				EC7A27D31937B2B8002CAB06 /* XCTest.framework */,
+				EC0B87C2194E32AE00EA9B65 /* Foundation.framework */,
+				EC0B87C4194E32AE00EA9B65 /* CoreGraphics.framework */,
+				EC0B87C6194E32AE00EA9B65 /* UIKit.framework */,
 				EC7A27B61937B2B8002CAB06 /* Other Frameworks */,
 				F04E670C302E4BA9B4B4C6AA /* libPods-PageKiteDemo.a */,
+				7648199D2A13492BBFC85BC2 /* libPods-PocketPageKiteDemo.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -209,6 +353,43 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		EC0B87C0194E32AE00EA9B65 /* PocketPageKiteDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC0B87F5194E32AF00EA9B65 /* Build configuration list for PBXNativeTarget "PocketPageKiteDemo" */;
+			buildPhases = (
+				E87F6E4977E54D88A3972A06 /* Check Pods Manifest.lock */,
+				EC0B87BD194E32AE00EA9B65 /* Sources */,
+				EC0B87BE194E32AE00EA9B65 /* Frameworks */,
+				EC0B87BF194E32AE00EA9B65 /* Resources */,
+				2038970F0E324F97957D91E7 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PocketPageKiteDemo;
+			productName = PocketPageKiteDemo;
+			productReference = EC0B87C1194E32AE00EA9B65 /* PocketPageKiteDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EC0B87E2194E32AF00EA9B65 /* PocketPageKiteDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC0B87F6194E32AF00EA9B65 /* Build configuration list for PBXNativeTarget "PocketPageKiteDemoTests" */;
+			buildPhases = (
+				EC0B87DF194E32AF00EA9B65 /* Sources */,
+				EC0B87E0194E32AF00EA9B65 /* Frameworks */,
+				EC0B87E1194E32AF00EA9B65 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC0B87E8194E32AF00EA9B65 /* PBXTargetDependency */,
+			);
+			name = PocketPageKiteDemoTests;
+			productName = PocketPageKiteDemoTests;
+			productReference = EC0B87E3194E32AF00EA9B65 /* PocketPageKiteDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		EC7A27B01937B2B8002CAB06 /* PageKiteDemo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EC7A27E21937B2B8002CAB06 /* Build configuration list for PBXNativeTarget "PageKiteDemo" */;
@@ -257,6 +438,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "SonicBunny Software";
 				TargetAttributes = {
+					EC0B87E2194E32AF00EA9B65 = {
+						TestTargetID = EC7A27B01937B2B8002CAB06;
+					};
 					EC7A27D11937B2B8002CAB06 = {
 						TestTargetID = EC7A27B01937B2B8002CAB06;
 					};
@@ -277,11 +461,31 @@
 			targets = (
 				EC7A27B01937B2B8002CAB06 /* PageKiteDemo */,
 				EC7A27D11937B2B8002CAB06 /* PageKiteDemoTests */,
+				EC0B87C0194E32AE00EA9B65 /* PocketPageKiteDemo */,
+				EC0B87E2194E32AF00EA9B65 /* PocketPageKiteDemoTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		EC0B87BF194E32AE00EA9B65 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC0B87DE194E32AF00EA9B65 /* Images.xcassets in Resources */,
+				EC0B87CD194E32AF00EA9B65 /* InfoPlist.strings in Resources */,
+				EC0B87D6194E32AF00EA9B65 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC0B87E1194E32AF00EA9B65 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC0B87EE194E32AF00EA9B65 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EC7A27AF1937B2B8002CAB06 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -304,6 +508,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2038970F0E324F97957D91E7 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-PocketPageKiteDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		54D5F3E27AFF4AE980FD9B06 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -334,9 +553,47 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		E87F6E4977E54D88A3972A06 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		EC0B87BD194E32AE00EA9B65 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC0B87D3194E32AF00EA9B65 /* PKDAppDelegate.m in Sources */,
+				EC0B8807194E48DA00EA9B65 /* PKDKiteViewController.m in Sources */,
+				EC0B880A194E493200EA9B65 /* PKDKiteTableViewController.m in Sources */,
+				EC0B87FC194E37AC00EA9B65 /* PKDLogViewController.m in Sources */,
+				EC0B8801194E3E8A00EA9B65 /* PKDDomainTableViewController.m in Sources */,
+				EC0B8804194E471600EA9B65 /* PKDTabBarController.m in Sources */,
+				EC0B87CF194E32AF00EA9B65 /* main.m in Sources */,
+				EC0B87F9194E369000EA9B65 /* PKDLoginViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC0B87DF194E32AF00EA9B65 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC0B87F0194E32AF00EA9B65 /* PocketPageKiteDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EC7A27AD1937B2B8002CAB06 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -361,6 +618,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		EC0B87E8194E32AF00EA9B65 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC0B87C0194E32AE00EA9B65 /* PocketPageKiteDemo */;
+			targetProxy = EC0B87E7194E32AF00EA9B65 /* PBXContainerItemProxy */;
+		};
 		EC7A27D71937B2B8002CAB06 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = EC7A27B01937B2B8002CAB06 /* PageKiteDemo */;
@@ -369,6 +631,30 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		EC0B87CB194E32AF00EA9B65 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC0B87CC194E32AF00EA9B65 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		EC0B87D4194E32AF00EA9B65 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC0B87D5194E32AF00EA9B65 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EC0B87EC194E32AF00EA9B65 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC0B87ED194E32AF00EA9B65 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		EC7A27BD1937B2B8002CAB06 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -404,6 +690,108 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		EC0B87F1194E32AF00EA9B65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC7B00B8273741AABC32ED3A /* Pods-PocketPageKiteDemo.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/PageKiteDemo-dutraibrojqtjddikseqkzvfklfp/Build/Products/Debug",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PocketPageKiteDemo/PocketPageKiteDemo-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "PocketPageKiteDemo/PocketPageKiteDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/jayl/git/libpagekite/mac/PageKiteKit/build/Debug-iphoneos",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		EC0B87F2194E32AF00EA9B65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC7B00B8273741AABC32ED3A /* Pods-PocketPageKiteDemo.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/PageKiteDemo-dutraibrojqtjddikseqkzvfklfp/Build/Products/Debug",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PocketPageKiteDemo/PocketPageKiteDemo-Prefix.pch";
+				INFOPLIST_FILE = "PocketPageKiteDemo/PocketPageKiteDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/jayl/git/libpagekite/mac/PageKiteKit/build/Debug-iphoneos",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		EC0B87F3194E32AF00EA9B65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PageKiteDemo.app/Contents/MacOS/PageKiteDemo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PocketPageKiteDemo/PocketPageKiteDemo-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "PocketPageKiteDemoTests/PocketPageKiteDemoTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		EC0B87F4194E32AF00EA9B65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PageKiteDemo.app/Contents/MacOS/PageKiteDemo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PocketPageKiteDemo/PocketPageKiteDemo-Prefix.pch";
+				INFOPLIST_FILE = "PocketPageKiteDemoTests/PocketPageKiteDemoTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
 		EC7A27E01937B2B8002CAB06 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -553,6 +941,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		EC0B87F5194E32AF00EA9B65 /* Build configuration list for PBXNativeTarget "PocketPageKiteDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC0B87F1194E32AF00EA9B65 /* Debug */,
+				EC0B87F2194E32AF00EA9B65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC0B87F6194E32AF00EA9B65 /* Build configuration list for PBXNativeTarget "PocketPageKiteDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC0B87F3194E32AF00EA9B65 /* Debug */,
+				EC0B87F4194E32AF00EA9B65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		EC7A27AC1937B2B8002CAB06 /* Build configuration list for PBXProject "PageKiteDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

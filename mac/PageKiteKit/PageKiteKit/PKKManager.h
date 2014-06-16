@@ -43,6 +43,8 @@ typedef void (^PKKManagerCompletionBlock)(BOOL success);
 - (void)flyKites;
 - (void)landKites;
 
+- (void)destroyAllKites;
+
 - (void)addLogMessage:(NSString *)message;
 - (void)addLogWacher:(id<PKKManagerLogWatcher>)watcher;
 
