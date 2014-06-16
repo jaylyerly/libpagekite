@@ -31,14 +31,14 @@
 		EC0B8763194C7B8200EA9B65 /* PKKProtocols.m in Sources */ = {isa = PBXBuildFile; fileRef = EC72253419425D49001BB934 /* PKKProtocols.m */; };
 		EC0B8764194C7B8200EA9B65 /* PKKXmlRpcClient.m in Sources */ = {isa = PBXBuildFile; fileRef = EC7A27F11938CAE6002CAB06 /* PKKXmlRpcClient.m */; };
 		EC0B8765194C7B8200EA9B65 /* PKKLibPageKite.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9412FA1940EDB400E00F42 /* PKKLibPageKite.m */; };
-		EC0B8766194C7BB700EA9B65 /* libev.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC7225311941083A001BB934 /* libev.a */; };
 		EC0B876F194E28B400EA9B65 /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EC72252D194107F7001BB934 /* libcrypto.dylib */; };
 		EC0B8770194E28BA00EA9B65 /* libssl.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EC722529194107EA001BB934 /* libssl.dylib */; };
 		EC0B8772194E28CD00EA9B65 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EC0B8771194E28CD00EA9B65 /* libz.dylib */; };
 		EC0B8774194E28EB00EA9B65 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC0B8773194E28EB00EA9B65 /* SystemConfiguration.framework */; };
+		EC0B880C194EC29A00EA9B65 /* libev-osx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC0B880B194EC29A00EA9B65 /* libev-osx.a */; };
+		EC0B880E194EC2B300EA9B65 /* libev-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC0B880D194EC2B300EA9B65 /* libev-ios.a */; };
 		EC72252C194107EF001BB934 /* libpthread.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EC72252B194107EF001BB934 /* libpthread.dylib */; };
 		EC72253019410802001BB934 /* libm.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EC72252F19410802001BB934 /* libm.dylib */; };
-		EC7225321941083A001BB934 /* libev.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC7225311941083A001BB934 /* libev.a */; };
 		EC72253519425D49001BB934 /* PKKProtocols.h in Headers */ = {isa = PBXBuildFile; fileRef = EC72253319425D49001BB934 /* PKKProtocols.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EC72253619425D49001BB934 /* PKKProtocols.m in Sources */ = {isa = PBXBuildFile; fileRef = EC72253419425D49001BB934 /* PKKProtocols.m */; };
 		EC7A27341937B0FD002CAB06 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC7A27331937B0FD002CAB06 /* Cocoa.framework */; };
@@ -114,6 +114,8 @@
 		EC0B876B194C7E4E00EA9B65 /* PageKiteKitIOS-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PageKiteKitIOS-Prefix.pch"; sourceTree = "<group>"; };
 		EC0B8771194E28CD00EA9B65 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		EC0B8773194E28EB00EA9B65 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		EC0B880B194EC29A00EA9B65 /* libev-osx.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libev-osx.a"; path = "../ThirdParty/libev-4.15-ios/libev-osx.a"; sourceTree = "<group>"; };
+		EC0B880D194EC2B300EA9B65 /* libev-ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libev-ios.a"; path = "../ThirdParty/libev-4.15/libev-ios.a"; sourceTree = "<group>"; };
 		EC722529194107EA001BB934 /* libssl.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libssl.dylib; path = usr/lib/libssl.dylib; sourceTree = SDKROOT; };
 		EC72252B194107EF001BB934 /* libpthread.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpthread.dylib; path = usr/lib/libpthread.dylib; sourceTree = SDKROOT; };
 		EC72252D194107F7001BB934 /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = usr/lib/libcrypto.dylib; sourceTree = SDKROOT; };
@@ -177,7 +179,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC0B8766194C7BB700EA9B65 /* libev.a in Frameworks */,
+				EC0B880E194EC2B300EA9B65 /* libev-ios.a in Frameworks */,
 				EC0B8729194C7AC800EA9B65 /* Foundation.framework in Frameworks */,
 				19939E890B364EC7B926FEBC /* libPods-PageKiteKitIOS.a in Frameworks */,
 			);
@@ -198,11 +200,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC0B880C194EC29A00EA9B65 /* libev-osx.a in Frameworks */,
 				EC0B8774194E28EB00EA9B65 /* SystemConfiguration.framework in Frameworks */,
 				EC0B8772194E28CD00EA9B65 /* libz.dylib in Frameworks */,
 				EC0B8770194E28BA00EA9B65 /* libssl.dylib in Frameworks */,
 				EC0B876F194E28B400EA9B65 /* libcrypto.dylib in Frameworks */,
-				EC7225321941083A001BB934 /* libev.a in Frameworks */,
 				EC72253019410802001BB934 /* libm.dylib in Frameworks */,
 				EC72252C194107EF001BB934 /* libpthread.dylib in Frameworks */,
 				EC7A27341937B0FD002CAB06 /* Cocoa.framework in Frameworks */,
@@ -250,6 +252,8 @@
 		EC7A27321937B0FD002CAB06 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EC0B880D194EC2B300EA9B65 /* libev-ios.a */,
+				EC0B880B194EC29A00EA9B65 /* libev-osx.a */,
 				EC0B8773194E28EB00EA9B65 /* SystemConfiguration.framework */,
 				EC0B8771194E28CD00EA9B65 /* libz.dylib */,
 				EC7225311941083A001BB934 /* libev.a */,
@@ -722,6 +726,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/jayl/git/libpagekite/mac/ThirdParty/libev-4.15/.libs",
+					"/Users/jayl/git/libpagekite/mac/ThirdParty/libev-4.15",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -750,6 +755,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/jayl/git/libpagekite/mac/ThirdParty/libev-4.15/.libs",
+					"/Users/jayl/git/libpagekite/mac/ThirdParty/libev-4.15",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -926,7 +932,10 @@
 				);
 				INFOPLIST_FILE = "PageKiteKit/PageKiteKit-Info.plist";
 				LD_DYLIB_INSTALL_NAME = "@rpath/${EXECUTABLE_PATH}";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/jayl/git/libpagekite/mac/ThirdParty/libev-4.15-ios",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
 			};
@@ -949,7 +958,10 @@
 				);
 				INFOPLIST_FILE = "PageKiteKit/PageKiteKit-Info.plist";
 				LD_DYLIB_INSTALL_NAME = "@rpath/${EXECUTABLE_PATH}";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/jayl/git/libpagekite/mac/ThirdParty/libev-4.15-ios",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
 			};
