@@ -1,0 +1,53 @@
+
+SOURCES = ev.c \
+    ev_epoll.c \
+    ev_poll.c \
+    ev_select.c \
+    ev_win32.c \
+    event.c \
+    ev++.h \
+    ev.h \
+    ev_kqueue.c \
+    ev_port.c \
+    ev_vars.h \
+    ev_wrap.h \
+    event.h
+
+LIBS =  libev-ios.a.arm64 \
+    libev-ios.a.armv7 \
+    libev-ios.a.armv7s \
+    libev-ios.a.i386 \
+    libev-ios.a.x86_64 \
+    libev-osx.a.i386 \
+    libev-osx.a.x86_64 
+
+all: all_libs
+
+.PHONY: clean libs all
+
+libev-ios.a.arm64: $(SOURCES)
+	./compile.py ios arm64
+
+libev-ios.a.armv7: $(SOURCES)
+	./compile.py ios armv7
+
+libev-ios.a.armv7s: $(SOURCES)
+	./compile.py ios armv7s
+
+libev-ios.a.i386: $(SOURCES)
+	./compile.py ios i386
+
+libev-ios.a.x86_64: $(SOURCES)
+	./compile.py ios x86_64
+
+libev-osx.a.i386: $(SOURCES)
+	./compile.py osx i386
+
+libev-osx.a.x86_64: $(SOURCES)
+	./compile.py osx x86_64
+
+all_libs: $(LIBS)
+
+clean:
+	rm -rf $(LIBS)
+

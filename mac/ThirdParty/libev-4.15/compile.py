@@ -4,7 +4,7 @@ import os
 import sys
 import subprocess
 
-libs = {
+all_libs = {
     'ios': [
         { "ARCH":"armv7", "SDK":"iphoneos", "MIN_IOS_VER":"-miphoneos-version-min=7.0", "HOST":"--host=armv7-apple-darwin7" },
         { "ARCH":"armv7s", "SDK":"iphoneos", "MIN_IOS_VER":"-miphoneos-version-min=7.0", "HOST":"--host=armv7-apple-darwin7" },
@@ -20,41 +20,63 @@ libs = {
     ]
 }
 
-for plat in libs:
-    archlist = libs[plat]
-    files = {}
-    for a in archlist:
-        print "%s-%s" % (a['ARCH'], a['SDK'])
-        
-        env = os.environ.copy()
-        
-        env.update(a)
-        env['PLAT'] = plat
-        env ['SDKDIR'] = subprocess.check_output("xcrun --sdk $SDK --show-sdk-path", shell=True, env=env).strip()
-        #print env
-        #sys.exit()
-        #SDKDIR=`xcrun --sdk $SDK --show-sdk-path`  
-        #/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk
+def main(argv = sys.argv):
+    # run with no arguments, build everything
+    # other wise, just build the specified platform / arch to make the Makefile work
 
-        env['CC']       = "xcrun --sdk %(SDK)s gcc" % env
-        env['CFLAGS']   = "-arch %(ARCH)s -isysroot %(SDKDIR)s %(MIN_IOS_VER)s" % env
-        env['CXX']      = "xcrun --sdk %(SDK)s llvm-g++-4.2" %env 
-        env['CXXFLAGS'] = "-arch %(ARCH)s -isysroot %(SDKDIR)s %(MIN_IOS_VER)s" % env
-        env['CPP']      = "xcrun --sdk %(SDK)s llvm-cpp-4.2" % env
-        env['AR']       = "xcrun --sdk %(SDK)s ar" % env
-        env['NM']       = "xcrun --sdk %(SDK)s nm" % env
+    if len(argv) == 3:
+        argPlat = argv[1]
+        argArch = argv[2]
+        libs = {}
+        target_arch = None
+        for arch in all_libs[argPlat]:
+            if arch['ARCH'] == argArch:
+                target_arch = arch
+        if target_arch == None:
+            print "Error finding config for", argPlat, argArch
+            sys.exit()
+        libs[argPlat] = [target_arch]
+    else:
+        libs = all_libs
+        
+    for plat in libs:
+        archlist = libs[plat]
+        files = {}
+        for a in archlist:
+            print "%s-%s" % (a['ARCH'], a['SDK'])
+        
+            env = os.environ.copy()
+        
+            env.update(a)
+            env['PLAT'] = plat
+            env ['SDKDIR'] = subprocess.check_output("xcrun --sdk $SDK --show-sdk-path", shell=True, env=env).strip()
+            #print env
+            #sys.exit()
+            #SDKDIR=`xcrun --sdk $SDK --show-sdk-path`  
+            #/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk
 
-        status = subprocess.call("./configure %(HOST)s" % env, shell=True, env=env)
-        status = subprocess.call("make clean", shell=True, env=env)
-        status = subprocess.call("make", shell=True, env=env)
-        filename = "libev-%(PLAT)s.a.%(ARCH)s" % env
-        files[a['ARCH']] = filename
-        status = subprocess.call("cp .libs/libev.a %s" % filename , shell=True, env=env)
+            env['CC']       = "xcrun --sdk %(SDK)s gcc" % env
+            env['CFLAGS']   = "-arch %(ARCH)s -isysroot %(SDKDIR)s %(MIN_IOS_VER)s" % env
+            env['CXX']      = "xcrun --sdk %(SDK)s llvm-g++-4.2" %env 
+            env['CXXFLAGS'] = "-arch %(ARCH)s -isysroot %(SDKDIR)s %(MIN_IOS_VER)s" % env
+            env['CPP']      = "xcrun --sdk %(SDK)s llvm-cpp-4.2" % env
+            env['AR']       = "xcrun --sdk %(SDK)s ar" % env
+            env['NM']       = "xcrun --sdk %(SDK)s nm" % env
+
+            status = subprocess.call("./configure %(HOST)s" % env, shell=True, env=env)
+            status = subprocess.call("make clean", shell=True, env=env)
+            status = subprocess.call("make", shell=True, env=env)
+            filename = "libev-%(PLAT)s.a.%(ARCH)s" % env
+            files[a['ARCH']] = filename
+            status = subprocess.call("cp .libs/libev.a %s" % filename , shell=True, env=env)
     
-    #lipo -arch i386 foo-osx.a.i386 -arch x86_64 foo-osx.a.x86_64 -create -output foo-osx.a    
-    cmd = "lipo"
-    for arch in files:
-        cmd +=" -arch %s %s " % ( arch, files[arch] )
-    cmd += " -create "
-    cmd += " -output libev-%s.a" % plat
-    status = subprocess.call(cmd, shell=True, env=env)
+        #lipo -arch i386 foo-osx.a.i386 -arch x86_64 foo-osx.a.x86_64 -create -output foo-osx.a    
+        cmd = "lipo"
+        for arch in files:
+            cmd +=" -arch %s %s " % ( arch, files[arch] )
+        cmd += " -create "
+        cmd += " -output libev-%s.a" % plat
+        status = subprocess.call(cmd, shell=True, env=env)
+
+if __name__ == '__main__':
+    main()
