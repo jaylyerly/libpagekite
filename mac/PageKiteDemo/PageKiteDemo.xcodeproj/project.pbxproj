@@ -37,6 +37,8 @@
 		EC0B8816194EC82800EA9B65 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC0B8815194EC82800EA9B65 /* CoreLocation.framework */; };
 		EC0B885C195104BF00EA9B65 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC0B885B195104BE00EA9B65 /* MapKit.framework */; };
 		EC0B885F1951119E00EA9B65 /* UIImage+Capture.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0B885E1951119E00EA9B65 /* UIImage+Capture.m */; };
+		EC0B88641953239800EA9B65 /* PKDImageCaptureMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0B88631953239800EA9B65 /* PKDImageCaptureMgr.m */; };
+		EC0B88661953244900EA9B65 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC0B88651953244900EA9B65 /* AVFoundation.framework */; };
 		EC7A27B51937B2B8002CAB06 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC7A27B41937B2B8002CAB06 /* Cocoa.framework */; };
 		EC7A27BF1937B2B8002CAB06 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EC7A27BD1937B2B8002CAB06 /* InfoPlist.strings */; };
 		EC7A27C11937B2B8002CAB06 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EC7A27C01937B2B8002CAB06 /* main.m */; };
@@ -126,6 +128,9 @@
 		EC0B885B195104BE00EA9B65 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
 		EC0B885D1951119E00EA9B65 /* UIImage+Capture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Capture.h"; sourceTree = "<group>"; };
 		EC0B885E1951119E00EA9B65 /* UIImage+Capture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Capture.m"; sourceTree = "<group>"; };
+		EC0B88621953239800EA9B65 /* PKDImageCaptureMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKDImageCaptureMgr.h; sourceTree = "<group>"; };
+		EC0B88631953239800EA9B65 /* PKDImageCaptureMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKDImageCaptureMgr.m; sourceTree = "<group>"; };
+		EC0B88651953244900EA9B65 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		EC7A27B11937B2B8002CAB06 /* PageKiteDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PageKiteDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC7A27B41937B2B8002CAB06 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		EC7A27B71937B2B8002CAB06 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -157,6 +162,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC0B88661953244900EA9B65 /* AVFoundation.framework in Frameworks */,
 				EC0B885C195104BF00EA9B65 /* MapKit.framework in Frameworks */,
 				EC0B8816194EC82800EA9B65 /* CoreLocation.framework in Frameworks */,
 				EC0B87FE194E38D800EA9B65 /* libPageKiteKitIOS.a in Frameworks */,
@@ -230,6 +236,8 @@
 				EC0B8810194EC3AD00EA9B65 /* PKDWebServer.m */,
 				EC0B8812194EC7F700EA9B65 /* PKDLocationMgr.h */,
 				EC0B8813194EC7F700EA9B65 /* PKDLocationMgr.m */,
+				EC0B88621953239800EA9B65 /* PKDImageCaptureMgr.h */,
+				EC0B88631953239800EA9B65 /* PKDImageCaptureMgr.m */,
 				EC0B885D1951119E00EA9B65 /* UIImage+Capture.h */,
 				EC0B885E1951119E00EA9B65 /* UIImage+Capture.m */,
 				EC0B87DD194E32AF00EA9B65 /* Images.xcassets */,
@@ -295,6 +303,7 @@
 		EC7A27B31937B2B8002CAB06 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EC0B88651953244900EA9B65 /* AVFoundation.framework */,
 				EC0B885B195104BE00EA9B65 /* MapKit.framework */,
 				EC0B8815194EC82800EA9B65 /* CoreLocation.framework */,
 				EC0B87FD194E38D800EA9B65 /* libPageKiteKitIOS.a */,
@@ -598,6 +607,7 @@
 				EC0B8807194E48DA00EA9B65 /* PKDKiteViewController.m in Sources */,
 				EC0B87FC194E37AC00EA9B65 /* PKDLogViewController.m in Sources */,
 				EC0B885F1951119E00EA9B65 /* UIImage+Capture.m in Sources */,
+				EC0B88641953239800EA9B65 /* PKDImageCaptureMgr.m in Sources */,
 				EC0B8801194E3E8A00EA9B65 /* PKDDomainTableViewController.m in Sources */,
 				EC0B8804194E471600EA9B65 /* PKDTabBarController.m in Sources */,
 				EC0B8811194EC3AD00EA9B65 /* PKDWebServer.m in Sources */,

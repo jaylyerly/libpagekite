@@ -11,6 +11,7 @@
 #import <PageKiteKit/PageKiteKit.h>
 #import "PKDLocationMgr.h"
 #import "PKDKiteViewController.h"
+#import "PKDImageCaptureMgr.h"
 
 @implementation PKDWebServer
 
@@ -35,8 +36,14 @@
                                 NSData *data = UIImagePNGRepresentation(weakSelf.kiteVC.mapImage);
                                 return [GCDWebServerDataResponse responseWithData:data
                                                                       contentType:@"image/png"];
-
                             }
+
+                            if ([path isEqualToString:@"/camera.png"]){
+                                NSData *data = UIImagePNGRepresentation([PKDImageCaptureMgr sharedManager].currentImage);
+                                return [GCDWebServerDataResponse responseWithData:data
+                                                                      contentType:@"image/png"];
+                            }
+
                             
                             CLLocationCoordinate2D location = [[PKDLocationMgr sharedManager] currentLocation];
                             CLLocationDegrees llat = location.latitude;
@@ -47,7 +54,7 @@
                             [html appendString:@"<p>Hello World from iPhone</p>"];
                             [html appendFormat:@"<p>Device: %@</p>", [[UIDevice currentDevice] name]];
                             [html appendFormat:@"<p>Location: %f, %f</p>", llat, llong];
-                            [html appendFormat:@"<p><img src=\"mapview.png\"></p>"];
+                            [html appendFormat:@"<p><img src=\"mapview.png\"><img src=\"camera.png\"></p>"];
                             [html appendString:@"</body></html>"];
                             return [GCDWebServerDataResponse responseWithHTML:html];
                   
@@ -56,6 +63,7 @@
 }
 
 - (void) enable {
+    [[PKDImageCaptureMgr sharedManager] startImageCapture];
     BOOL status = [self startWithPort:8123 bonjourName:nil];
     if (! status) {
         [[PKKManager sharedManager] addLogMessage:@"Failed to start webserver on port:8123"];
@@ -64,5 +72,6 @@
 
 - (void) disable {
     [self stop];
+    [[PKDImageCaptureMgr sharedManager] stopImageCapture];
 }
 @end

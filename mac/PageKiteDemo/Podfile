@@ -21,8 +21,9 @@ end
 target :PocketPageKiteDemo, :exclusive => true do
   xcodeproj 'PageKiteDemo'
   platform :ios, '7.0'
-  pod 'GCDWebServer',       '~> 2.4',    :inhibit_warnings => true
-  pod "RMPickerViewController", "~> 1.1.1", :inhibit_warnings => true
+  pod 'GCDWebServer',           '~> 2.4',    :inhibit_warnings => true
+  pod "RMPickerViewController", "~> 1.1.1",  :inhibit_warnings => true
+  pod "NYXImagesKit",           "~> 2.3",    :inhibit_warnings => true
 end
 
 target :PageKiteKitIOS, :exclusive => true do
