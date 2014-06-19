@@ -24,15 +24,6 @@ NSString * const kPKDDefaultsKeyPassword = @"password";
 
 @implementation PKDLoginViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -40,14 +31,6 @@ NSString * const kPKDDefaultsKeyPassword = @"password";
     self.passwordField.text = self.password;
     self.usernameField.delegate = self;
     self.passwordField.delegate = self;
-    
-    // Do any additional setup after loading the view.
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (NSString *)username{
@@ -73,17 +56,6 @@ NSString * const kPKDDefaultsKeyPassword = @"password";
     [textField resignFirstResponder];
     return NO;
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 - (IBAction)handleUsername:(id)sender{
     self.username = self.usernameField.text;
