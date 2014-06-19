@@ -13,7 +13,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
     [[PKDLocationMgr sharedManager] beginLocating]; // initialize location
     return YES;
 }

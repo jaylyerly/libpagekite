@@ -8,7 +8,11 @@
 
 #import "GCDWebServer.h"
 
+@class PKDKiteViewController;
+
 @interface PKDWebServer : GCDWebServer
+
+@property (nonatomic, weak)   PKDKiteViewController *kiteVC;
 
 - (void) enable;
 - (void) disable;

@@ -72,6 +72,16 @@
                                     <action selector="handleDomainPicker:" destination="TxP-pv-S4R" eventType="touchUpInside" id="9RG-Ke-Fcz"/>
                                 </connections>
                             </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="FB7-tf-JAW">
+                                <rect key="frame" x="0.0" y="154" width="320" height="344"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </mapView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q3e-Xj-PdY">
+                                <rect key="frame" x="20" y="125" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -80,6 +90,8 @@
                         <outlet property="domainButton" destination="ipH-GL-BZJ" id="Gvt-yE-PtC"/>
                         <outlet property="flyButton" destination="xDy-3y-jkD" id="ldg-HU-a9M"/>
                         <outlet property="landButton" destination="XBA-FT-rfT" id="Zed-5F-Q2R"/>
+                        <outlet property="locationLabel" destination="q3e-Xj-PdY" id="VvH-gY-uP3"/>
+                        <outlet property="mapView" destination="FB7-tf-JAW" id="ZNh-YV-qiv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cGi-MO-BRq" userLabel="First Responder" sceneMemberID="firstResponder"/>

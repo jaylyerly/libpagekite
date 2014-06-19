@@ -10,12 +10,16 @@
 #import "RMPickerViewController.h"
 #import <PageKiteKit/PageKiteKit.h>
 #import "PKDWebServer.h"
+#import "PKDLocationMgr.h"
 
-@interface PKDKiteViewController () <RMPickerViewControllerDelegate>
+#import "UIImage+Capture.h"
+
+@interface PKDKiteViewController () <RMPickerViewControllerDelegate, PKDLocationMgrWatcher, MKMapViewDelegate>
 
 @property (nonatomic, strong) RMPickerViewController *domainPicker;
 @property (nonatomic, strong) PKKDomain              *selectedDomain;
 @property (nonatomic, strong) PKDWebServer           *webServer;
+@property (nonatomic, strong) UIImage                *mapImage;
 
 @property (nonatomic, assign, getter = isFlying)          BOOL     flying;
 
@@ -30,6 +34,10 @@
     self.domainButton.titleLabel.minimumScaleFactor = .5;
     [self updateDomainButton];
     
+    [[PKDLocationMgr sharedManager] addWatcher:self];
+    self.mapView.delegate = self;
+    self.mapView.showsUserLocation = YES;
+    
     self.flying = NO;
  }
 
@@ -39,6 +47,11 @@
     self.landButton.enabled = flying;
 }
 
+- (void)updateLocationLabel {
+    CLLocationCoordinate2D coord = [[PKDLocationMgr sharedManager] currentLocation];
+    NSString *locString = [NSString stringWithFormat:@"Latitude: %0.2f Longitude: %0.2f", coord.latitude, coord.longitude];
+    self.locationLabel.text = locString;
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -68,11 +81,13 @@
 
 - (void) startWebServer {
     self.webServer = [[PKDWebServer alloc] init];
+    self.webServer.kiteVC = self;
     [self.webServer enable];
 }
 
 - (void) stopWebServer {
     [self.webServer disable];
+    self.webServer.kiteVC = nil;
     self.webServer = nil;
 }
 
@@ -87,6 +102,30 @@
 }
 */
 
+- (void) locationMgr:(PKDLocationMgr *)mgr location:(CLLocation *)location{
+    
+    MKCoordinateRegion region;
+    region.center = location.coordinate;
+    
+    MKCoordinateSpan span;
+    span.latitudeDelta  = 1; // Change these values to change the zoom
+    span.longitudeDelta = 1;
+    region.span = span;
+    
+    [self.mapView setRegion:region animated:YES];
+    
+    [self updateLocationLabel];
+}
+
+- (void) mapViewDidFinishLoadingMap:(MKMapView *)mapView {
+    // lame hack to make sure that map has time to actually render
+    [self performSelector:@selector(captureMap) withObject:nil afterDelay:1];
+}
+
+- (void) captureMap{
+    UIImage *img = [UIImage imageWithView:self.mapView];
+    self.mapImage = img;
+}
 
 #pragma mark - Domain Picker
 
