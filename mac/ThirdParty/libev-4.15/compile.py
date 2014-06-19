@@ -24,18 +24,9 @@ def main(argv = sys.argv):
     # run with no arguments, build everything
     # other wise, just build the specified platform / arch to make the Makefile work
 
-    if len(argv) == 3:
+    if len(argv) == 2:
         argPlat = argv[1]
-        argArch = argv[2]
-        libs = {}
-        target_arch = None
-        for arch in all_libs[argPlat]:
-            if arch['ARCH'] == argArch:
-                target_arch = arch
-        if target_arch == None:
-            print "Error finding config for", argPlat, argArch
-            sys.exit()
-        libs[argPlat] = [target_arch]
+        libs = { argPlat : all_libs[argPlat] }
     else:
         libs = all_libs
         
@@ -56,9 +47,9 @@ def main(argv = sys.argv):
             #/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk
 
             env['CC']       = "xcrun --sdk %(SDK)s gcc" % env
-            env['CFLAGS']   = "-arch %(ARCH)s -isysroot %(SDKDIR)s %(MIN_IOS_VER)s" % env
+            env['CFLAGS']   = "-arch %(ARCH)s -isysroot %(SDKDIR)s %(MIN_IOS_VER)s -w" % env
             env['CXX']      = "xcrun --sdk %(SDK)s llvm-g++-4.2" %env 
-            env['CXXFLAGS'] = "-arch %(ARCH)s -isysroot %(SDKDIR)s %(MIN_IOS_VER)s" % env
+            env['CXXFLAGS'] = "-arch %(ARCH)s -isysroot %(SDKDIR)s %(MIN_IOS_VER)s -w" % env
             env['CPP']      = "xcrun --sdk %(SDK)s llvm-cpp-4.2" % env
             env['AR']       = "xcrun --sdk %(SDK)s ar" % env
             env['NM']       = "xcrun --sdk %(SDK)s nm" % env
@@ -77,6 +68,12 @@ def main(argv = sys.argv):
         cmd += " -create "
         cmd += " -output libev-%s.a" % plat
         status = subprocess.call(cmd, shell=True, env=env)
+        
+        cmd = "rm"
+        for arch in files:
+            cmd +=" %s" % files[arch]
+        status = subprocess.call(cmd, shell=True, env=env)
+
 
 if __name__ == '__main__':
     main()

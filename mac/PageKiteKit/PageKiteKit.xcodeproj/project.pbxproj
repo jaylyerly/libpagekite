@@ -81,6 +81,20 @@
 			remoteGlobalIDString = EC0B8726194C7AC800EA9B65;
 			remoteInfo = PageKiteKitIOS;
 		};
+		EC0B886E195375EB00EA9B65 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC7A27271937B0FD002CAB06 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC0B886A195375E100EA9B65;
+			remoteInfo = libev;
+		};
+		EC0B8870195375F100EA9B65 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC7A27271937B0FD002CAB06 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC0B886A195375E100EA9B65;
+			remoteInfo = libev;
+		};
 		EC7A274B1937B0FD002CAB06 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EC7A27271937B0FD002CAB06 /* Project object */;
@@ -400,6 +414,23 @@
 		};
 /* End PBXHeadersBuildPhase section */
 
+/* Begin PBXLegacyTarget section */
+		EC0B886A195375E100EA9B65 /* libev */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "-f Makefile.pagekite $(ACTION)";
+			buildConfigurationList = EC0B886B195375E200EA9B65 /* Build configuration list for PBXLegacyTarget "libev" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			buildWorkingDirectory = "/Users/jayl/git/libpagekite/mac/ThirdParty/libev-4.15";
+			dependencies = (
+			);
+			name = libev;
+			passBuildSettingsInEnvironment = 1;
+			productName = libev;
+		};
+/* End PBXLegacyTarget section */
+
 /* Begin PBXNativeTarget section */
 		EC0B8726194C7AC800EA9B65 /* PageKiteKitIOS */ = {
 			isa = PBXNativeTarget;
@@ -414,6 +445,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				EC0B886F195375EB00EA9B65 /* PBXTargetDependency */,
 			);
 			name = PageKiteKitIOS;
 			productName = PageKiteKitIOS;
@@ -452,6 +484,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				EC0B8871195375F100EA9B65 /* PBXTargetDependency */,
 			);
 			name = PageKiteKit;
 			productName = PageKiteKit;
@@ -509,6 +542,7 @@
 				EC7A27461937B0FD002CAB06 /* PageKiteKitTests */,
 				EC0B8726194C7AC800EA9B65 /* PageKiteKitIOS */,
 				EC0B8734194C7AC900EA9B65 /* PageKiteKitIOSTests */,
+				EC0B886A195375E100EA9B65 /* libev */,
 			);
 		};
 /* End PBXProject section */
@@ -674,6 +708,16 @@
 			target = EC0B8726194C7AC800EA9B65 /* PageKiteKitIOS */;
 			targetProxy = EC0B873A194C7AC900EA9B65 /* PBXContainerItemProxy */;
 		};
+		EC0B886F195375EB00EA9B65 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC0B886A195375E100EA9B65 /* libev */;
+			targetProxy = EC0B886E195375EB00EA9B65 /* PBXContainerItemProxy */;
+		};
+		EC0B8871195375F100EA9B65 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC0B886A195375E100EA9B65 /* libev */;
+			targetProxy = EC0B8870195375F100EA9B65 /* PBXContainerItemProxy */;
+		};
 		EC7A274C1937B0FD002CAB06 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = EC7A272F1937B0FD002CAB06 /* PageKiteKit */;
@@ -806,6 +850,35 @@
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+		EC0B886C195375E200EA9B65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DEBUGGING_SYMBOLS = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		EC0B886D195375E200EA9B65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -1027,6 +1100,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		EC0B886B195375E200EA9B65 /* Build configuration list for PBXLegacyTarget "libev" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC0B886C195375E200EA9B65 /* Debug */,
+				EC0B886D195375E200EA9B65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		EC7A272A1937B0FD002CAB06 /* Build configuration list for PBXProject "PageKiteKit" */ = {
 			isa = XCConfigurationList;

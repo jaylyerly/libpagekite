@@ -13,38 +13,17 @@ SOURCES = ev.c \
     ev_wrap.h \
     event.h
 
-LIBS =  libev-ios.a.arm64 \
-    libev-ios.a.armv7 \
-    libev-ios.a.armv7s \
-    libev-ios.a.i386 \
-    libev-ios.a.x86_64 \
-    libev-osx.a.i386 \
-    libev-osx.a.x86_64 
+LIBS =  libev-osx.a libev-ios.a 
 
 all: all_libs
 
 .PHONY: clean libs all
 
-libev-ios.a.arm64: $(SOURCES)
-	./compile.py ios arm64
+libev-ios.a: $(SOURCES)
+	./compile.py ios 
 
-libev-ios.a.armv7: $(SOURCES)
-	./compile.py ios armv7
-
-libev-ios.a.armv7s: $(SOURCES)
-	./compile.py ios armv7s
-
-libev-ios.a.i386: $(SOURCES)
-	./compile.py ios i386
-
-libev-ios.a.x86_64: $(SOURCES)
-	./compile.py ios x86_64
-
-libev-osx.a.i386: $(SOURCES)
-	./compile.py osx i386
-
-libev-osx.a.x86_64: $(SOURCES)
-	./compile.py osx x86_64
+libev-osx.a: $(SOURCES)
+	./compile.py osx 
 
 all_libs: $(LIBS)
 
