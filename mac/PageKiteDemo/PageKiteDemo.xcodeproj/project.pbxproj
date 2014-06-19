@@ -222,24 +222,9 @@
 				EC0B87D1194E32AF00EA9B65 /* PKDAppDelegate.h */,
 				EC0B87D2194E32AF00EA9B65 /* PKDAppDelegate.m */,
 				EC0B87D4194E32AF00EA9B65 /* Main.storyboard */,
-				EC0B8802194E471600EA9B65 /* PKDTabBarController.h */,
-				EC0B8803194E471600EA9B65 /* PKDTabBarController.m */,
-				EC0B87F7194E369000EA9B65 /* PKDLoginViewController.h */,
-				EC0B87F8194E369000EA9B65 /* PKDLoginViewController.m */,
-				EC0B87FA194E37AC00EA9B65 /* PKDLogViewController.h */,
-				EC0B87FB194E37AC00EA9B65 /* PKDLogViewController.m */,
-				EC0B87FF194E3E8A00EA9B65 /* PKDDomainTableViewController.h */,
-				EC0B8800194E3E8A00EA9B65 /* PKDDomainTableViewController.m */,
-				EC0B8805194E48DA00EA9B65 /* PKDKiteViewController.h */,
-				EC0B8806194E48DA00EA9B65 /* PKDKiteViewController.m */,
-				EC0B880F194EC3AD00EA9B65 /* PKDWebServer.h */,
-				EC0B8810194EC3AD00EA9B65 /* PKDWebServer.m */,
-				EC0B8812194EC7F700EA9B65 /* PKDLocationMgr.h */,
-				EC0B8813194EC7F700EA9B65 /* PKDLocationMgr.m */,
-				EC0B88621953239800EA9B65 /* PKDImageCaptureMgr.h */,
-				EC0B88631953239800EA9B65 /* PKDImageCaptureMgr.m */,
-				EC0B885D1951119E00EA9B65 /* UIImage+Capture.h */,
-				EC0B885E1951119E00EA9B65 /* UIImage+Capture.m */,
+				EC0B88671953335D00EA9B65 /* View Controllers */,
+				EC0B88681953336A00EA9B65 /* Service Managers */,
+				EC0B88691953337C00EA9B65 /* Categories */,
 				EC0B87DD194E32AF00EA9B65 /* Images.xcassets */,
 				EC0B87C9194E32AF00EA9B65 /* Supporting Files */,
 			);
@@ -273,6 +258,45 @@
 				EC0B87EC194E32AF00EA9B65 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EC0B88671953335D00EA9B65 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EC0B8802194E471600EA9B65 /* PKDTabBarController.h */,
+				EC0B8803194E471600EA9B65 /* PKDTabBarController.m */,
+				EC0B87F7194E369000EA9B65 /* PKDLoginViewController.h */,
+				EC0B87F8194E369000EA9B65 /* PKDLoginViewController.m */,
+				EC0B87FA194E37AC00EA9B65 /* PKDLogViewController.h */,
+				EC0B87FB194E37AC00EA9B65 /* PKDLogViewController.m */,
+				EC0B87FF194E3E8A00EA9B65 /* PKDDomainTableViewController.h */,
+				EC0B8800194E3E8A00EA9B65 /* PKDDomainTableViewController.m */,
+				EC0B8805194E48DA00EA9B65 /* PKDKiteViewController.h */,
+				EC0B8806194E48DA00EA9B65 /* PKDKiteViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		EC0B88681953336A00EA9B65 /* Service Managers */ = {
+			isa = PBXGroup;
+			children = (
+				EC0B880F194EC3AD00EA9B65 /* PKDWebServer.h */,
+				EC0B8810194EC3AD00EA9B65 /* PKDWebServer.m */,
+				EC0B8812194EC7F700EA9B65 /* PKDLocationMgr.h */,
+				EC0B8813194EC7F700EA9B65 /* PKDLocationMgr.m */,
+				EC0B88621953239800EA9B65 /* PKDImageCaptureMgr.h */,
+				EC0B88631953239800EA9B65 /* PKDImageCaptureMgr.m */,
+			);
+			name = "Service Managers";
+			sourceTree = "<group>";
+		};
+		EC0B88691953337C00EA9B65 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				EC0B885D1951119E00EA9B65 /* UIImage+Capture.h */,
+				EC0B885E1951119E00EA9B65 /* UIImage+Capture.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 		EC7A27A81937B2B8002CAB06 = {

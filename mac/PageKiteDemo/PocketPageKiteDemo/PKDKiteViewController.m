@@ -169,7 +169,7 @@
     static dispatch_once_t onceToken;
     static UITabBarItem *_tbi = nil;
     dispatch_once(&onceToken, ^{
-        _tbi = [[UITabBarItem alloc] initWithTitle:@"Kites" image:nil tag:1];
+        _tbi = [[UITabBarItem alloc] initWithTitle:@"Kites" image:[UIImage imageNamed:@"pagekite"] tag:1];
     });
     return _tbi;
 }

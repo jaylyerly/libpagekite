@@ -13,7 +13,7 @@
 NSString * const kPKDDefaultsKeyUsername = @"username";
 NSString * const kPKDDefaultsKeyPassword = @"password";
 
-@interface PKDLoginViewController ()
+@interface PKDLoginViewController () <UITextFieldDelegate>
 
 @property (nonatomic, copy) NSString *username;
 @property (nonatomic, copy) NSString *password;
@@ -38,6 +38,8 @@ NSString * const kPKDDefaultsKeyPassword = @"password";
     [super viewDidLoad];
     self.usernameField.text = self.username;
     self.passwordField.text = self.password;
+    self.usernameField.delegate = self;
+    self.passwordField.delegate = self;
     
     // Do any additional setup after loading the view.
 }
@@ -64,6 +66,12 @@ NSString * const kPKDDefaultsKeyPassword = @"password";
 - (void)setPassword:(NSString *)password {
     [[NSUserDefaults standardUserDefaults] setObject:password forKey:kPKDDefaultsKeyPassword];
     [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+// Closed the keyboard after 'Done'
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return NO;
 }
 
 /*
@@ -117,7 +125,7 @@ NSString * const kPKDDefaultsKeyPassword = @"password";
     static dispatch_once_t onceToken;
     static UITabBarItem *_tbi = nil;
     dispatch_once(&onceToken, ^{
-        _tbi = [[UITabBarItem alloc] initWithTitle:@"Login" image:nil tag:0];
+        _tbi = [[UITabBarItem alloc] initWithTitle:@"Login" image:[UIImage imageNamed:@"first"] tag:0];
     });
     return _tbi;
 }

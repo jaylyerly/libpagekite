@@ -1,0 +1,60 @@
+#!/usr/bin/env python
+#
+# Convert the inputs (svg) to a fully loaded icns file.
+#  - requires svg2png, available via brew
+#
+
+import os
+import sys
+import subprocess
+
+inputs = [
+        "pagekite-icon.svg",
+        "pagekite-logo.svg",
+    ]
+    
+# sizes from https://developer.apple.com/library/mac/documentation/userexperience/conceptual/applehiguidelines/IconsImages/IconsImages.html#//apple_ref/doc/uid/20000967-TPXREF124
+
+sizes = [
+            16,
+            32,
+            128,
+            256,
+            512,
+            ]
+      
+icons = []
+for size in sizes:
+    # regular icons
+    icon = {}
+    icon["name"] = "icon_%sx%s.png" % (size, size)
+    icon["size"] = size
+    icons.append(icon)
+    
+    # retina icons
+    icon = {}
+    icon["name"] = "icon_%sx%s@2x.png" % (size, size)
+    icon["size"] = size * 2
+    icons.append(icon)
+      
+def doCmd(cmd):
+    print "Executing cmd:", cmd
+    subprocess.call(cmd, shell=True)      
+      
+for infile in inputs:
+    (basename, ext) = os.path.splitext(infile)
+    iconset = "%s.iconset" % basename
+    icns = "%s.icns" % basename
+    os.mkdir(iconset)
+    for icon in icons:
+        filename = os.path.join(iconset, icon["name"])
+        size = icon["size"]
+        cmd = "svg2png -w %s -h %s %s %s" % (size, size, infile, filename)
+        doCmd(cmd)
+        
+    cmd = "iconutil --convert icns"
+    cmd += " --output %s" % icns
+    cmd += " %s" % iconset
+    doCmd(cmd)
+    
+    doCmd("rm -r %s" % iconset)    

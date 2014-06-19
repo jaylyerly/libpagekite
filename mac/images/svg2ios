@@ -1,0 +1,61 @@
+#!/usr/bin/env python
+#
+# Convert the inputs (svg) to a fully loaded icns file.
+#  - requires svg2png, available via brew
+#
+
+import os
+import sys
+import subprocess
+
+inputs = [
+        "pagekite-icon.svg",
+        "pagekite-logo.svg",
+    ]
+    
+# sizes from http://ivomynttinen.com/blog/the-ios-7-design-cheat-sheet/
+
+sizes = [
+            120,
+            152,
+            76,
+            80,
+            60,
+            40,
+            58,
+            29,
+        ]
+      
+icons = []
+for size in sizes:
+    # regular icons
+    icon = {}
+    icon["name"] = "%%s_%sx%s.png" % (size, size)
+    icon["size"] = size
+    icons.append(icon)
+    
+    # retina icons
+    icon = {}
+    icon["name"] = "%%s_%sx%s@2x.png" % (size, size)
+    icon["size"] = size * 2
+    icons.append(icon)
+      
+def doCmd(cmd):
+    print "Executing cmd:", cmd
+    subprocess.call(cmd, shell=True)      
+      
+for infile in inputs:
+    (basename, ext) = os.path.splitext(infile)
+    iosdir = "ios"
+    icns = "%s.icns" % basename
+    try:
+        os.mkdir(iosdir)
+    except:
+        pass
+    for icon in icons:
+        filename = os.path.join(iosdir, icon["name"])
+        filename = filename % basename
+        size = icon["size"]
+        cmd = "svg2png -w %s -h %s %s %s" % (size, size, infile, filename)
+        doCmd(cmd)
+        

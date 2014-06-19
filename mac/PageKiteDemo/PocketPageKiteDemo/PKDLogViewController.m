@@ -56,7 +56,7 @@
     static dispatch_once_t onceToken;
     static UITabBarItem *_tbi = nil;
     dispatch_once(&onceToken, ^{
-        _tbi = [[UITabBarItem alloc] initWithTitle:@"Service Log" image:nil tag:2];
+        _tbi = [[UITabBarItem alloc] initWithTitle:@"Service Log" image:[UIImage imageNamed:@"second"] tag:2];
     });
     return _tbi;
 }
