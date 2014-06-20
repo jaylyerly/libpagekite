@@ -128,7 +128,7 @@
 		EC0B876B194C7E4E00EA9B65 /* PageKiteKitIOS-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PageKiteKitIOS-Prefix.pch"; sourceTree = "<group>"; };
 		EC0B8771194E28CD00EA9B65 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		EC0B8773194E28EB00EA9B65 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		EC0B880B194EC29A00EA9B65 /* libev-osx.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libev-osx.a"; path = "../ThirdParty/libev-4.15-ios/libev-osx.a"; sourceTree = "<group>"; };
+		EC0B880B194EC29A00EA9B65 /* libev-osx.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libev-osx.a"; path = "../ThirdParty/libev-4.15/libev-osx.a"; sourceTree = "<group>"; };
 		EC0B880D194EC2B300EA9B65 /* libev-ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libev-ios.a"; path = "../ThirdParty/libev-4.15/libev-ios.a"; sourceTree = "<group>"; };
 		EC722529194107EA001BB934 /* libssl.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libssl.dylib; path = usr/lib/libssl.dylib; sourceTree = SDKROOT; };
 		EC72252B194107EF001BB934 /* libpthread.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpthread.dylib; path = usr/lib/libpthread.dylib; sourceTree = SDKROOT; };
@@ -1007,7 +1007,7 @@
 				LD_DYLIB_INSTALL_NAME = "@rpath/${EXECUTABLE_PATH}";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/jayl/git/libpagekite/mac/ThirdParty/libev-4.15-ios",
+					"$(SRCROOT)/../ThirdParty/libev-4.15",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
@@ -1033,7 +1033,7 @@
 				LD_DYLIB_INSTALL_NAME = "@rpath/${EXECUTABLE_PATH}";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/jayl/git/libpagekite/mac/ThirdParty/libev-4.15-ios",
+					"$(SRCROOT)/../ThirdParty/libev-4.15",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;

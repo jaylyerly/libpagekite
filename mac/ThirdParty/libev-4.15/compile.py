@@ -14,7 +14,9 @@ all_libs = {
         
     ],
     'osx': [
-        { "ARCH":"i386", "SDK":"macosx", "MIN_IOS_VER":"", "HOST":"" },
+        # We don't really need 32-bit support in OSX, 
+        # 64-bit has been required since 10.7
+        #{ "ARCH":"i386", "SDK":"macosx", "MIN_IOS_VER":"", "HOST":"" },
         { "ARCH":"x86_64", "SDK":"macosx", "MIN_IOS_VER":"", "HOST":"" },
 
     ]
