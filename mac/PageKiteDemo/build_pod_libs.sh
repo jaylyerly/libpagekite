@@ -11,10 +11,10 @@ WORKSPACE=PageKiteDemo.xcworkspace
 pod install
 
 xcodebuild -workspace $WORKSPACE -scheme libev -configuration $CONFIGURATION clean
-xcodebuild -workspace $WORKSPACE -scheme libev -configuration $CONFIGURATION
-
 xcodebuild -workspace $WORKSPACE -scheme PageKiteKit -configuration $CONFIGURATION clean
 xcodebuild -workspace $WORKSPACE -scheme PageKiteKitIOS -configuration $CONFIGURATION clean
+
+xcodebuild -workspace $WORKSPACE -scheme libev -configuration $CONFIGURATION
 
 MAC_PRODUCTS_DIR=`xcodebuild -workspace $WORKSPACE -scheme PageKiteKit -configuration $CONFIGURATION -showBuildSettings|grep ' BUILT_PRODUCTS_DIR ='|head -1|awk -F= '{print $2}'|tr -d ' '`
 xcodebuild -workspace $WORKSPACE -scheme PageKiteKit -configuration $CONFIGURATION 
