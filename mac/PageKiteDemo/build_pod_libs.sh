@@ -16,7 +16,10 @@ xcodebuild -workspace $WORKSPACE -scheme PageKiteKit -configuration $CONFIGURATI
 xcodebuild -workspace $WORKSPACE -scheme PageKiteKitIOS -configuration $CONFIGURATION clean
 
 echo BUILDING LIBEV
-xcodebuild -workspace $WORKSPACE -scheme libev -configuration $CONFIGURATION
+pushd ../ThirdParty/libev-4.15
+make -f Makefile.pagekite dist_clean
+make -f Makefile.pagekite 
+popd
 
 echo LIBEV STATUS
 ls -la ../ThirdParty/libev-4.15/lib*
