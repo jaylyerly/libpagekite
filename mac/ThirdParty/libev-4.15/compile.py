@@ -24,8 +24,8 @@ all_libs = {
 
 def doCmd(cmd,env):
     print "COMPILE.PY --> Execing cmd:", cmd
-    subprocess.call(cmd, shell=True, env=env)
-
+    output = subprocess.check_output(cmd, shell=True, env=env, stderr=subprocess.STDOUT)
+    print output
 
 def main(argv = sys.argv):
     # run with no arguments, build everything
@@ -80,6 +80,8 @@ def main(argv = sys.argv):
         for arch in files:
             cmd +=" %s" % files[arch]
         doCmd(cmd, env=env)
+        doCmd("pwd", env=env)
+        doCmd("ls -la", env=env)
 
 
 if __name__ == '__main__':
