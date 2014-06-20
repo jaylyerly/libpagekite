@@ -28,5 +28,8 @@ libev-osx.a: $(SOURCES)
 all_libs: $(LIBS)
 
 clean:
+	echo Nothing to clean. Do \'make -f $(MAKEFILE_LIST) dist_clean\' to remove libraries.
+
+dist_clean:
 	rm -rf $(LIBS)
 
