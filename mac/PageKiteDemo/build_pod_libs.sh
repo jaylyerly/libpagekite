@@ -5,10 +5,10 @@ set -x
 mkdir -p ios/Frameworks
 mkdir -p osx/Frameworks
 
-xcodebuild -scheme libev
-
 CONFIGURATION=Release
 WORKSPACE=PageKiteDemo.xcworkspace
+
+pod install
 
 xcodebuild -workspace $WORKSPACE -scheme libev -configuration $CONFIGURATION clean
 xcodebuild -workspace $WORKSPACE -scheme PageKiteKit -configuration $CONFIGURATION clean
