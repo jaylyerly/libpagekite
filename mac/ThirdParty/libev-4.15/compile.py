@@ -22,6 +22,11 @@ all_libs = {
     ]
 }
 
+def doCmd(cmd,env):
+    print "COMPILE.PY --> Execing cmd:", cmd
+    subprocess.call(cmd, shell=True, env=env)
+
+
 def main(argv = sys.argv):
     # run with no arguments, build everything
     # other wise, just build the specified platform / arch to make the Makefile work
@@ -56,12 +61,12 @@ def main(argv = sys.argv):
             env['AR']       = "xcrun --sdk %(SDK)s ar" % env
             env['NM']       = "xcrun --sdk %(SDK)s nm" % env
 
-            status = subprocess.call("./configure %(HOST)s" % env, shell=True, env=env)
-            status = subprocess.call("make clean", shell=True, env=env)
-            status = subprocess.call("make", shell=True, env=env)
+            doCmd("./configure %(HOST)s" % env, env=env)
+            doCmd("make clean", env=env)
+            doCmd("make", env=env)
             filename = "libev-%(PLAT)s.a.%(ARCH)s" % env
             files[a['ARCH']] = filename
-            status = subprocess.call("cp .libs/libev.a %s" % filename , shell=True, env=env)
+            doCmd("cp .libs/libev.a %s" % filename , env=env)
     
         #lipo -arch i386 foo-osx.a.i386 -arch x86_64 foo-osx.a.x86_64 -create -output foo-osx.a    
         cmd = "lipo"
@@ -69,12 +74,12 @@ def main(argv = sys.argv):
             cmd +=" -arch %s %s " % ( arch, files[arch] )
         cmd += " -create "
         cmd += " -output libev-%s.a" % plat
-        status = subprocess.call(cmd, shell=True, env=env)
+        doCmd(cmd, env=env)
         
         cmd = "rm"
         for arch in files:
             cmd +=" %s" % files[arch]
-        status = subprocess.call(cmd, shell=True, env=env)
+        doCmd(cmd, env=env)
 
 
 if __name__ == '__main__':
