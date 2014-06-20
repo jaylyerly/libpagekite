@@ -11,6 +11,8 @@ WORKSPACE=PageKiteDemo.xcworkspace
 pod install
 
 xcodebuild -workspace $WORKSPACE -scheme libev -configuration $CONFIGURATION clean
+xcodebuild -workspace $WORKSPACE -scheme libev -configuration $CONFIGURATION
+
 xcodebuild -workspace $WORKSPACE -scheme PageKiteKit -configuration $CONFIGURATION clean
 xcodebuild -workspace $WORKSPACE -scheme PageKiteKitIOS -configuration $CONFIGURATION clean
 
