@@ -3,7 +3,7 @@
 set -x
 
 mkdir -p ios/Frameworks
-mkdir -p mac/Frameworks
+mkdir -p osx/Frameworks
 
 xcodebuild -scheme libev
 
@@ -16,7 +16,7 @@ xcodebuild -workspace $WORKSPACE -scheme PageKiteKitIOS -configuration $CONFIGUR
 
 MAC_PRODUCTS_DIR=`xcodebuild -workspace $WORKSPACE -scheme PageKiteKit -configuration $CONFIGURATION -showBuildSettings|grep ' BUILT_PRODUCTS_DIR ='|head -1|awk -F= '{print $2}'|tr -d ' '`
 xcodebuild -workspace $WORKSPACE -scheme PageKiteKit -configuration $CONFIGURATION 
-cp -a $MAC_PRODUCTS_DIR/PageKiteKit.framework mac/Frameworks
+cp -a $MAC_PRODUCTS_DIR/PageKiteKit.framework osx/Frameworks
 
 # stub out the framework for iOS
 cp -a $MAC_PRODUCTS_DIR/PageKiteKit.framework ios/Frameworks

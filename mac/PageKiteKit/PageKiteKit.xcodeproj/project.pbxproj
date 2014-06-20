@@ -766,7 +766,7 @@
 					"\"${PODS_ROOT}/Headers/xmlrpc\"",
 					"$(SRCROOT)/../ThirdParty/libev-4.15",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/jayl/git/libpagekite/mac/ThirdParty/libev-4.15/.libs",
@@ -795,7 +795,7 @@
 					"\"${PODS_ROOT}/Headers/xmlrpc\"",
 					"$(SRCROOT)/../ThirdParty/libev-4.15",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/jayl/git/libpagekite/mac/ThirdParty/libev-4.15/.libs",
