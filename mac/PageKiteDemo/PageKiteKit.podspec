@@ -125,9 +125,14 @@ Pod::Spec.new do |s|
   s.osx.vendored_frameworks = 'mac/PageKiteDemo/osx/Frameworks/PageKiteKit.framework'
 
   # set the RPath to look in the Frameworks directory
-  s.osx.xcconfig = { 'LD_RUNPATH_SEARCH_PATHS' => '@loader_path/../Frameworks' }
+  s.osx.xcconfig = { 
+        'LD_RUNPATH_SEARCH_PATHS' => '@loader_path/../Frameworks',
+        'FRAMEWORK_SEARCH_PATHS' => '\"${PODS_ROOT}/PageKiteKit/mac/PageKiteDemo/osx/Frameworks\"',
+     }
   # FIXME -- still need to automatically copy PageKiteKit into the Frameworks directory
 
+  s.osx.frameworks = "PageKiteKit"
+  s.osx.resources = "mac/PageKiteDemo/osx/Frameworks/PageKiteKit.framework"
 
   # ――― Project Settings ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
