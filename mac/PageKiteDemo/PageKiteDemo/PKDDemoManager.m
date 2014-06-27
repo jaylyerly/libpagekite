@@ -154,15 +154,27 @@
 
 - (IBAction)handleAddKiteName:(id)sender{
     __weak PKKManager *manager = [PKKManager sharedManager];
-    [manager addDomainName:self.addKiteName completionBlock:^(BOOL success){
+    [manager addDomainName:self.addDomainName completionBlock:^(BOOL success){
         if (success){
-            [self handleGetKites:self];
+            [self handleGetDomains:self];
         }else{
             [self log:[NSString stringWithFormat:@"failed to make new kite: %@", manager.lastError]];
         }
     }];
 }
 
+- (IBAction)handleRemoveKiteName:(id)sender{
+    __weak PKKManager *manager = [PKKManager sharedManager];
+    PKKDomain *domain = [[self.domainListController selectedObjects] firstObject];
+    NSLog(@"Removing domain: %@", domain);
+    [manager removeDomainName:domain.name completionBlock:^(BOOL success){
+        if (success){
+            [self handleGetDomains:self];
+        }else{
+            [self log:[NSString stringWithFormat:@"failed to delete kite: %@", manager.lastError]];
+        }
+    }];
+}
 
 - (IBAction)handleAddKite:(id)sender{
     

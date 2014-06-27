@@ -72,6 +72,9 @@
     return self;
 }
 
+- (BOOL)isConnected {
+    return (self.credential && self.accountId);
+}
 
 - (void)retrieveKitesStatusWithCompletionBlock:(PKKManagerCompletionBlock)block {
     if (self.credential && self.accountId){
@@ -153,6 +156,22 @@
                 withParameters:@[self.accountId, self.credential, name, @NO]
                completionBlock:^(XMLRPCResponse *resp, NSError *err){
                    
+                   NSDictionary *data = objc_dynamic_cast(NSDictionary, [self payloadForResponse:resp error:err]);
+                   if (data){
+                       NSLog(@"Added kite with response: %@", data);
+                       if (block) { block(YES); }
+                       return;
+                   }
+                   if (block) { block(NO); }
+               }];
+    
+}
+
+- (void)removeDomainName:(NSString*)name completionBlock:(PKKManagerCompletionBlock)block{
+    [self.xmlClient callMethod:@"delete_kites"
+                withParameters:@[self.accountId, self.credential, @[name]]
+               completionBlock:^(XMLRPCResponse *resp, NSError *err){
+                   
                    NSString *data = objc_dynamic_cast(NSString, [self payloadForResponse:resp error:err]);
                    if (data){
                        NSLog(@"Added kite with response: %@", data);
@@ -163,6 +182,7 @@
                }];
     
 }
+
 
 - (void)getAccountInfoWithCompletionBlock:(PKKManagerCompletionBlock)block{
     [self.xmlClient callMethod:@"get_account_info"

@@ -13,13 +13,14 @@
 		EC87E6CA195C9DE700A94A83 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EC87E6C9195C9DE700A94A83 /* main.m */; };
 		EC87E6CE195C9DE700A94A83 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = EC87E6CC195C9DE700A94A83 /* Credits.rtf */; };
 		EC87E6D1195C9DE700A94A83 /* PKXAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EC87E6D0195C9DE700A94A83 /* PKXAppDelegate.m */; };
-		EC87E6D4195C9DE700A94A83 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC87E6D2195C9DE700A94A83 /* MainMenu.xib */; };
 		EC87E6D6195C9DE700A94A83 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC87E6D5195C9DE700A94A83 /* Images.xcassets */; };
 		EC87E6DD195C9DE700A94A83 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC87E6DC195C9DE700A94A83 /* XCTest.framework */; };
 		EC87E6DE195C9DE700A94A83 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC87E6BD195C9DE700A94A83 /* Cocoa.framework */; };
 		EC87E6E6195C9DE700A94A83 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EC87E6E4195C9DE700A94A83 /* InfoPlist.strings */; };
 		EC87E6E8195C9DE700A94A83 /* PageKiteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC87E6E7195C9DE700A94A83 /* PageKiteTests.m */; };
 		EC87E6F3195CA00B00A94A83 /* PKXAppManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EC87E6F2195CA00B00A94A83 /* PKXAppManager.m */; };
+		EC87E6F7195DAC9200A94A83 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC87E6D2195C9DE700A94A83 /* MainMenu.xib */; };
+		EC87E6FA195DB82400A94A83 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = EC87E6F9195DB82400A94A83 /* NSString+Additions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,9 @@
 		EC87E6E7195C9DE700A94A83 /* PageKiteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageKiteTests.m; sourceTree = "<group>"; };
 		EC87E6F1195CA00B00A94A83 /* PKXAppManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKXAppManager.h; sourceTree = "<group>"; };
 		EC87E6F2195CA00B00A94A83 /* PKXAppManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKXAppManager.m; sourceTree = "<group>"; };
+		EC87E6F5195CC4EF00A94A83 /* PageKiteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PageKiteKit.framework; path = ../Pods/PageKiteKit/mac/PageKiteDemo/osx/Frameworks/PageKiteKit.framework; sourceTree = "<group>"; };
+		EC87E6F8195DB82400A94A83 /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
+		EC87E6F9195DB82400A94A83 /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,7 @@
 		EC87E6BC195C9DE700A94A83 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EC87E6F5195CC4EF00A94A83 /* PageKiteKit.framework */,
 				EC87E6BD195C9DE700A94A83 /* Cocoa.framework */,
 				EC87E6DC195C9DE700A94A83 /* XCTest.framework */,
 				EC87E6BF195C9DE700A94A83 /* Other Frameworks */,
@@ -128,6 +133,8 @@
 				EC87E6D0195C9DE700A94A83 /* PKXAppDelegate.m */,
 				EC87E6F1195CA00B00A94A83 /* PKXAppManager.h */,
 				EC87E6F2195CA00B00A94A83 /* PKXAppManager.m */,
+				EC87E6F8195DB82400A94A83 /* NSString+Additions.h */,
+				EC87E6F9195DB82400A94A83 /* NSString+Additions.m */,
 				EC87E6D2195C9DE700A94A83 /* MainMenu.xib */,
 				EC87E6D5195C9DE700A94A83 /* Images.xcassets */,
 				EC87E6C4195C9DE700A94A83 /* Supporting Files */,
@@ -247,7 +254,7 @@
 				EC87E6C8195C9DE700A94A83 /* InfoPlist.strings in Resources */,
 				EC87E6D6195C9DE700A94A83 /* Images.xcassets in Resources */,
 				EC87E6CE195C9DE700A94A83 /* Credits.rtf in Resources */,
-				EC87E6D4195C9DE700A94A83 /* MainMenu.xib in Resources */,
+				EC87E6F7195DAC9200A94A83 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC87E6F3195CA00B00A94A83 /* PKXAppManager.m in Sources */,
+				EC87E6FA195DB82400A94A83 /* NSString+Additions.m in Sources */,
 				EC87E6D1195C9DE700A94A83 /* PKXAppDelegate.m in Sources */,
 				EC87E6CA195C9DE700A94A83 /* main.m in Sources */,
 			);

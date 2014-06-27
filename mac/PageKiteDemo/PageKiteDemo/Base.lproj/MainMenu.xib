@@ -947,6 +947,18 @@
                             <binding destination="8oC-Px-734" name="enabled" keyPath="self.loggedIn" id="Eaa-wG-NK3"/>
                         </connections>
                     </button>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uuq-Wh-4lg">
+                        <rect key="frame" x="23" y="423" width="90" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="Remove" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="7vm-HA-pdh">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="handleRemoveKiteName:" target="8oC-Px-734" id="IVd-de-xK3"/>
+                            <binding destination="8oC-Px-734" name="enabled" keyPath="self.loggedIn" id="u3u-Iq-Kcl"/>
+                        </connections>
+                    </button>
                     <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Yn-b6-7gr">
                         <rect key="frame" x="137" y="349" width="415" height="135"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>

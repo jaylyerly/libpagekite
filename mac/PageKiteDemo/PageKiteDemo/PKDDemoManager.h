@@ -34,6 +34,7 @@
 - (IBAction)handleGetDomains:(id)sender;
 - (IBAction)handleClearLog:(id)sender;
 - (IBAction)handleAddKiteName:(id)sender;
+- (IBAction)handleRemoveKiteName:(id)sender;
 - (IBAction)handleAddKite:(id)sender;
 - (IBAction)handleRemoveKite:(id)sender;
 - (IBAction)handleFlyKites:(id)sender;

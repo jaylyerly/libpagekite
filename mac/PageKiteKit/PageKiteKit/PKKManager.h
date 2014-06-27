@@ -24,6 +24,7 @@ typedef void (^PKKManagerCompletionBlock)(BOOL success);
 @property (nonatomic, readonly, copy) NSString *log;
 
 @property (nonatomic, readonly) BOOL kitesAreFlying;
+@property (nonatomic, readonly) BOOL isConnected;
 
 + (instancetype) sharedManager;
 
@@ -31,6 +32,8 @@ typedef void (^PKKManagerCompletionBlock)(BOOL success);
 - (void)retrieveKitesStatusWithCompletionBlock:(PKKManagerCompletionBlock)block;
 - (void)retrieveDomainsWithCompletionBlock:(PKKManagerCompletionBlock)block;
 - (void)addDomainName:(NSString*)name completionBlock:(PKKManagerCompletionBlock)block;
+- (void)removeDomainName:(NSString*)name completionBlock:(PKKManagerCompletionBlock)block;
+
 //- (void)getAccountInfoWithCompletionBlock:(PKKManagerCompletionBlock)block;
 
 - (PKKKite *) addKiteWithName:(NSString *)name
