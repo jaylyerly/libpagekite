@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "PageKiteKit"
-  s.version      = "140620"
+  s.version      = "0.0.1"
   s.summary      = "A high performance PageKite implementation in C"
 
   s.description  = <<-DESC
@@ -78,7 +78,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/jaylyerly/libpagekite.git", :tag => "v140620" }
+  s.source       = { :git => "https://github.com/jaylyerly/libpagekite.git", :tag => "v0.0.1" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
