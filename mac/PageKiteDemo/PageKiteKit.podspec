@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "PageKiteKit"
-  s.version      = "v140627"
+  s.version      = "140627"
   s.summary      = "A high performance PageKite implementation in C"
 
   s.description  = <<-DESC
