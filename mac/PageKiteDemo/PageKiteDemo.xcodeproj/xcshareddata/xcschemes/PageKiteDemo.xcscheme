@@ -14,6 +14,20 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "EC7A272F1937B0FD002CAB06"
+               BuildableName = "PageKiteKit.framework"
+               BlueprintName = "PageKiteKit"
+               ReferencedContainer = "container:../PageKiteKit/PageKiteKit.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "EC7A27B01937B2B8002CAB06"
                BuildableName = "PageKiteDemo.app"
                BlueprintName = "PageKiteDemo"

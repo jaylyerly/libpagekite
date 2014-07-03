@@ -7,6 +7,7 @@
 //
 
 #import "PKDLocationMgr.h"
+#import <PageKiteKit/PageKiteKit.h>
 
 @interface PKDLocationMgr ()<CLLocationManagerDelegate>
 

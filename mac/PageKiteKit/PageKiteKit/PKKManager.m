@@ -12,6 +12,7 @@
 #import "PKKDomain.h"
 #import "PKKKite.h"
 #import "PKKLibPageKite.h"
+#import "PKKCompilerMacros.h"
 
 #import <xmlrpc/XMLRPC.h>
 

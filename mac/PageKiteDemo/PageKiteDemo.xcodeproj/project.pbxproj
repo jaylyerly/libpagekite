@@ -758,10 +758,6 @@
 				);
 				INFOPLIST_FILE = "PocketPageKiteDemo/PocketPageKiteDemo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Users/jayl/git/libpagekite/mac/PageKiteKit/build/Debug-iphoneos",
-				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
@@ -784,10 +780,6 @@
 				GCC_PREFIX_HEADER = "PocketPageKiteDemo/PocketPageKiteDemo-Prefix.pch";
 				INFOPLIST_FILE = "PocketPageKiteDemo/PocketPageKiteDemo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Users/jayl/git/libpagekite/mac/PageKiteKit/build/Debug-iphoneos",
-				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

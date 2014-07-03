@@ -16,6 +16,7 @@ target :PageKiteKit, :exclusive => true do
   xcodeproj '../PageKiteKit/PageKiteKit'
   platform :osx, '10.7'
   pod 'xmlrpc',             '~> 2.3.3',  :inhibit_warnings => true
+  pod 'libev',              '~> 4.15.0', :inhibit_warnings => true
 end
 
 target :PocketPageKiteDemo, :exclusive => true do
@@ -31,5 +32,6 @@ target :PageKiteKitIOS, :exclusive => true do
   platform :ios, '6.0'
   pod 'xmlrpc',             '~> 2.3.3',  :inhibit_warnings => true
   pod 'OpenSSL',            '~> 1.0.1',  :inhibit_warnings => true
+  pod 'libev',              '~> 4.15.0', :inhibit_warnings => true
 end
 
