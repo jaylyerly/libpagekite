@@ -1,7 +1,0 @@
-.deps/*
-.libs/*
-config.log
-config.status
-libtool
-libev-???.a.*
-Makefile
