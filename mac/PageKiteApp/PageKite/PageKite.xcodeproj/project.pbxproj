@@ -65,6 +65,8 @@
 		EC87E6FB195E0B6700A94A83 /* PKXAddKiteController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKXAddKiteController.h; sourceTree = "<group>"; };
 		EC87E6FC195E0B6700A94A83 /* PKXAddKiteController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKXAddKiteController.m; sourceTree = "<group>"; };
 		EC87E6FE195E207A00A94A83 /* AddKite.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddKite.xib; sourceTree = "<group>"; };
+		ECB297021965D9DD0080AFB8 /* libssl.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libssl.dylib; path = usr/lib/libssl.dylib; sourceTree = SDKROOT; };
+		ECB297041965D9F30080AFB8 /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = usr/lib/libcrypto.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,8 @@
 		EC87E6BC195C9DE700A94A83 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ECB297041965D9F30080AFB8 /* libcrypto.dylib */,
+				ECB297021965D9DD0080AFB8 /* libssl.dylib */,
 				EC87E6F5195CC4EF00A94A83 /* PageKiteKit.framework */,
 				EC87E6BD195C9DE700A94A83 /* Cocoa.framework */,
 				EC87E6DC195C9DE700A94A83 /* XCTest.framework */,
