@@ -60,7 +60,10 @@
     AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:device error:&error];
     if (!input) {
         // Handle the error appropriately.
-        NSLog(@"no input.....");
+        if (! self.currentImage) {
+            self.currentImage = [UIImage imageNamed:@"NoCamera"];
+        }
+        return;
     }
     [session addInput:input];
     
