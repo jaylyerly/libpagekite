@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "PageKiteKit"
-  s.version      = "140627"
+  s.version      = "0.1.0"
   s.summary      = "A high performance PageKite implementation in C"
 
   s.description  = <<-DESC
@@ -53,19 +53,15 @@ Pod::Spec.new do |s|
   #  profile URL.
   #
   
-  s.author             = { "jaylyerly" => "jayl@sonicbunny.org" }
-  # Or just: s.author    = "jaylyerly"
-  # s.authors            = { "jaylyerly" => "email@address.com" }
-
+  s.authors            = { "jaylyerly" => "jayl@sonicbunny.org" }
   s.social_media_url   = "http://twitter.com/jaylyerly"
+
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
   #  If this Pod runs only on iOS or OS X, then specify the platform and
   #  the deployment target. You can optionally include the target after the platform.
   #
 
-  # s.platform     = :ios
-  # s.platform     = :ios, "5.0"
 
   #  When using multiple platforms
   s.ios.deployment_target = "6.1"
@@ -78,8 +74,8 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/jaylyerly/libpagekite.git", :tag => "v140627" }
-  
+  s.source       = { :git => "https://github.com/jaylyerly/libpagekite.git", :tag => "0.1.0" }
+
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -88,19 +84,19 @@ Pod::Spec.new do |s|
   #  files it will include any header in the folder.
   #  Not including the public_header_files will make all headers public.
   #
-
+  
+  s.source_files = "*.{h,c}", "mac/PageKiteKit/PageKiteKit/*.{h,m}"
+  s.exclude_files = "pagekite-jni.c", "pagekitec.c", "httpkite.c", "*test*.c"
+  
   #s.source_files  = "Classes", "Classes/**/*.{h,m}"
   #s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
+  s.public_header_files = "mac/PageKiteKit/PageKiteKit/*.h"
+  
+  s.compiler_flags = '-DHAVE_IPV6=1', '-DHAVE_OPENSSL=1', '-DPK_TRACE=0'
 
-  s.prepare_command = <<-CMD
-                        env
-                        pwd
-                        ls
-                        cd mac/PageKiteDemo
-                        ./build_pod_libs.sh
-                   CMD
+
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
   #  A list of resources included with the Pod. These are copied into the
@@ -121,14 +117,12 @@ Pod::Spec.new do |s|
   #  the lib prefix of their name.
   #
 
-  s.ios.vendored_frameworks = 'mac/PageKiteDemo/ios/Frameworks/PageKiteKit.framework'
-  s.osx.vendored_frameworks = 'mac/PageKiteDemo/osx/Frameworks/PageKiteKit.framework'
+  # s.framework  = "SomeFramework"
+  # s.frameworks = "SomeFramework", "AnotherFramework"
 
-  # set the RPath to look in the Frameworks directory
-  s.osx.xcconfig = { 'LD_RUNPATH_SEARCH_PATHS' => '@loader_path/../Frameworks', }
+  # s.library   = "iconv"
+  # s.libraries = "iconv", "xml2"
 
-  s.osx.frameworks = "PageKiteKit"
-  s.osx.resources = "mac/PageKiteDemo/osx/Frameworks/PageKiteKit.framework"
 
   # ――― Project Settings ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -140,5 +134,9 @@ Pod::Spec.new do |s|
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
+  
+  s.dependency     "xmlrpc",  "~> 2.3.3"
+  s.dependency     "libev",   "~> 4.15.0"
+  s.ios.dependency "OpenSSL", "~> 1.0.1"
 
 end
