@@ -9,6 +9,7 @@
 #import "PKXAppManager.h"
 #import "FXKeychain.h"
 #import <PageKiteKit/PageKiteKit.h>
+#import "PKXAddKiteController.h"
 
 #import "NSString+Additions.h"
 
@@ -18,9 +19,10 @@ NSString *kPKXUserDefaultsEmail = @"PageKiteEmail";
 @interface PKXAppManager ()
 
 @property (nonatomic, strong)          NSStatusItem *statusItem;
-@property (nonatomic, strong)          NSString     *email;
-@property (nonatomic, strong)          NSString     *password;
+@property (nonatomic, copy)            NSString     *email;
+@property (nonatomic, copy)            NSString     *password;
 @property (nonatomic, strong)          NSArray      *domains;
+@property (nonatomic, copy)            NSString     *addDomainName;
 @end
 
 @implementation PKXAppManager
@@ -99,13 +101,50 @@ NSString *kPKXUserDefaultsEmail = @"PageKiteEmail";
     [[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
 }
 
+#pragma mark - Domain operations
+
 - (IBAction)addDomain:(id)sender {
     NSLog(@"Add domain");
+    NSPoint mouseLoc = [NSEvent mouseLocation];
+    [self.addDomainWindow setFrameOrigin:mouseLoc];
+    [self.addDomainWindow makeKeyAndOrderFront:self];
 }
 
 - (IBAction)removeDomain:(id)sender {
-    PKKDomain *domain = [[self.domainController selectedObjects] firstObject];
+    __weak PKKDomain *domain = [[self.domainController selectedObjects] firstObject];
     NSLog(@"Remove domain: %@", domain);
+    [[PKKManager sharedManager] removeDomainName:domain.name completionBlock:^(BOOL success){
+        if (success){
+            [self updateDomains];
+        } else {
+            NSString *msg = [NSString stringWithFormat:@"Failed to remove domain: %@.", domain.name];
+            NSString *info = [NSString stringWithFormat:@"Server reported an error: %@", [PKKManager sharedManager].lastError ?: @"Unknown"];
+            [self showAlertMesg:msg info:info];
+        }
+    }];
+}
+
+- (IBAction)addDomainName:(id)sender{
+    __weak PKXAppManager *weakSelf = self;
+    [[PKKManager sharedManager] addDomainName:self.addDomainName completionBlock:^(BOOL success){
+        if (success){
+            [self updateDomains];
+            [self.addDomainWindow orderOut:self];
+        } else {
+            NSString *msg = [NSString stringWithFormat:@"Failed to add new domain name: %@.", weakSelf.addDomainName];
+            NSString *info = [NSString stringWithFormat:@"Server reported an error: %@", [PKKManager sharedManager].lastError ?: @"Unknown"];
+            [self showAlertMesg:msg info:info];
+        }
+    }];
+}
+
+#pragma mark - Kite Operations
+
+- (IBAction)addKite:(id)sender {
+    NSLog(@"Add kite");
+    [self activate];
+    PKXAddKiteController *kiteCon = [[PKXAddKiteController alloc] initWithWindowNibName:@"AddKite"];
+    [kiteCon showWindow:self];
 }
 
 #pragma mark - PageKite Manager interactions

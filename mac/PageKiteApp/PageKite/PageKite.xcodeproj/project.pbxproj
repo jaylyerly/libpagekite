@@ -21,6 +21,8 @@
 		EC87E6F3195CA00B00A94A83 /* PKXAppManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EC87E6F2195CA00B00A94A83 /* PKXAppManager.m */; };
 		EC87E6F7195DAC9200A94A83 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC87E6D2195C9DE700A94A83 /* MainMenu.xib */; };
 		EC87E6FA195DB82400A94A83 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = EC87E6F9195DB82400A94A83 /* NSString+Additions.m */; };
+		EC87E6FD195E0B6700A94A83 /* PKXAddKiteController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC87E6FC195E0B6700A94A83 /* PKXAddKiteController.m */; };
+		EC87E6FF195E207A00A94A83 /* AddKite.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC87E6FE195E207A00A94A83 /* AddKite.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,9 @@
 		EC87E6F5195CC4EF00A94A83 /* PageKiteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PageKiteKit.framework; path = ../Pods/PageKiteKit/mac/PageKiteDemo/osx/Frameworks/PageKiteKit.framework; sourceTree = "<group>"; };
 		EC87E6F8195DB82400A94A83 /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
 		EC87E6F9195DB82400A94A83 /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
+		EC87E6FB195E0B6700A94A83 /* PKXAddKiteController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKXAddKiteController.h; sourceTree = "<group>"; };
+		EC87E6FC195E0B6700A94A83 /* PKXAddKiteController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKXAddKiteController.m; sourceTree = "<group>"; };
+		EC87E6FE195E207A00A94A83 /* AddKite.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddKite.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,9 +138,12 @@
 				EC87E6D0195C9DE700A94A83 /* PKXAppDelegate.m */,
 				EC87E6F1195CA00B00A94A83 /* PKXAppManager.h */,
 				EC87E6F2195CA00B00A94A83 /* PKXAppManager.m */,
+				EC87E6FB195E0B6700A94A83 /* PKXAddKiteController.h */,
+				EC87E6FC195E0B6700A94A83 /* PKXAddKiteController.m */,
 				EC87E6F8195DB82400A94A83 /* NSString+Additions.h */,
 				EC87E6F9195DB82400A94A83 /* NSString+Additions.m */,
 				EC87E6D2195C9DE700A94A83 /* MainMenu.xib */,
+				EC87E6FE195E207A00A94A83 /* AddKite.xib */,
 				EC87E6D5195C9DE700A94A83 /* Images.xcassets */,
 				EC87E6C4195C9DE700A94A83 /* Supporting Files */,
 			);
@@ -253,6 +261,7 @@
 			files = (
 				EC87E6C8195C9DE700A94A83 /* InfoPlist.strings in Resources */,
 				EC87E6D6195C9DE700A94A83 /* Images.xcassets in Resources */,
+				EC87E6FF195E207A00A94A83 /* AddKite.xib in Resources */,
 				EC87E6CE195C9DE700A94A83 /* Credits.rtf in Resources */,
 				EC87E6F7195DAC9200A94A83 /* MainMenu.xib in Resources */,
 			);
@@ -310,6 +319,7 @@
 				EC87E6FA195DB82400A94A83 /* NSString+Additions.m in Sources */,
 				EC87E6D1195C9DE700A94A83 /* PKXAppDelegate.m in Sources */,
 				EC87E6CA195C9DE700A94A83 /* main.m in Sources */,
+				EC87E6FD195E0B6700A94A83 /* PKXAddKiteController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
