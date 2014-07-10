@@ -9,6 +9,7 @@
 #import "PKXAppManager.h"
 #import <PageKiteKit/PageKiteKit.h>
 #import "PKXAddKiteController.h"
+#import "PKXLogWindowController.h"
 #import "PKXAlert.h"
 #import "PKXCredentials.h"
 
@@ -22,8 +23,8 @@
 
 @interface PKXAppManager ()
 
-@property (nonatomic, strong)          NSStatusItem *statusItem;
-@property (nonatomic, strong)          MASPreferencesWindowController            *prefsWindowController;
+@property (nonatomic, strong)   NSStatusItem *statusItem;
+@property (nonatomic, strong)   MASPreferencesWindowController  *prefsWindowController;
 
 @end
 
@@ -66,7 +67,7 @@
     if (showDlg){
         [self promptUserToLogin];
     }else{
-        // have username and password, so try to login
+        // have username and password, so try to log in
         __weak PKXAppManager *weakSelf = self;
         [[PKKManager sharedManager] loginWithUser:[PKXCredentials sharedManager].email
                                          password:[PKXCredentials sharedManager].password
@@ -105,14 +106,16 @@
     [[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
 }
 
-
-#pragma mark - Kite Operations
-
 - (IBAction)addKite:(id)sender {
-    NSLog(@"Add kite");
     [self activate];
     PKXAddKiteController *kiteCon = [[PKXAddKiteController alloc] initWithWindowNibName:@"AddKite"];
     [kiteCon showWindow:self];
+}
+
+- (IBAction)showLog:(id)sender {
+    [self activate];
+    PKXLogWindowController *logCon = [[PKXLogWindowController alloc] initWithWindowNibName:@"PKXLogWindowController"];
+    [logCon showWindow:self];
 }
 
 

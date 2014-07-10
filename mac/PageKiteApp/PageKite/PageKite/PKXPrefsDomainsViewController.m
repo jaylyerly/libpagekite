@@ -21,7 +21,7 @@
 }
 
 - (NSImage *)toolbarItemImage {
-    return nil;
+    return [NSImage imageNamed:NSImageNameNetwork];
 }
 
 - (NSString *)toolbarItemLabel {
@@ -30,6 +30,7 @@
 
 - (void) awakeFromNib {
     self.domains = [PKKManager sharedManager].domains;
+    [self updateDomains];
     [[PKKManager sharedManager] addObserver:self
                                  forKeyPath:@"domains"
                                     options:0

@@ -19,11 +19,11 @@
 }
 
 - (NSImage *)toolbarItemImage {
-    return nil;
+    return [NSImage imageNamed:NSImageNamePreferencesGeneral];
 }
 
 - (NSString *)toolbarItemLabel {
-    return @"Other";
+    return @"General";
 }
 
 @end

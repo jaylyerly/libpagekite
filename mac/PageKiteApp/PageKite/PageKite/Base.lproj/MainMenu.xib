@@ -48,6 +48,12 @@
                         <action selector="about:" target="plw-gJ-IT6" id="gS4-2U-bdP"/>
                     </connections>
                 </menuItem>
+                <menuItem title="PageKite Log..." id="KnF-E8-DSz">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="showLog:" target="plw-gJ-IT6" id="cfV-xF-hfW"/>
+                    </connections>
+                </menuItem>
                 <menuItem isSeparatorItem="YES" id="hWz-QV-5Yc"/>
                 <menuItem title="Quit PageKite" id="n1c-YI-0O4">
                     <modifierMask key="keyEquivalentModifierMask"/>

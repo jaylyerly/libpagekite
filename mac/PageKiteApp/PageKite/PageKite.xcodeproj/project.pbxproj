@@ -35,6 +35,8 @@
 		EC8BDF6F196F1765009BB33F /* PKXPrefsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8BDF6E196F1765009BB33F /* PKXPrefsViewController.m */; };
 		EC8BDF73196F1E40009BB33F /* PKXAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8BDF72196F1E40009BB33F /* PKXAlert.m */; };
 		EC8BDF76196F2791009BB33F /* PKXCredentials.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8BDF75196F2791009BB33F /* PKXCredentials.m */; };
+		EC8BDF7A196F447E009BB33F /* PKXLogWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8BDF78196F447E009BB33F /* PKXLogWindowController.m */; };
+		EC8BDF7B196F447E009BB33F /* PKXLogWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC8BDF79196F447E009BB33F /* PKXLogWindowController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +99,9 @@
 		EC8BDF72196F1E40009BB33F /* PKXAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKXAlert.m; sourceTree = "<group>"; };
 		EC8BDF74196F2791009BB33F /* PKXCredentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKXCredentials.h; sourceTree = "<group>"; };
 		EC8BDF75196F2791009BB33F /* PKXCredentials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKXCredentials.m; sourceTree = "<group>"; };
+		EC8BDF77196F447E009BB33F /* PKXLogWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKXLogWindowController.h; sourceTree = "<group>"; };
+		EC8BDF78196F447E009BB33F /* PKXLogWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKXLogWindowController.m; sourceTree = "<group>"; };
+		EC8BDF79196F447E009BB33F /* PKXLogWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PKXLogWindowController.xib; sourceTree = "<group>"; };
 		ECB297021965D9DD0080AFB8 /* libssl.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libssl.dylib; path = usr/lib/libssl.dylib; sourceTree = SDKROOT; };
 		ECB297041965D9F30080AFB8 /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = usr/lib/libcrypto.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -176,10 +181,13 @@
 				EC87E6D0195C9DE700A94A83 /* PKXAppDelegate.m */,
 				EC87E6F1195CA00B00A94A83 /* PKXAppManager.h */,
 				EC87E6F2195CA00B00A94A83 /* PKXAppManager.m */,
+				EC87E6D2195C9DE700A94A83 /* MainMenu.xib */,
 				EC87E6FB195E0B6700A94A83 /* PKXAddKiteController.h */,
 				EC87E6FC195E0B6700A94A83 /* PKXAddKiteController.m */,
-				EC87E6D2195C9DE700A94A83 /* MainMenu.xib */,
 				EC87E6FE195E207A00A94A83 /* AddKite.xib */,
+				EC8BDF77196F447E009BB33F /* PKXLogWindowController.h */,
+				EC8BDF78196F447E009BB33F /* PKXLogWindowController.m */,
+				EC8BDF79196F447E009BB33F /* PKXLogWindowController.xib */,
 				EC8BDF59196F0E6D009BB33F /* Preference Panes */,
 				EC8BDF70196F1E09009BB33F /* Support Classes */,
 				EC8BDF5A196F0E71009BB33F /* Categories */,
@@ -347,6 +355,7 @@
 				EC87E6CE195C9DE700A94A83 /* Credits.rtf in Resources */,
 				EC8BDF6C196F0F0D009BB33F /* PKXPrefsDomainsViewController.xib in Resources */,
 				EC8BDF62196F0ECA009BB33F /* PKXPrefsGeneralViewController.xib in Resources */,
+				EC8BDF7B196F447E009BB33F /* PKXLogWindowController.xib in Resources */,
 				EC87E6F7195DAC9200A94A83 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -407,6 +416,7 @@
 				EC8BDF61196F0ECA009BB33F /* PKXPrefsGeneralViewController.m in Sources */,
 				EC87E6D1195C9DE700A94A83 /* PKXAppDelegate.m in Sources */,
 				EC8BDF56196EE1D5009BB33F /* NSImage+ColorMap.m in Sources */,
+				EC8BDF7A196F447E009BB33F /* PKXLogWindowController.m in Sources */,
 				EC8BDF73196F1E40009BB33F /* PKXAlert.m in Sources */,
 				EC8BDF76196F2791009BB33F /* PKXCredentials.m in Sources */,
 				EC87E6CA195C9DE700A94A83 /* main.m in Sources */,

@@ -21,7 +21,7 @@
 
 - (void)showWindow:(id)sender{
     [self.window center];
-    [super showWindow:self];    
+    [super showWindow:sender];
 }
 
 - (IBAction)chooseWebRootDir:(id)sender {

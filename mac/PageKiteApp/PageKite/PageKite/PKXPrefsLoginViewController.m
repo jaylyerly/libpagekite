@@ -40,11 +40,11 @@
 }
 
 - (NSImage *)toolbarItemImage {
-    return nil;
+    return [NSImage imageNamed:NSImageNameUserAccounts];
 }
 
 - (NSString *)toolbarItemLabel {
-    return @"Service";
+    return @"Account";
 }
 
 - (IBAction)verifyCreds:(id)sender {
