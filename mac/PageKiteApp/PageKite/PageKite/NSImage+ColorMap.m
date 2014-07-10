@@ -27,7 +27,8 @@
     
     CGRect extent = [result extent];
     CGImageRef cgImage = [context createCGImage:result fromRect:extent];
-    return [[NSImage alloc] initWithCGImage:cgImage size:self.size];
+    NSImage *clampedImage = [[NSImage alloc] initWithCGImage:cgImage size:self.size];
+    return clampedImage ?: self;    // return original image if something went horribly wrong (like no filter, etc)
 }
 
 -(NSImage *)whiten {
