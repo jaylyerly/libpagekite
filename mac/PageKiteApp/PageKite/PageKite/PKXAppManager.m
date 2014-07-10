@@ -12,6 +12,7 @@
 #import "PKXAddKiteController.h"
 
 #import "NSString+Additions.h"
+#import "NSImage+ColorMap.h"
 
 NSString *kPKXKeychainPassword = @"PageKitePassword";
 NSString *kPKXUserDefaultsEmail = @"PageKiteEmail";
@@ -30,7 +31,8 @@ NSString *kPKXUserDefaultsEmail = @"PageKiteEmail";
 - (void) awakeFromNib {
     self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     [self.statusItem setMenu:self.statusMenu];
-    [self.statusItem setTitle:@"Status"];
+    NSImage *statusIcon = [[NSImage imageNamed:@"StatusIcon"] blacken];  // 18 px for non-retina, 34 for retina
+    [self.statusItem setImage:statusIcon];
     [self.statusItem setHighlightMode:YES];
     
     [self checkStartupCreds];

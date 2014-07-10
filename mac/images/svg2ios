@@ -23,7 +23,9 @@ sizes = [
             60,
             40,
             58,
+            34,     # for NSStatusItem
             29,
+            18,     # for NSStatusItem
         ]
       
 icons = []

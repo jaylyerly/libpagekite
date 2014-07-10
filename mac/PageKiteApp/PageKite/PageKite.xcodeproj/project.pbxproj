@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4146A8C6ED824CBDA91C58AF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C75D3BB6B9AF4F16B3A68B51 /* libPods.a */; };
+		EC13A9C81965F11E00B9C831 /* PKXStartupManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EC13A9C71965F11E00B9C831 /* PKXStartupManager.m */; };
 		EC87E6BE195C9DE700A94A83 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC87E6BD195C9DE700A94A83 /* Cocoa.framework */; };
 		EC87E6C8195C9DE700A94A83 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EC87E6C6195C9DE700A94A83 /* InfoPlist.strings */; };
 		EC87E6CA195C9DE700A94A83 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EC87E6C9195C9DE700A94A83 /* main.m */; };
@@ -23,6 +24,8 @@
 		EC87E6FA195DB82400A94A83 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = EC87E6F9195DB82400A94A83 /* NSString+Additions.m */; };
 		EC87E6FD195E0B6700A94A83 /* PKXAddKiteController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC87E6FC195E0B6700A94A83 /* PKXAddKiteController.m */; };
 		EC87E6FF195E207A00A94A83 /* AddKite.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC87E6FE195E207A00A94A83 /* AddKite.xib */; };
+		EC8BDF56196EE1D5009BB33F /* NSImage+ColorMap.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8BDF55196EE1D5009BB33F /* NSImage+ColorMap.m */; };
+		EC8BDF58196EE7B1009BB33F /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC8BDF57196EE7B1009BB33F /* Quartz.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +41,8 @@
 /* Begin PBXFileReference section */
 		4BDC707F55C145AFB3B96D2F /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = ../Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		C75D3BB6B9AF4F16B3A68B51 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC13A9C61965F11E00B9C831 /* PKXStartupManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKXStartupManager.h; sourceTree = "<group>"; };
+		EC13A9C71965F11E00B9C831 /* PKXStartupManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKXStartupManager.m; sourceTree = "<group>"; };
 		EC87E6BA195C9DE700A94A83 /* PageKite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PageKite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC87E6BD195C9DE700A94A83 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		EC87E6C0195C9DE700A94A83 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -65,6 +70,9 @@
 		EC87E6FB195E0B6700A94A83 /* PKXAddKiteController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKXAddKiteController.h; sourceTree = "<group>"; };
 		EC87E6FC195E0B6700A94A83 /* PKXAddKiteController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKXAddKiteController.m; sourceTree = "<group>"; };
 		EC87E6FE195E207A00A94A83 /* AddKite.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddKite.xib; sourceTree = "<group>"; };
+		EC8BDF54196EE1D5009BB33F /* NSImage+ColorMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+ColorMap.h"; sourceTree = "<group>"; };
+		EC8BDF55196EE1D5009BB33F /* NSImage+ColorMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+ColorMap.m"; sourceTree = "<group>"; };
+		EC8BDF57196EE7B1009BB33F /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		ECB297021965D9DD0080AFB8 /* libssl.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libssl.dylib; path = usr/lib/libssl.dylib; sourceTree = SDKROOT; };
 		ECB297041965D9F30080AFB8 /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = usr/lib/libcrypto.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -74,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC8BDF58196EE7B1009BB33F /* Quartz.framework in Frameworks */,
 				EC87E6BE195C9DE700A94A83 /* Cocoa.framework in Frameworks */,
 				4146A8C6ED824CBDA91C58AF /* libPods.a in Frameworks */,
 			);
@@ -114,6 +123,7 @@
 		EC87E6BC195C9DE700A94A83 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EC8BDF57196EE7B1009BB33F /* Quartz.framework */,
 				ECB297041965D9F30080AFB8 /* libcrypto.dylib */,
 				ECB297021965D9DD0080AFB8 /* libssl.dylib */,
 				EC87E6F5195CC4EF00A94A83 /* PageKiteKit.framework */,
@@ -146,6 +156,10 @@
 				EC87E6FC195E0B6700A94A83 /* PKXAddKiteController.m */,
 				EC87E6F8195DB82400A94A83 /* NSString+Additions.h */,
 				EC87E6F9195DB82400A94A83 /* NSString+Additions.m */,
+				EC8BDF54196EE1D5009BB33F /* NSImage+ColorMap.h */,
+				EC8BDF55196EE1D5009BB33F /* NSImage+ColorMap.m */,
+				EC13A9C61965F11E00B9C831 /* PKXStartupManager.h */,
+				EC13A9C71965F11E00B9C831 /* PKXStartupManager.m */,
 				EC87E6D2195C9DE700A94A83 /* MainMenu.xib */,
 				EC87E6FE195E207A00A94A83 /* AddKite.xib */,
 				EC87E6D5195C9DE700A94A83 /* Images.xcassets */,
@@ -322,8 +336,10 @@
 				EC87E6F3195CA00B00A94A83 /* PKXAppManager.m in Sources */,
 				EC87E6FA195DB82400A94A83 /* NSString+Additions.m in Sources */,
 				EC87E6D1195C9DE700A94A83 /* PKXAppDelegate.m in Sources */,
+				EC8BDF56196EE1D5009BB33F /* NSImage+ColorMap.m in Sources */,
 				EC87E6CA195C9DE700A94A83 /* main.m in Sources */,
 				EC87E6FD195E0B6700A94A83 /* PKXAddKiteController.m in Sources */,
+				EC13A9C81965F11E00B9C831 /* PKXStartupManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
