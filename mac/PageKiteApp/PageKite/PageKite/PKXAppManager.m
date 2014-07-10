@@ -23,9 +23,6 @@
 @interface PKXAppManager ()
 
 @property (nonatomic, strong)          NSStatusItem *statusItem;
-@property (nonatomic, strong)          NSArray      *domains;
-@property (nonatomic, copy)            NSString     *addDomainName;
-
 @property (nonatomic, strong)          MASPreferencesWindowController            *prefsWindowController;
 
 @end
@@ -33,12 +30,20 @@
 @implementation PKXAppManager
 
 - (void) awakeFromNib {
+    [self buildStatusItem];
+    [self buildPreferencesController];
+    [self checkStartupCreds];
+}
+
+- (void)buildStatusItem {
     self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     [self.statusItem setMenu:self.statusMenu];
     NSImage *statusIcon = [[NSImage imageNamed:@"StatusIcon"] blacken];  // 18 px for non-retina, 34 for retina
     [self.statusItem setImage:statusIcon];
     [self.statusItem setHighlightMode:YES];
- 
+}
+
+- (void)buildPreferencesController {
     NSArray *prefsControllers = @[
                                   [PKXPrefsLoginViewController new],
                                   [PKXPrefsDomainsViewController new],
@@ -46,7 +51,6 @@
                                   ];
     self.prefsWindowController =[[MASPreferencesWindowController alloc] initWithViewControllers:prefsControllers
                                                                                           title:@"Preferences"];
-    [self checkStartupCreds];
 }
 
 - (void)checkStartupCreds {
@@ -111,37 +115,5 @@
     [kiteCon showWindow:self];
 }
 
-#pragma mark - PageKite Manager interactions
-
-- (IBAction)verifyCreds:(id)sender {
-    [[PKKManager sharedManager] loginWithUser:[PKXCredentials sharedManager].email
-                                     password:[PKXCredentials sharedManager].password
-                              completionBlock:^(BOOL success){
-                                  if (success) {
-                                      NSLog(@"Log in successful!");
-                                      [self updateDomains];
-                                  }else {
-                                      NSLog(@"Log in FAILED!");
-                                  }
-                              }];
-}
-
-- (void) updateDomains {
-    [[PKKManager sharedManager] loginWithUser:[PKXCredentials sharedManager].email
-                                     password:[PKXCredentials sharedManager].password
-                              completionBlock:^(BOOL success){
-                                  if (success) {
-                                      NSLog(@"Log in successful!");
-                                      [[PKKManager sharedManager] retrieveDomainsWithCompletionBlock:^(BOOL success){
-                                          if (success){
-                                              self.domains = [PKKManager sharedManager].domains;
-                                          }
-                                      }];
-                                  }else {
-                                      NSLog(@"Log in FAILED!");
-                                  }
-                              }];
-
-}
 
 @end

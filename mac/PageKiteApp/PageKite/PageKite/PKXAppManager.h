@@ -10,17 +10,13 @@
 
 @interface PKXAppManager : NSObject
 
-@property (nonatomic, readonly)          NSStatusItem        *statusItem;
-@property (nonatomic, weak)     IBOutlet NSMenu              *statusMenu;
-@property (nonatomic, weak)     IBOutlet NSWindowController  *addKiteWindowController;
-@property (nonatomic, weak)     IBOutlet NSArrayController   *domainController;
-
-@property (nonatomic, readonly)            NSArray      *domains;
+@property (nonatomic, readonly)          NSStatusItem  *statusItem;
+@property (nonatomic, weak)     IBOutlet NSMenu        *statusMenu;
+@property (nonatomic, readonly)          NSArray       *domains;
 
 - (IBAction)quit:(id)sender;
 - (IBAction)about:(id)sender;
 - (IBAction)preferences:(id)sender;
-
 - (IBAction)addKite:(id)sender;
 
 @end
