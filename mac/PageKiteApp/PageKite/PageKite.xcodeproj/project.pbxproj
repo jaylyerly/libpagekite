@@ -26,6 +26,15 @@
 		EC87E6FF195E207A00A94A83 /* AddKite.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC87E6FE195E207A00A94A83 /* AddKite.xib */; };
 		EC8BDF56196EE1D5009BB33F /* NSImage+ColorMap.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8BDF55196EE1D5009BB33F /* NSImage+ColorMap.m */; };
 		EC8BDF58196EE7B1009BB33F /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC8BDF57196EE7B1009BB33F /* Quartz.framework */; };
+		EC8BDF61196F0ECA009BB33F /* PKXPrefsGeneralViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8BDF5F196F0ECA009BB33F /* PKXPrefsGeneralViewController.m */; };
+		EC8BDF62196F0ECA009BB33F /* PKXPrefsGeneralViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC8BDF60196F0ECA009BB33F /* PKXPrefsGeneralViewController.xib */; };
+		EC8BDF66196F0EF5009BB33F /* PKXPrefsLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8BDF64196F0EF5009BB33F /* PKXPrefsLoginViewController.m */; };
+		EC8BDF67196F0EF5009BB33F /* PKXPrefsLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC8BDF65196F0EF5009BB33F /* PKXPrefsLoginViewController.xib */; };
+		EC8BDF6B196F0F0D009BB33F /* PKXPrefsDomainsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8BDF69196F0F0D009BB33F /* PKXPrefsDomainsViewController.m */; };
+		EC8BDF6C196F0F0D009BB33F /* PKXPrefsDomainsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC8BDF6A196F0F0D009BB33F /* PKXPrefsDomainsViewController.xib */; };
+		EC8BDF6F196F1765009BB33F /* PKXPrefsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8BDF6E196F1765009BB33F /* PKXPrefsViewController.m */; };
+		EC8BDF73196F1E40009BB33F /* PKXAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8BDF72196F1E40009BB33F /* PKXAlert.m */; };
+		EC8BDF76196F2791009BB33F /* PKXCredentials.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8BDF75196F2791009BB33F /* PKXCredentials.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +82,21 @@
 		EC8BDF54196EE1D5009BB33F /* NSImage+ColorMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+ColorMap.h"; sourceTree = "<group>"; };
 		EC8BDF55196EE1D5009BB33F /* NSImage+ColorMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+ColorMap.m"; sourceTree = "<group>"; };
 		EC8BDF57196EE7B1009BB33F /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
+		EC8BDF5E196F0ECA009BB33F /* PKXPrefsGeneralViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKXPrefsGeneralViewController.h; sourceTree = "<group>"; };
+		EC8BDF5F196F0ECA009BB33F /* PKXPrefsGeneralViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKXPrefsGeneralViewController.m; sourceTree = "<group>"; };
+		EC8BDF60196F0ECA009BB33F /* PKXPrefsGeneralViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PKXPrefsGeneralViewController.xib; sourceTree = "<group>"; };
+		EC8BDF63196F0EF5009BB33F /* PKXPrefsLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKXPrefsLoginViewController.h; sourceTree = "<group>"; };
+		EC8BDF64196F0EF5009BB33F /* PKXPrefsLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKXPrefsLoginViewController.m; sourceTree = "<group>"; };
+		EC8BDF65196F0EF5009BB33F /* PKXPrefsLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PKXPrefsLoginViewController.xib; sourceTree = "<group>"; };
+		EC8BDF68196F0F0D009BB33F /* PKXPrefsDomainsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKXPrefsDomainsViewController.h; sourceTree = "<group>"; };
+		EC8BDF69196F0F0D009BB33F /* PKXPrefsDomainsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKXPrefsDomainsViewController.m; sourceTree = "<group>"; };
+		EC8BDF6A196F0F0D009BB33F /* PKXPrefsDomainsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PKXPrefsDomainsViewController.xib; sourceTree = "<group>"; };
+		EC8BDF6D196F1765009BB33F /* PKXPrefsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKXPrefsViewController.h; sourceTree = "<group>"; };
+		EC8BDF6E196F1765009BB33F /* PKXPrefsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKXPrefsViewController.m; sourceTree = "<group>"; };
+		EC8BDF71196F1E40009BB33F /* PKXAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKXAlert.h; sourceTree = "<group>"; };
+		EC8BDF72196F1E40009BB33F /* PKXAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKXAlert.m; sourceTree = "<group>"; };
+		EC8BDF74196F2791009BB33F /* PKXCredentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKXCredentials.h; sourceTree = "<group>"; };
+		EC8BDF75196F2791009BB33F /* PKXCredentials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKXCredentials.m; sourceTree = "<group>"; };
 		ECB297021965D9DD0080AFB8 /* libssl.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libssl.dylib; path = usr/lib/libssl.dylib; sourceTree = SDKROOT; };
 		ECB297041965D9F30080AFB8 /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = usr/lib/libcrypto.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -154,14 +178,11 @@
 				EC87E6F2195CA00B00A94A83 /* PKXAppManager.m */,
 				EC87E6FB195E0B6700A94A83 /* PKXAddKiteController.h */,
 				EC87E6FC195E0B6700A94A83 /* PKXAddKiteController.m */,
-				EC87E6F8195DB82400A94A83 /* NSString+Additions.h */,
-				EC87E6F9195DB82400A94A83 /* NSString+Additions.m */,
-				EC8BDF54196EE1D5009BB33F /* NSImage+ColorMap.h */,
-				EC8BDF55196EE1D5009BB33F /* NSImage+ColorMap.m */,
-				EC13A9C61965F11E00B9C831 /* PKXStartupManager.h */,
-				EC13A9C71965F11E00B9C831 /* PKXStartupManager.m */,
 				EC87E6D2195C9DE700A94A83 /* MainMenu.xib */,
 				EC87E6FE195E207A00A94A83 /* AddKite.xib */,
+				EC8BDF59196F0E6D009BB33F /* Preference Panes */,
+				EC8BDF70196F1E09009BB33F /* Support Classes */,
+				EC8BDF5A196F0E71009BB33F /* Categories */,
 				EC87E6D5195C9DE700A94A83 /* Images.xcassets */,
 				EC87E6C4195C9DE700A94A83 /* Supporting Files */,
 			);
@@ -196,6 +217,48 @@
 				EC87E6E4195C9DE700A94A83 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EC8BDF59196F0E6D009BB33F /* Preference Panes */ = {
+			isa = PBXGroup;
+			children = (
+				EC8BDF6D196F1765009BB33F /* PKXPrefsViewController.h */,
+				EC8BDF6E196F1765009BB33F /* PKXPrefsViewController.m */,
+				EC8BDF5E196F0ECA009BB33F /* PKXPrefsGeneralViewController.h */,
+				EC8BDF5F196F0ECA009BB33F /* PKXPrefsGeneralViewController.m */,
+				EC8BDF60196F0ECA009BB33F /* PKXPrefsGeneralViewController.xib */,
+				EC8BDF63196F0EF5009BB33F /* PKXPrefsLoginViewController.h */,
+				EC8BDF64196F0EF5009BB33F /* PKXPrefsLoginViewController.m */,
+				EC8BDF65196F0EF5009BB33F /* PKXPrefsLoginViewController.xib */,
+				EC8BDF68196F0F0D009BB33F /* PKXPrefsDomainsViewController.h */,
+				EC8BDF69196F0F0D009BB33F /* PKXPrefsDomainsViewController.m */,
+				EC8BDF6A196F0F0D009BB33F /* PKXPrefsDomainsViewController.xib */,
+			);
+			name = "Preference Panes";
+			sourceTree = "<group>";
+		};
+		EC8BDF5A196F0E71009BB33F /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				EC87E6F8195DB82400A94A83 /* NSString+Additions.h */,
+				EC87E6F9195DB82400A94A83 /* NSString+Additions.m */,
+				EC8BDF54196EE1D5009BB33F /* NSImage+ColorMap.h */,
+				EC8BDF55196EE1D5009BB33F /* NSImage+ColorMap.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		EC8BDF70196F1E09009BB33F /* Support Classes */ = {
+			isa = PBXGroup;
+			children = (
+				EC13A9C61965F11E00B9C831 /* PKXStartupManager.h */,
+				EC13A9C71965F11E00B9C831 /* PKXStartupManager.m */,
+				EC8BDF71196F1E40009BB33F /* PKXAlert.h */,
+				EC8BDF72196F1E40009BB33F /* PKXAlert.m */,
+				EC8BDF74196F2791009BB33F /* PKXCredentials.h */,
+				EC8BDF75196F2791009BB33F /* PKXCredentials.m */,
+			);
+			name = "Support Classes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,9 +341,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC87E6C8195C9DE700A94A83 /* InfoPlist.strings in Resources */,
+				EC8BDF67196F0EF5009BB33F /* PKXPrefsLoginViewController.xib in Resources */,
 				EC87E6D6195C9DE700A94A83 /* Images.xcassets in Resources */,
 				EC87E6FF195E207A00A94A83 /* AddKite.xib in Resources */,
 				EC87E6CE195C9DE700A94A83 /* Credits.rtf in Resources */,
+				EC8BDF6C196F0F0D009BB33F /* PKXPrefsDomainsViewController.xib in Resources */,
+				EC8BDF62196F0ECA009BB33F /* PKXPrefsGeneralViewController.xib in Resources */,
 				EC87E6F7195DAC9200A94A83 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -333,10 +399,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC8BDF6F196F1765009BB33F /* PKXPrefsViewController.m in Sources */,
 				EC87E6F3195CA00B00A94A83 /* PKXAppManager.m in Sources */,
+				EC8BDF6B196F0F0D009BB33F /* PKXPrefsDomainsViewController.m in Sources */,
 				EC87E6FA195DB82400A94A83 /* NSString+Additions.m in Sources */,
+				EC8BDF66196F0EF5009BB33F /* PKXPrefsLoginViewController.m in Sources */,
+				EC8BDF61196F0ECA009BB33F /* PKXPrefsGeneralViewController.m in Sources */,
 				EC87E6D1195C9DE700A94A83 /* PKXAppDelegate.m in Sources */,
 				EC8BDF56196EE1D5009BB33F /* NSImage+ColorMap.m in Sources */,
+				EC8BDF73196F1E40009BB33F /* PKXAlert.m in Sources */,
+				EC8BDF76196F2791009BB33F /* PKXCredentials.m in Sources */,
 				EC87E6CA195C9DE700A94A83 /* main.m in Sources */,
 				EC87E6FD195E0B6700A94A83 /* PKXAddKiteController.m in Sources */,
 				EC13A9C81965F11E00B9C831 /* PKXStartupManager.m in Sources */,

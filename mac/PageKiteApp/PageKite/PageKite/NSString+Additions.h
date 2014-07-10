@@ -17,4 +17,11 @@
  */
 - (BOOL) isNotEmpty;
 
+/**
+ *  isEmpty
+ *
+ *  @return Returns YES if the string is zero length or only contains spaces
+ */
+- (BOOL) isEmpty;
+
 @end

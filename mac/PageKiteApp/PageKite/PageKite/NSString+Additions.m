@@ -18,4 +18,8 @@
     }
     return YES;
 }
+
+- (BOOL) isEmpty {
+    return ![self isNotEmpty];
+}
 @end

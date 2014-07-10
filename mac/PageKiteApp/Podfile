@@ -8,8 +8,9 @@ workspace 'PageKiteApp'
 xcodeproj 'PageKite/PageKite.xcodeproj'
 
 platform :osx, '10.7'
-pod 'GCDWebServer', '~> 2.4'
-pod 'FXKeychain',   '~> 1.5'
+pod 'GCDWebServer',   '~> 2.4'
+pod 'FXKeychain',     '~> 1.5'
+pod 'MASPreferences', '~> 1.1'
 pod 'PageKiteKit', :podspec => 'https://raw.githubusercontent.com/jaylyerly/libpagekite/master/mac/PageKiteDemo/PageKiteKit.podspec'
 #pod 'PageKiteKit', :path => '~/git/libpagekite/mac/PageKiteDemo'
 

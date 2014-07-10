@@ -7,23 +7,27 @@
 //
 
 #import "PKXAppManager.h"
-#import "FXKeychain.h"
 #import <PageKiteKit/PageKiteKit.h>
 #import "PKXAddKiteController.h"
+#import "PKXAlert.h"
+#import "PKXCredentials.h"
+
+#import "PKXPrefsDomainsViewController.h"
+#import "PKXPrefsLoginViewController.h"
+#import "PKXPrefsGeneralViewController.h"
+#import "MASPreferencesWindowController.h"
 
 #import "NSString+Additions.h"
 #import "NSImage+ColorMap.h"
 
-NSString *kPKXKeychainPassword = @"PageKitePassword";
-NSString *kPKXUserDefaultsEmail = @"PageKiteEmail";
-
 @interface PKXAppManager ()
 
 @property (nonatomic, strong)          NSStatusItem *statusItem;
-@property (nonatomic, copy)            NSString     *email;
-@property (nonatomic, copy)            NSString     *password;
 @property (nonatomic, strong)          NSArray      *domains;
 @property (nonatomic, copy)            NSString     *addDomainName;
+
+@property (nonatomic, strong)          MASPreferencesWindowController            *prefsWindowController;
+
 @end
 
 @implementation PKXAppManager
@@ -34,53 +38,47 @@ NSString *kPKXUserDefaultsEmail = @"PageKiteEmail";
     NSImage *statusIcon = [[NSImage imageNamed:@"StatusIcon"] blacken];  // 18 px for non-retina, 34 for retina
     [self.statusItem setImage:statusIcon];
     [self.statusItem setHighlightMode:YES];
-    
+ 
+    NSArray *prefsControllers = @[
+                                  [PKXPrefsLoginViewController new],
+                                  [PKXPrefsDomainsViewController new],
+                                  [PKXPrefsGeneralViewController new],
+                                  ];
+    self.prefsWindowController =[[MASPreferencesWindowController alloc] initWithViewControllers:prefsControllers
+                                                                                          title:@"Preferences"];
     [self checkStartupCreds];
 }
 
 - (void)checkStartupCreds {
     BOOL showDlg = NO;
     
-    if (! [self.email isNotEmpty]) {
+    if (! [[PKXCredentials sharedManager].email isNotEmpty]) {
         showDlg = YES;
     }
-    if (! [self.password isNotEmpty]) {
+    if (! [[PKXCredentials sharedManager].password isNotEmpty]) {
         showDlg = YES;
     }
     
     if (showDlg){
-        [self preferences:self];
-        [self showAlertMesg:@"Time to log in to PageKite!"
-                       info:@"Please enter your email and password to connect to your PageKite account."];
-    } else {
-        [self updateDomains];
+        [self promptUserToLogin];
+    }else{
+        // have username and password, so try to login
+        __weak PKXAppManager *weakSelf = self;
+        [[PKKManager sharedManager] loginWithUser:[PKXCredentials sharedManager].email
+                                         password:[PKXCredentials sharedManager].password
+                                  completionBlock:^(BOOL success){
+                                      if (! success) {  // login failed!
+                                          [weakSelf promptUserToLogin];
+                                      }
+                                  }];
     }
 }
 
-- (void)showAlertMesg:(NSString *)msg info:(NSString *)info {
-    NSAlert *alert = [[NSAlert alloc] init];
-    alert.messageText = msg;
-    alert.informativeText = info;
-    [alert runModal];
-}
-
-#pragma mark - Accessor Methods for Keychain / NSUserDefaults
-
-- (NSString *)password {
-  return [FXKeychain defaultKeychain][kPKXKeychainPassword];
-}
-
-- (void) setPassword:(NSString *)password {
-    [FXKeychain defaultKeychain][kPKXKeychainPassword] = password;
-}
-
-- (NSString *)email {
-    return [[NSUserDefaults standardUserDefaults] stringForKey:kPKXUserDefaultsEmail];
-}
-
-- (void)setEmail:(NSString *)email {
-    [[NSUserDefaults standardUserDefaults] setObject:email forKey:kPKXUserDefaultsEmail];
-    [[NSUserDefaults standardUserDefaults] synchronize];    
+- (void) promptUserToLogin {
+    [self preferences:self];
+    [self.prefsWindowController selectControllerAtIndex:0]; // switch to login tab
+    [PKXAlert showAlertMesg:@"Time to log in to PageKite!"
+                       info:@"Please enter your email and password to connect to your PageKite account."];
 }
 
 #pragma mark - Actions
@@ -96,49 +94,13 @@ NSString *kPKXUserDefaultsEmail = @"PageKiteEmail";
 
 - (IBAction)preferences:(id)sender{
     [self activate];
-    [self.prefsWindow makeKeyAndOrderFront:sender];
+    [self.prefsWindowController showWindow:self];
 }
 
 - (void) activate {
     [[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
 }
 
-#pragma mark - Domain operations
-
-- (IBAction)addDomain:(id)sender {
-    NSLog(@"Add domain");
-    NSPoint mouseLoc = [NSEvent mouseLocation];
-    [self.addDomainWindow setFrameOrigin:mouseLoc];
-    [self.addDomainWindow makeKeyAndOrderFront:self];
-}
-
-- (IBAction)removeDomain:(id)sender {
-    __weak PKKDomain *domain = [[self.domainController selectedObjects] firstObject];
-    NSLog(@"Remove domain: %@", domain);
-    [[PKKManager sharedManager] removeDomainName:domain.name completionBlock:^(BOOL success){
-        if (success){
-            [self updateDomains];
-        } else {
-            NSString *msg = [NSString stringWithFormat:@"Failed to remove domain: %@.", domain.name];
-            NSString *info = [NSString stringWithFormat:@"Server reported an error: %@", [PKKManager sharedManager].lastError ?: @"Unknown"];
-            [self showAlertMesg:msg info:info];
-        }
-    }];
-}
-
-- (IBAction)addDomainName:(id)sender{
-    __weak PKXAppManager *weakSelf = self;
-    [[PKKManager sharedManager] addDomainName:self.addDomainName completionBlock:^(BOOL success){
-        if (success){
-            [self updateDomains];
-            [self.addDomainWindow orderOut:self];
-        } else {
-            NSString *msg = [NSString stringWithFormat:@"Failed to add new domain name: %@.", weakSelf.addDomainName];
-            NSString *info = [NSString stringWithFormat:@"Server reported an error: %@", [PKKManager sharedManager].lastError ?: @"Unknown"];
-            [self showAlertMesg:msg info:info];
-        }
-    }];
-}
 
 #pragma mark - Kite Operations
 
@@ -152,8 +114,8 @@ NSString *kPKXUserDefaultsEmail = @"PageKiteEmail";
 #pragma mark - PageKite Manager interactions
 
 - (IBAction)verifyCreds:(id)sender {
-    [[PKKManager sharedManager] loginWithUser:self.email
-                                     password:self.password
+    [[PKKManager sharedManager] loginWithUser:[PKXCredentials sharedManager].email
+                                     password:[PKXCredentials sharedManager].password
                               completionBlock:^(BOOL success){
                                   if (success) {
                                       NSLog(@"Log in successful!");
@@ -165,8 +127,8 @@ NSString *kPKXUserDefaultsEmail = @"PageKiteEmail";
 }
 
 - (void) updateDomains {
-    [[PKKManager sharedManager] loginWithUser:self.email
-                                     password:self.password
+    [[PKKManager sharedManager] loginWithUser:[PKXCredentials sharedManager].email
+                                     password:[PKXCredentials sharedManager].password
                               completionBlock:^(BOOL success){
                                   if (success) {
                                       NSLog(@"Log in successful!");

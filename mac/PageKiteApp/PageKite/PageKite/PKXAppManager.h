@@ -12,26 +12,15 @@
 
 @property (nonatomic, readonly)          NSStatusItem        *statusItem;
 @property (nonatomic, weak)     IBOutlet NSMenu              *statusMenu;
-@property (nonatomic, weak)     IBOutlet NSWindow            *prefsWindow;
-@property (nonatomic, weak)     IBOutlet NSWindow            *addDomainWindow;
 @property (nonatomic, weak)     IBOutlet NSWindowController  *addKiteWindowController;
 @property (nonatomic, weak)     IBOutlet NSArrayController   *domainController;
 
-@property (nonatomic, copy, readonly)            NSString     *addDomainName;
-@property (nonatomic, copy, readonly)            NSString     *email;
-@property (nonatomic, copy, readonly)            NSString     *password;
 @property (nonatomic, readonly)            NSArray      *domains;
 
 - (IBAction)quit:(id)sender;
 - (IBAction)about:(id)sender;
 - (IBAction)preferences:(id)sender;
-- (IBAction)verifyCreds:(id)sender;
-- (IBAction)addDomain:(id)sender;
-- (IBAction)removeDomain:(id)sender;
 
 - (IBAction)addKite:(id)sender;
-
-
-- (IBAction)addDomainName:(id)sender;
 
 @end
