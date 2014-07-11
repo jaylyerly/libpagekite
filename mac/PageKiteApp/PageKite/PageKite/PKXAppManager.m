@@ -23,9 +23,9 @@
 
 @interface PKXAppManager ()
 
-@property (nonatomic, strong)   NSStatusItem *statusItem;
+@property (nonatomic, strong)   NSStatusItem                    *statusItem;
 @property (nonatomic, strong)   MASPreferencesWindowController  *prefsWindowController;
-
+@property (nonatomic, strong)   PKXLogWindowController          *logController;
 @end
 
 @implementation PKXAppManager
@@ -108,15 +108,20 @@
 
 - (IBAction)addKite:(id)sender {
     [self activate];
-    PKXAddKiteController *kiteCon = [[PKXAddKiteController alloc] initWithWindowNibName:@"AddKite"];
+    PKXAddKiteController *kiteCon = [[PKXAddKiteController alloc] initWithWindowNibName:@"PKXAddKiteController"];
     [kiteCon showWindow:self];
 }
 
 - (IBAction)showLog:(id)sender {
     [self activate];
-    PKXLogWindowController *logCon = [[PKXLogWindowController alloc] initWithWindowNibName:@"PKXLogWindowController"];
-    [logCon showWindow:self];
+    [self.logController showWindow:nil];
 }
 
+- (PKXLogWindowController *)logController{
+    if (! _logController){
+        _logController = [[PKXLogWindowController alloc] initWithWindowNibName:@"PKXLogWindowController"];
+    }
+    return _logController;
+}
 
 @end

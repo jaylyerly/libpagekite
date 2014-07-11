@@ -10,7 +10,7 @@
 
 @interface PKXLogWindowController : NSWindowController
 
-@property (nonatomic, readonly) NSAttributedString *attributedLog;
+@property (nonatomic, copy, readonly) NSAttributedString *attributedLog;
 
 - (IBAction)copyToClipboard:(id)sender;
 - (IBAction)clearLog:(id)sender;

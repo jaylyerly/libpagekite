@@ -7,12 +7,13 @@
 //
 
 #import "PKXAppDelegate.h"
+#import "PKXLogger.h"
 
 @implementation PKXAppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    // Insert code here to initialize your application
+    [[PKXLogger sharedManager] logMessage:@"PageKite app startup"];
 }
 
 @end
