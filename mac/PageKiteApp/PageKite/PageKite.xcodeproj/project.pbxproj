@@ -38,6 +38,9 @@
 		EC8BDF7A196F447E009BB33F /* PKXLogWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8BDF78196F447E009BB33F /* PKXLogWindowController.m */; };
 		EC8BDF7B196F447E009BB33F /* PKXLogWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC8BDF79196F447E009BB33F /* PKXLogWindowController.xib */; };
 		EC8BDF7E1970126A009BB33F /* PKXLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8BDF7D1970126A009BB33F /* PKXLogger.m */; };
+		ECBCC9E119704740000BF67A /* NSView+AutoLayoutAddSubview.m in Sources */ = {isa = PBXBuildFile; fileRef = ECBCC9E019704740000BF67A /* NSView+AutoLayoutAddSubview.m */; };
+		ECBCC9E619709DA4000BF67A /* PKKKite+WebServer.m in Sources */ = {isa = PBXBuildFile; fileRef = ECBCC9E319709DA4000BF67A /* PKKKite+WebServer.m */; };
+		ECBCC9E719709DA4000BF67A /* PKKManager+WebServer.m in Sources */ = {isa = PBXBuildFile; fileRef = ECBCC9E519709DA4000BF67A /* PKKManager+WebServer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,7 +79,6 @@
 		EC87E6E7195C9DE700A94A83 /* PageKiteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageKiteTests.m; sourceTree = "<group>"; };
 		EC87E6F1195CA00B00A94A83 /* PKXAppManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKXAppManager.h; sourceTree = "<group>"; };
 		EC87E6F2195CA00B00A94A83 /* PKXAppManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKXAppManager.m; sourceTree = "<group>"; };
-		EC87E6F5195CC4EF00A94A83 /* PageKiteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PageKiteKit.framework; path = ../Pods/PageKiteKit/mac/PageKiteDemo/osx/Frameworks/PageKiteKit.framework; sourceTree = "<group>"; };
 		EC87E6F8195DB82400A94A83 /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
 		EC87E6F9195DB82400A94A83 /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
 		EC87E6FB195E0B6700A94A83 /* PKXAddKiteController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKXAddKiteController.h; sourceTree = "<group>"; };
@@ -107,6 +109,12 @@
 		EC8BDF7D1970126A009BB33F /* PKXLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKXLogger.m; sourceTree = "<group>"; };
 		ECB297021965D9DD0080AFB8 /* libssl.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libssl.dylib; path = usr/lib/libssl.dylib; sourceTree = SDKROOT; };
 		ECB297041965D9F30080AFB8 /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = usr/lib/libcrypto.dylib; sourceTree = SDKROOT; };
+		ECBCC9DF19704740000BF67A /* NSView+AutoLayoutAddSubview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSView+AutoLayoutAddSubview.h"; sourceTree = "<group>"; };
+		ECBCC9E019704740000BF67A /* NSView+AutoLayoutAddSubview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSView+AutoLayoutAddSubview.m"; sourceTree = "<group>"; };
+		ECBCC9E219709DA4000BF67A /* PKKKite+WebServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PKKKite+WebServer.h"; sourceTree = "<group>"; };
+		ECBCC9E319709DA4000BF67A /* PKKKite+WebServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PKKKite+WebServer.m"; sourceTree = "<group>"; };
+		ECBCC9E419709DA4000BF67A /* PKKManager+WebServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PKKManager+WebServer.h"; sourceTree = "<group>"; };
+		ECBCC9E519709DA4000BF67A /* PKKManager+WebServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PKKManager+WebServer.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,7 +166,6 @@
 				EC8BDF57196EE7B1009BB33F /* Quartz.framework */,
 				ECB297041965D9F30080AFB8 /* libcrypto.dylib */,
 				ECB297021965D9DD0080AFB8 /* libssl.dylib */,
-				EC87E6F5195CC4EF00A94A83 /* PageKiteKit.framework */,
 				EC87E6BD195C9DE700A94A83 /* Cocoa.framework */,
 				EC87E6DC195C9DE700A94A83 /* XCTest.framework */,
 				EC87E6BF195C9DE700A94A83 /* Other Frameworks */,
@@ -251,10 +258,16 @@
 		EC8BDF5A196F0E71009BB33F /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				ECBCC9E219709DA4000BF67A /* PKKKite+WebServer.h */,
+				ECBCC9E319709DA4000BF67A /* PKKKite+WebServer.m */,
+				ECBCC9E419709DA4000BF67A /* PKKManager+WebServer.h */,
+				ECBCC9E519709DA4000BF67A /* PKKManager+WebServer.m */,
 				EC87E6F8195DB82400A94A83 /* NSString+Additions.h */,
 				EC87E6F9195DB82400A94A83 /* NSString+Additions.m */,
 				EC8BDF54196EE1D5009BB33F /* NSImage+ColorMap.h */,
 				EC8BDF55196EE1D5009BB33F /* NSImage+ColorMap.m */,
+				ECBCC9DF19704740000BF67A /* NSView+AutoLayoutAddSubview.h */,
+				ECBCC9E019704740000BF67A /* NSView+AutoLayoutAddSubview.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -417,10 +430,13 @@
 				EC87E6F3195CA00B00A94A83 /* PKXAppManager.m in Sources */,
 				EC8BDF6B196F0F0D009BB33F /* PKXPrefsDomainsViewController.m in Sources */,
 				EC87E6FA195DB82400A94A83 /* NSString+Additions.m in Sources */,
+				ECBCC9E119704740000BF67A /* NSView+AutoLayoutAddSubview.m in Sources */,
 				EC8BDF66196F0EF5009BB33F /* PKXPrefsLoginViewController.m in Sources */,
 				EC8BDF61196F0ECA009BB33F /* PKXPrefsGeneralViewController.m in Sources */,
 				EC87E6D1195C9DE700A94A83 /* PKXAppDelegate.m in Sources */,
 				EC8BDF56196EE1D5009BB33F /* NSImage+ColorMap.m in Sources */,
+				ECBCC9E619709DA4000BF67A /* PKKKite+WebServer.m in Sources */,
+				ECBCC9E719709DA4000BF67A /* PKKManager+WebServer.m in Sources */,
 				EC8BDF7E1970126A009BB33F /* PKXLogger.m in Sources */,
 				EC8BDF7A196F447E009BB33F /* PKXLogWindowController.m in Sources */,
 				EC8BDF73196F1E40009BB33F /* PKXAlert.m in Sources */,

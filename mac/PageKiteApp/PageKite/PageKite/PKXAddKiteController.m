@@ -7,10 +7,13 @@
 //
 
 #import "PKXAddKiteController.h"
+#import <PageKiteKit/PageKiteKit.h>
+
+#import "NSView+AutoLayoutAddSubview.h"
 
 @interface PKXAddKiteController ()
-@property (nonatomic, copy) NSString *webRootDir;
-
+@property (nonatomic, readonly) NSArray         *modeConfig;
+@property (nonatomic, readonly) NSArray         *portConfig;
 @end
 
 @implementation PKXAddKiteController
@@ -19,6 +22,113 @@
 //    [self.window center];
 //    [super showWindow:sender];
 //}
+
+- (instancetype)init {
+    self = [super init];
+    if (self){
+    }
+    return self;
+}
+
+- (void) windowDidLoad{
+    
+    [[PKKManager sharedManager] addObserver:self
+                                 forKeyPath:@"domains"
+                                    options:0
+                                    context:nil];
+    [[PKKManager sharedManager] retrieveDomainsWithCompletionBlock:nil];
+    [self setupDomainPopup];
+    //[self.modeBoxView autoLayoutAddSubview:self.webserverConfigView];
+    [self setupModePopup];
+    [self setupOtherPopups];
+    
+    
+    
+    self.tabView.tabViewType = NSNoTabsBezelBorder;
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    if ([keyPath isEqualToString:@"domains"]){
+        [self setupDomainPopup];
+    }
+}
+
+#pragma mark - Config info
+
+- (NSArray *)modeConfig{
+    return @[
+             @{ @"title" : @"Connect to Local Server", @"view":self.portConfigView      },
+             @{ @"title" : @"Built-In Web Server",     @"view":self.webserverConfigView },
+             ];
+}
+
+- (NSArray *)portConfig {
+    return @[
+             @{ @"name" : @"HTTP",      @"port":@"80"  },
+             @{ @"name" : @"HTTPS",     @"port":@"443" },
+             @{ @"name" : @"SSH",       @"port":@"22"  },
+             @{ @"name" : @"Custom",    @"port":@""    },
+             ];
+}
+
+#pragma mark - Setup
+
+- (void) setupModePopup {
+    for (NSTabViewItem *item in self.tabView.tabViewItems){
+        [self.tabView removeTabViewItem:item];
+    }
+    [self.modePopup removeAllItems];
+
+    for (NSInteger i=0; i < [self.modeConfig count] ; i++) {
+        NSString *title = self.modeConfig[i][@"title"];
+        [self.modePopup addItemWithTitle:title];
+        self.modePopup.lastItem.tag = i;
+        
+        NSView *view = self.modeConfig[i][@"view"];
+        NSTabViewItem *item = [[NSTabViewItem alloc] init];
+        item.view = view;
+        item.label = title;
+        [self.tabView addTabViewItem:item];
+    }
+    [self.tabView setNeedsDisplay:YES];
+}
+
+- (void) setupDomainPopup {
+    NSMutableArray *domainNames = [@[] mutableCopy];
+    for (PKKDomain *domain in [PKKManager sharedManager].domains){
+        [domainNames addObject:domain.name];
+    }
+    
+    [self setupPopup:self.domainPopup withTitles:domainNames];
+}
+
+- (void) setupOtherPopups {
+    NSMutableArray *portNames = [@[] mutableCopy];
+    for (NSDictionary *pDict in self.portConfig){
+        [portNames addObject:pDict[@"name"]];
+    }
+
+    [self setupPopup:self.portPopup withTitles:portNames];
+    [self setupPopup:self.localPortPopup withTitles:portNames];
+    
+    // prime the port number fields
+    self.remotePortNumber = [self portNumberForName:[portNames firstObject]];
+    self.localPortNumber  = [self portNumberForName:[portNames firstObject]];
+    
+    [self setupPopup:self.protocolPopup withTitles:[[PKKProtocols protocolNames] allValues]];
+}
+
+- (void) setupPopup:(NSPopUpButton *)popup withTitles:(NSArray *)titles {
+    [popup removeAllItems];
+    
+    for (NSInteger i=0; i < [titles count] ; i++) {
+        NSString *title = titles[i];
+        [popup addItemWithTitle:title];
+        popup.lastItem.tag = i;
+    }
+}
+
+#pragma mark - Actions
 
 - (IBAction)chooseWebRootDir:(id)sender {
     __weak PKXAddKiteController *weakSelf = self;
@@ -36,6 +146,35 @@
 
 - (IBAction)createKite:(id)sender {
     NSLog(@"Create Kite");
+    PKKKite *kite = [[PKKManager sharedManager]addKiteWithName:self.kiteName
+                                                      protocol:self.protocolName
+                                                      remoteIp:self.kiteHostName
+                                                    remotePort:@([self.remotePortNumber intValue])
+                                                       localIp:@"127.0.0.1"
+                                                     localPort:@([self.localPortNumber intValue])
+                                                                  ];
+    
+}
+
+#pragma mark - Getters and Setters
+
+- (void)setRemotePortName:(NSString *)remotePortName {
+    _remotePortName = remotePortName;
+    self.remotePortNumber = [self portNumberForName:remotePortName];
+}
+
+- (void)setLocalPortName:(NSString *)localPortName {
+    _localPortName = localPortName;
+    self.localPortNumber = [self portNumberForName:localPortName];
+}
+
+- (NSString *) portNumberForName:(NSString *)portName {
+    for (NSDictionary *pDict in self.portConfig){
+        if ([portName isEqualToString:pDict[@"name"]]){
+            return pDict[@"port"];
+        }
+    }
+    return @"";   // if no matching name found, return empty string
 }
 
 @end
