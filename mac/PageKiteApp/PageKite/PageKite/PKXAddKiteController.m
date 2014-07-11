@@ -15,14 +15,10 @@
 
 @implementation PKXAddKiteController
 
-- (NSString *)windowNibName {
-    return @"AddKite";
-}
-
-- (void)showWindow:(id)sender{
-    [self.window center];
-    [super showWindow:sender];
-}
+//- (void)showWindow:(id)sender{
+//    [self.window center];
+//    [super showWindow:sender];
+//}
 
 - (IBAction)chooseWebRootDir:(id)sender {
     __weak PKXAddKiteController *weakSelf = self;

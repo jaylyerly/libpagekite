@@ -26,6 +26,7 @@
 @property (nonatomic, strong)   NSStatusItem                    *statusItem;
 @property (nonatomic, strong)   MASPreferencesWindowController  *prefsWindowController;
 @property (nonatomic, strong)   PKXLogWindowController          *logController;
+@property (nonatomic, strong)   PKXAddKiteController            *kiteController;
 @end
 
 @implementation PKXAppManager
@@ -108,8 +109,7 @@
 
 - (IBAction)addKite:(id)sender {
     [self activate];
-    PKXAddKiteController *kiteCon = [[PKXAddKiteController alloc] initWithWindowNibName:@"PKXAddKiteController"];
-    [kiteCon showWindow:self];
+    [self.kiteController showWindow:self];
 }
 
 - (IBAction)showLog:(id)sender {
@@ -122,6 +122,13 @@
         _logController = [[PKXLogWindowController alloc] initWithWindowNibName:@"PKXLogWindowController"];
     }
     return _logController;
+}
+
+- (PKXAddKiteController *)kiteController{
+    if (! _kiteController){
+        _kiteController = [[PKXAddKiteController alloc] initWithWindowNibName:@"PKXAddKiteController"];
+    }
+    return _kiteController;
 }
 
 @end
