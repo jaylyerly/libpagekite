@@ -21,15 +21,27 @@
         <menu id="NHA-Pj-Evi" userLabel="StatusItemMenu">
             <items>
                 <menuItem title="PageKites" id="ZBD-VK-8Lf">
+                    <attributedString key="attributedTitle">
+                        <fragment content="PageKites">
+                            <attributes>
+                                <font key="NSFont" metaFont="toolTip"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
-                <menuItem title="Item" id="2uC-Jc-VCg">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                </menuItem>
-                <menuItem title="Add Kite" id="9Lf-W2-CpX">
+                <menuItem title="Add Kite" indentationLevel="1" id="9Lf-W2-CpX">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="addKite:" target="plw-gJ-IT6" id="FdI-bg-ijv"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Fly Kites" id="2uC-Jc-VCg">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="flyKites:" target="plw-gJ-IT6" id="5eq-Eh-V0v"/>
+                        <binding destination="plw-gJ-IT6" name="value" keyPath="self.flyKiteString" id="hsq-2h-qqS"/>
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="pgE-td-4qT"/>

@@ -28,6 +28,11 @@
     return self;
 }
 
+- (void) dealloc {
+    [[PKXLogger sharedManager] removeObserver:self
+                                    forKeyPath:@"attributedLog"];
+}
+
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if ([keyPath isEqualToString:@"attributedLog"]){
         [self updateLog];

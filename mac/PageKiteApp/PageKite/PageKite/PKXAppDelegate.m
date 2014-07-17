@@ -13,7 +13,7 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    [[PKXLogger sharedManager] logMessage:@"PageKite app startup"];
+    PKXLog(@"PageKite app startup");
 }
 
 @end

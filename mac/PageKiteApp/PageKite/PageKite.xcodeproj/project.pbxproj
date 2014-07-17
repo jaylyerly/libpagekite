@@ -41,6 +41,7 @@
 		ECBCC9E119704740000BF67A /* NSView+AutoLayoutAddSubview.m in Sources */ = {isa = PBXBuildFile; fileRef = ECBCC9E019704740000BF67A /* NSView+AutoLayoutAddSubview.m */; };
 		ECBCC9E619709DA4000BF67A /* PKKKite+WebServer.m in Sources */ = {isa = PBXBuildFile; fileRef = ECBCC9E319709DA4000BF67A /* PKKKite+WebServer.m */; };
 		ECBCC9E719709DA4000BF67A /* PKKManager+WebServer.m in Sources */ = {isa = PBXBuildFile; fileRef = ECBCC9E519709DA4000BF67A /* PKKManager+WebServer.m */; };
+		ECEE789619787E27004A359D /* PKXKiteMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = ECEE789519787E27004A359D /* PKXKiteMenu.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +116,8 @@
 		ECBCC9E319709DA4000BF67A /* PKKKite+WebServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PKKKite+WebServer.m"; sourceTree = "<group>"; };
 		ECBCC9E419709DA4000BF67A /* PKKManager+WebServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PKKManager+WebServer.h"; sourceTree = "<group>"; };
 		ECBCC9E519709DA4000BF67A /* PKKManager+WebServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PKKManager+WebServer.m"; sourceTree = "<group>"; };
+		ECEE789419787E27004A359D /* PKXKiteMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKXKiteMenu.h; sourceTree = "<group>"; };
+		ECEE789519787E27004A359D /* PKXKiteMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKXKiteMenu.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +194,8 @@
 				EC87E6D0195C9DE700A94A83 /* PKXAppDelegate.m */,
 				EC87E6F1195CA00B00A94A83 /* PKXAppManager.h */,
 				EC87E6F2195CA00B00A94A83 /* PKXAppManager.m */,
+				ECEE789419787E27004A359D /* PKXKiteMenu.h */,
+				ECEE789519787E27004A359D /* PKXKiteMenu.m */,
 				EC87E6D2195C9DE700A94A83 /* MainMenu.xib */,
 				EC87E6FB195E0B6700A94A83 /* PKXAddKiteController.h */,
 				EC87E6FC195E0B6700A94A83 /* PKXAddKiteController.m */,
@@ -426,6 +431,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECEE789619787E27004A359D /* PKXKiteMenu.m in Sources */,
 				EC8BDF6F196F1765009BB33F /* PKXPrefsViewController.m in Sources */,
 				EC87E6F3195CA00B00A94A83 /* PKXAppManager.m in Sources */,
 				EC8BDF6B196F0F0D009BB33F /* PKXPrefsDomainsViewController.m in Sources */,

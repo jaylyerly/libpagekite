@@ -8,6 +8,7 @@
 
 #import "PKXAddKiteController.h"
 #import <PageKiteKit/PageKiteKit.h>
+#import "PKXLogger.h"
 
 #import "NSView+AutoLayoutAddSubview.h"
 
@@ -28,6 +29,11 @@
     if (self){
     }
     return self;
+}
+
+- (void)dealloc{
+    [[PKKManager sharedManager] removeObserver:self
+                                    forKeyPath:@"domains"];
 }
 
 - (void) windowDidLoad{
@@ -98,6 +104,7 @@
     for (PKKDomain *domain in [PKKManager sharedManager].domains){
         [domainNames addObject:domain.name];
     }
+    self.kiteHostName = [domainNames firstObject];  // Bindings doesn't handle initial value
     
     [self setupPopup:self.domainPopup withTitles:domainNames];
 }
@@ -116,6 +123,7 @@
     self.localPortNumber  = [self portNumberForName:[portNames firstObject]];
     
     [self setupPopup:self.protocolPopup withTitles:[[PKKProtocols protocolNames] allValues]];
+    self.protocolName = [[[PKKProtocols protocolNames] allValues] firstObject];  // Bindings doesn't handle initial value
 }
 
 - (void) setupPopup:(NSPopUpButton *)popup withTitles:(NSArray *)titles {
@@ -145,7 +153,12 @@
 }
 
 - (IBAction)createKite:(id)sender {
-    NSLog(@"Create Kite");
+    PKXLog(@"Create Kite with name: %@", self.kiteName);
+    PKXLog(@"\t protocol: %@", self.protocolName);
+    PKXLog(@"\t remoteIp: %@", self.kiteHostName);
+    PKXLog(@"\t remotePort: %@", self.remotePortNumber);
+    PKXLog(@"\t localIp: %@", @"127.0.0.1");
+    PKXLog(@"\t localPort: %@", self.localPortNumber);
     PKKKite *kite = [[PKKManager sharedManager]addKiteWithName:self.kiteName
                                                       protocol:self.protocolName
                                                       remoteIp:self.kiteHostName
@@ -153,7 +166,7 @@
                                                        localIp:@"127.0.0.1"
                                                      localPort:@([self.localPortNumber intValue])
                                                                   ];
-    
+    [self.window orderOut:self];
 }
 
 #pragma mark - Getters and Setters

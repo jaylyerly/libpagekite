@@ -38,6 +38,11 @@
 
 }
 
+- (void) dealloc {
+    [[PKKManager sharedManager] removeObserver:self
+                                   forKeyPath:@"domains"];
+}
+
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if ([keyPath isEqualToString:@"domains"]){
         self.domains = [PKKManager sharedManager].domains;

@@ -10,13 +10,16 @@
 
 @interface PKXAppManager : NSObject
 
-@property (nonatomic, readonly)          NSStatusItem  *statusItem;
-@property (nonatomic, weak)     IBOutlet NSMenu        *statusMenu;
-@property (nonatomic, readonly)          NSArray       *domains;
+@property (nonatomic, readonly)                                 NSStatusItem  *statusItem;
+@property (nonatomic, weak)                         IBOutlet    NSMenu        *statusMenu;
+@property (nonatomic, readonly)                                 NSArray       *domains;
+@property (nonatomic, assign, getter = areFlying)               BOOL          flying;
+@property (nonatomic, copy)                                     NSString      *flyKiteString;
 
 - (IBAction)quit:(id)sender;
 - (IBAction)about:(id)sender;
 - (IBAction)preferences:(id)sender;
 - (IBAction)addKite:(id)sender;
+- (IBAction)flyKites:(id)sender;
 
 @end

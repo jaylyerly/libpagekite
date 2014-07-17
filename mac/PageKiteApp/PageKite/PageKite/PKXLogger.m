@@ -30,7 +30,7 @@
 - (instancetype)init {
     self = [super init];
     if (self){
-        _logString = [@"" mutableCopy];
+        _logString = [NSMutableString string];
         [[PKKManager sharedManager] addLogWacher:self];
     }
     return self;
@@ -38,7 +38,7 @@
 
 - (void) clearLog {
     [self willChangeValueForKey:@"attributedLog"];
-    self.logString = [@"" mutableCopy];
+    [self.logString deleteCharactersInRange:NSMakeRange(0, [self.logString length])];
     [self didChangeValueForKey:@"attributedLog"];
 }
 
@@ -61,6 +61,15 @@
 
 - (NSAttributedString *)attributedLog {
     return [[NSAttributedString alloc] initWithString:self.logString];
+}
+
+- (void)log:(NSString *)formatString, ...
+{
+    va_list args;
+    va_start(args, formatString);
+    NSString *msg = [[NSString alloc] initWithFormat:formatString arguments:args];
+    va_end(args);
+    [self logMessage:msg];
 }
 
 @end
