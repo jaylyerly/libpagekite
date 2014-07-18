@@ -222,7 +222,9 @@
 }
 
 - (void) removeKite:(PKKKite *)kite {
+    [self willChangeValueForKey:@"kites"];
     [self.mutableKites removeObject:kite];
+    [self didChangeValueForKey:@"kites"];
 }
 
 - (NSArray *)kites {
@@ -230,7 +232,9 @@
 }
 
 - (void) destroyAllKites {
+    [self willChangeValueForKey:@"kites"];
     self.mutableKites = [@[] mutableCopy];
+    [self didChangeValueForKey:@"kites"];
 }
 
 - (void)addLogMessage:(NSString *)message {
