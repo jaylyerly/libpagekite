@@ -43,6 +43,8 @@ typedef void (^PKKManagerCompletionBlock)(BOOL success);
                       localIp:(NSString *)localIp
                     localPort:(NSNumber *)localPort;
 
+- (void) removeKite:(PKKKite *)kite;
+
 - (void)flyKites;
 - (void)landKites;
 

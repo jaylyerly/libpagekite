@@ -221,6 +221,9 @@
     return kite;
 }
 
+- (void) removeKite:(PKKKite *)kite {
+    [self.mutableKites removeObject:kite];
+}
 
 - (NSArray *)kites {
     return [NSArray arrayWithArray:self.mutableKites];
