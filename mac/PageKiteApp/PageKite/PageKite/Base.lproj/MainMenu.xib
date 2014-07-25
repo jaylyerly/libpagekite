@@ -15,11 +15,23 @@
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <customObject id="plw-gJ-IT6" userLabel="App Manager" customClass="PKXAppManager">
             <connections>
+                <outlet property="flyKitesMenuItem" destination="2uC-Jc-VCg" id="6Cm-nf-Rrr"/>
                 <outlet property="statusMenu" destination="NHA-Pj-Evi" id="2i3-PD-Nl7"/>
+                <outlet property="statusMenuItem" destination="Lpf-tP-nY6" id="7v2-kJ-toD"/>
             </connections>
         </customObject>
         <menu id="NHA-Pj-Evi" userLabel="StatusItemMenu">
             <items>
+                <menuItem title="Status: Landed" id="Lpf-tP-nY6">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem title="Fly Kites" id="2uC-Jc-VCg">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="flyKites:" target="plw-gJ-IT6" id="5eq-Eh-V0v"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="4AD-mN-NPd"/>
                 <menuItem title="PageKites" id="ZBD-VK-8Lf">
                     <attributedString key="attributedTitle">
                         <fragment content="PageKites">
@@ -31,17 +43,11 @@
                     </attributedString>
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
-                <menuItem title="Add Kite" indentationLevel="1" id="9Lf-W2-CpX">
+                <menuItem isSeparatorItem="YES" id="Zba-eY-BiU"/>
+                <menuItem title="Add Kite" id="9Lf-W2-CpX">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="addKite:" target="plw-gJ-IT6" id="FdI-bg-ijv"/>
-                    </connections>
-                </menuItem>
-                <menuItem title="Fly Kites" id="2uC-Jc-VCg">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="flyKites:" target="plw-gJ-IT6" id="5eq-Eh-V0v"/>
-                        <binding destination="plw-gJ-IT6" name="value" keyPath="self.flyKiteString" id="hsq-2h-qqS"/>
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="pgE-td-4qT"/>

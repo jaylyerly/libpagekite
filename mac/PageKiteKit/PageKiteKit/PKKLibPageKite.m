@@ -50,6 +50,7 @@
 
 - (void)initializeLibrary{
     if (! self.isInitialized){
+        //pks_global_init(PK_LOG_ALL);
         pks_global_init(PK_LOG_NORMAL);
         PKS_SSL_INIT(self.ssl_ctx);
         [NSTimer scheduledTimerWithTimeInterval:.3

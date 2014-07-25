@@ -9,6 +9,7 @@
 #import "PKKKite+WebServer.h"
 #import <objc/runtime.h>
 #import "GCDWebServer.h"
+#import "PKXLogger.h"
 
 @interface PKKKite (WebServerInternal)
 @property (nonatomic, strong) GCDWebServer *webServer;
@@ -18,7 +19,9 @@
 
 #pragma mark - webDocumentDirectory accessors
 - (void)setWebDocumentDirectory:(NSString *)webDocumentDirectory {
+    [[PKKManager sharedManager] willChangeValueForKey:@"kites"];  // this is a hack to trigger KVO when this grafted-on attribute changes
 	objc_setAssociatedObject(self, @selector(webDocumentDirectory), webDocumentDirectory, OBJC_ASSOCIATION_COPY_NONATOMIC);
+    [[PKKManager sharedManager] didChangeValueForKey:@"kites"];
 }
 
 - (NSString *)webDocumentDirectory {
@@ -44,15 +47,17 @@
                                         cacheAge:3600
                               allowRangeRequests:YES];
         [self.webServer addHandlerWithMatchBlock:^GCDWebServerRequest *(NSString* requestMethod, NSURL* requestURL, NSDictionary* requestHeaders, NSString* urlPath, NSDictionary* urlQuery) {
-            
-            // DO LOGGING
+            PKXLog(@"Internal web server request for %@", urlPath);
+            // FIXME: Add more/better logging
             
             return nil;
         } processBlock:^GCDWebServerResponse *(GCDWebServerRequest* request){ return nil; }];
         
         BOOL status = [self.webServer startWithPort:[self.localPort integerValue] bonjourName:@""];
-        if (! status) {
-            [[PKKManager sharedManager] addLogMessage:[NSString stringWithFormat:@"Failed to start webserver on port:%@ with root directory: %@", self.localPort, self.webDocumentDirectory]];
+        if (status) {
+            PKXLog(@"Started webserver on http://localhost:%@ with root directory: %@", self.localPort, self.webDocumentDirectory);
+        } else {
+            PKXLog(@"Failed to start webserver on port:%@ with root directory: %@", self.localPort, self.webDocumentDirectory);
         }
     }
 }

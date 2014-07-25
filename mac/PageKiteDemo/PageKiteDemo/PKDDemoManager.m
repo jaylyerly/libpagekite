@@ -53,6 +53,10 @@
     return self;
 }
 
+- (void)dealloc{
+    [[PKKManager sharedManager] removeObserver:self forKeyPath:@"kitesAreFlying"];
+}
+
 - (void) pageKiteManager:(PKKManager *)manager newLogMessage:(NSString *)message{
     [self log:message];
 }
@@ -178,8 +182,6 @@
 
 - (IBAction)handleAddKite:(id)sender{
     
-//    PKKDomain *remoteDomain = objc_dynamic_cast(PKKDomain, [[self.domainListController selectedObjects] firstObject]);
-    
     // FIXME -- this is a little gross
     NSNumber *protocolId = [[[PKKProtocols protocolNames] allKeysForObject:self.serviceName] lastObject];
     NSString *protocol = [PKKProtocols protocolServiceNames][protocolId];
@@ -200,7 +202,7 @@
                                                        localIp:self.localHost
                                                      localPort:self.localPort];
     if ([self.localPort integerValue]==8080){
-        kite.webDocumentDirectory = @"/Users/jayl/Sites/images";
+        kite.webDocumentDirectory = @"/Users/jayl/web";
     }
     [self willChangeValueForKey:@"kiteList"];
     [self.kiteList addObject:kite];
@@ -209,7 +211,14 @@
 }
 
 - (IBAction)handleRemoveKite:(id)sender{
-    [self.kiteListController removeObjectsAtArrangedObjectIndexes:[self.kiteListController selectionIndexes]];
+    id selected_obj = [[self.kiteListController selectedObjects] firstObject];
+    PKKKite *kite = objc_dynamic_cast(PKKKite, selected_obj);
+    if (kite){
+        [[PKKManager sharedManager] removeKite:kite];
+    }
+    [self willChangeValueForKey:@"kiteList"];
+    [self.kiteList removeObject:kite];
+    [self didChangeValueForKey:@"kiteList"];
 }
 
 

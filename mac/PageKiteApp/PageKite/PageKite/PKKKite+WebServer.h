@@ -10,7 +10,7 @@
 
 @interface PKKKite (WebServer)
 
-@property (nonatomic, copy) NSString* webDocumentDirectory;
+@property (nonatomic, copy) NSString  *webDocumentDirectory;
 
 - (void) startWebServer;
 - (void) stopWebServer;

@@ -12,9 +12,10 @@
 
 @property (nonatomic, readonly)                                 NSStatusItem  *statusItem;
 @property (nonatomic, weak)                         IBOutlet    NSMenu        *statusMenu;
+@property (nonatomic, weak)                         IBOutlet    NSMenuItem    *flyKitesMenuItem;
+@property (nonatomic, weak)                         IBOutlet    NSMenuItem    *statusMenuItem;
 @property (nonatomic, readonly)                                 NSArray       *domains;
 @property (nonatomic, assign, getter = areFlying)               BOOL          flying;
-@property (nonatomic, copy)                                     NSString      *flyKiteString;
 
 - (IBAction)quit:(id)sender;
 - (IBAction)about:(id)sender;

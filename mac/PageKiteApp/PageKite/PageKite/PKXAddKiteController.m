@@ -9,8 +9,21 @@
 #import "PKXAddKiteController.h"
 #import <PageKiteKit/PageKiteKit.h>
 #import "PKXLogger.h"
+#import "PKKKite+WebServer.h"
 
 #import "NSView+AutoLayoutAddSubview.h"
+
+#include <time.h>
+#include <stdlib.h>
+
+// FIXME -- this should be smarter and make sure the port is not in use.
+int randomPort(int minPort, int maxPort){
+    srand((unsigned int)time(NULL));
+    int range = maxPort - minPort;
+    int r = rand() % range;
+    return r + minPort;
+}
+
 
 @interface PKXAddKiteController ()
 @property (nonatomic, readonly) NSArray         *modeConfig;
@@ -43,12 +56,8 @@
                                     options:0
                                     context:nil];
     [[PKKManager sharedManager] retrieveDomainsWithCompletionBlock:nil];
-    [self setupDomainPopup];
-    //[self.modeBoxView autoLayoutAddSubview:self.webserverConfigView];
-    [self setupModePopup];
-    [self setupOtherPopups];
-    
-    
+
+    [self resetFields];
     
     self.tabView.tabViewType = NSNoTabsBezelBorder;
 }
@@ -57,6 +66,11 @@
     if ([keyPath isEqualToString:@"domains"]){
         [self setupDomainPopup];
     }
+}
+
+- (void) showWindow:(id)sender {
+    [super showWindow:sender];
+    [self resetFields];
 }
 
 #pragma mark - Config info
@@ -78,6 +92,12 @@
 }
 
 #pragma mark - Setup
+
+- (void) resetFields {
+    [self setupDomainPopup];
+    [self setupModePopup];
+    [self setupOtherPopups];
+}
 
 - (void) setupModePopup {
     for (NSTabViewItem *item in self.tabView.tabViewItems){
@@ -153,19 +173,38 @@
 }
 
 - (IBAction)createKite:(id)sender {
+    
+    if (self.modeIndex == 0) {      // local server
+        self.webRootDir = nil;
+    } else {                        // modeIndex == 1, built in web server
+        self.localPortNumber = [NSString stringWithFormat:@"%d", randomPort(45000, 46000)];
+    }
+    
+    NSNumber *protocolId = @(-1);
+    // FIXME -- reverse mapping the display name to service name should be easier
+    for (NSNumber *tmpProtocolId in [PKKProtocols protocols]){
+        NSString *displayName = [PKKProtocols protocolNames][tmpProtocolId];
+        if ([displayName isEqualToString:self.protocolName]){
+            protocolId = tmpProtocolId;
+        }
+    }
+    
+    NSString *serviceName = [PKKProtocols protocolServiceNames][protocolId] ?: @"http";
+    
     PKXLog(@"Create Kite with name: %@", self.kiteName);
-    PKXLog(@"\t protocol: %@", self.protocolName);
+    PKXLog(@"\t protocol: %@", serviceName);
     PKXLog(@"\t remoteIp: %@", self.kiteHostName);
     PKXLog(@"\t remotePort: %@", self.remotePortNumber);
     PKXLog(@"\t localIp: %@", @"127.0.0.1");
     PKXLog(@"\t localPort: %@", self.localPortNumber);
     PKKKite *kite = [[PKKManager sharedManager]addKiteWithName:self.kiteName
-                                                      protocol:self.protocolName
+                                                      protocol:serviceName
                                                       remoteIp:self.kiteHostName
                                                     remotePort:@([self.remotePortNumber intValue])
                                                        localIp:@"127.0.0.1"
                                                      localPort:@([self.localPortNumber intValue])
                                                                   ];
+    kite.webDocumentDirectory = self.webRootDir;
     [self.window orderOut:self];
 }
 
