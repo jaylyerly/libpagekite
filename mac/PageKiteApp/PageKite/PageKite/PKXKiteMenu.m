@@ -8,6 +8,8 @@
 
 #import "PKXKiteMenu.h"
 #import <PageKiteKit/PageKiteKit.h>
+#import "PKXAppManager.h"
+
 #import "PKKKite+WebServer.h"
 
 @interface PKXKiteMenu ()
@@ -33,7 +35,7 @@
             [self addDetailItemNamed:rootDir selector:@selector(openWebRoot:)];
         } else {
             NSString *local = [NSString stringWithFormat:@"Connects to local port: %@", kite.localPort];
-            [self addDetailItemNamed:local];
+            [self addDetailItemNamed:local selector:@selector(openLocalUrl:)];
         }
         
         [self addItem:[NSMenuItem separatorItem]];
@@ -57,6 +59,11 @@
     
 }
 
+- (IBAction)openLocalUrl:(id)sender {
+    NSString *urlString = [NSString stringWithFormat:@"%@://localhost:%@", self.kite.protocol, self.kite.localPort];
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:urlString]];
+}
+
 - (IBAction)openRemoteUrl:(id)sender {
     NSString *urlString = [NSString stringWithFormat:@"%@://%@:%@", self.kite.protocol, self.kite.remoteIp, self.kite.remotePort];
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:urlString]];
@@ -71,6 +78,7 @@
 
 - (IBAction)removeKite:(id)sender {
     [[PKKManager sharedManager] removeKite:self.kite];
+    [[PKXAppManager sharedManager] promptToRestart];
 }
 
 @end

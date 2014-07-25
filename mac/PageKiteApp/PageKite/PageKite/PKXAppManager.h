@@ -17,10 +17,14 @@
 @property (nonatomic, readonly)                                 NSArray       *domains;
 @property (nonatomic, assign, getter = areFlying)               BOOL          flying;
 
++ (instancetype) sharedManager;
+
 - (IBAction)quit:(id)sender;
 - (IBAction)about:(id)sender;
 - (IBAction)preferences:(id)sender;
 - (IBAction)addKite:(id)sender;
 - (IBAction)flyKites:(id)sender;
+
+- (void) promptToRestart;
 
 @end

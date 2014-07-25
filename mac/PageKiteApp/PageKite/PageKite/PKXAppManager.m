@@ -11,6 +11,7 @@
 #import "PKXAddKiteController.h"
 #import "PKXLogWindowController.h"
 #import "PKXAlert.h"
+#import "PKXLogger.h"
 #import "PKXCredentials.h"
 #import "PKXKiteMenu.h"
 
@@ -37,6 +38,22 @@ const NSUInteger kPKXMenuItemKiteTag = 17;
 @end
 
 @implementation PKXAppManager
+
++ (instancetype) sharedManager {
+    static dispatch_once_t onceToken;
+    static PKXAppManager *_mgr = nil;
+    dispatch_once(&onceToken, ^{
+        _mgr = [[PKXAppManager _alloc] _init];
+    });
+    
+    return _mgr;
+}
+
++ (id) allocWithZone:(NSZone*)z { return [self sharedManager];       }
++ (id) alloc                    { return [self sharedManager];       }
+- (id) init                     { return  self;                      }
++ (id)_alloc                    { return [super allocWithZone:NULL]; }
+- (id)_init                     { return [super init];               }
 
 - (void) awakeFromNib {
     self.areKitesRestoring = NO;
@@ -159,7 +176,12 @@ const NSUInteger kPKXMenuItemKiteTag = 17;
         [[PKKManager sharedManager] loginWithUser:[PKXCredentials sharedManager].email
                                          password:[PKXCredentials sharedManager].password
                                   completionBlock:^(BOOL success){
-                                      if (! success) {  // login failed!
+                                      if (success) {
+                                          BOOL flyOnLaunch = [[NSUserDefaults standardUserDefaults] boolForKey:@"flyOnLaunch"];
+                                          if (flyOnLaunch && !(self.areFlying)){
+                                              [self flyKites:self];
+                                          }                                          
+                                      } else {      // login failed!
                                           [weakSelf promptUserToLogin];
                                       }
                                   }];
@@ -235,6 +257,10 @@ const NSUInteger kPKXMenuItemKiteTag = 17;
     self.flying = ! self.areFlying;
 }
 
+- (IBAction)help:(id)sender {
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://pagekite.net/wiki/Howto/Mac/MacClient/"]];
+}
+
 #pragma mark - Custom Getters
 
 - (PKXLogWindowController *)logController{
@@ -253,7 +279,12 @@ const NSUInteger kPKXMenuItemKiteTag = 17;
 
 - (void) setFlying:(BOOL)flying {
     _flying = flying;
-    [self configureMenuItemsForFlightStatus:flying];
+    NSInteger kiteCount = [[[PKKManager sharedManager] kites] count];
+    if (flying && kiteCount < 1){
+        PKXLog(@"Can't fly without any kites.  Skipping launch.")
+        _flying = NO;
+    }
+    [self configureMenuItemsForFlightStatus:_flying];
 }
 
 - (IBAction)statusAction:(id)sender{
@@ -274,4 +305,24 @@ const NSUInteger kPKXMenuItemKiteTag = 17;
         [mgr landKitesWithWebServers];
     }
 }
+
+- (void) promptToRestart {
+    NSAlert *alert = [[NSAlert alloc] init];
+    
+    alert.messageText = @"Relaunch Kites";
+    
+    NSMutableString *info = [@"This change won't take affect until you stop your kites and restart.  " mutableCopy];
+    [info appendString:@"Do you want to relaunch all your kites now?  "];
+    alert.informativeText = info;
+    
+    [alert addButtonWithTitle:@"Relaunch Kites Now"];
+    [alert addButtonWithTitle:@"Manually Relanch Later"];
+    
+    NSInteger status = [alert runModal];
+    if (status == NSAlertFirstButtonReturn){
+        self.flying = NO;
+        self.flying = YES;
+    }
+}
+
 @end

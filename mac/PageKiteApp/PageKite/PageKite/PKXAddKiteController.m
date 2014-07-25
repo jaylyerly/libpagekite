@@ -9,8 +9,10 @@
 #import "PKXAddKiteController.h"
 #import <PageKiteKit/PageKiteKit.h>
 #import "PKXLogger.h"
-#import "PKKKite+WebServer.h"
+#import "PKXAppManager.h"
+#import "PKXAlert.h"
 
+#import "PKKKite+WebServer.h"
 #import "NSView+AutoLayoutAddSubview.h"
 
 #include <time.h>
@@ -97,6 +99,7 @@ int randomPort(int minPort, int maxPort){
     [self setupDomainPopup];
     [self setupModePopup];
     [self setupOtherPopups];
+    self.kiteName = @"";
 }
 
 - (void) setupModePopup {
@@ -197,15 +200,33 @@ int randomPort(int minPort, int maxPort){
     PKXLog(@"\t remotePort: %@", self.remotePortNumber);
     PKXLog(@"\t localIp: %@", @"127.0.0.1");
     PKXLog(@"\t localPort: %@", self.localPortNumber);
-    PKKKite *kite = [[PKKManager sharedManager]addKiteWithName:self.kiteName
-                                                      protocol:serviceName
-                                                      remoteIp:self.kiteHostName
-                                                    remotePort:@([self.remotePortNumber intValue])
-                                                       localIp:@"127.0.0.1"
-                                                     localPort:@([self.localPortNumber intValue])
-                                                                  ];
-    kite.webDocumentDirectory = self.webRootDir;
-    [self.window orderOut:self];
+    
+    NSNumber *remotePort = @([self.remotePortNumber intValue]);
+    NSNumber *localPort = @([self.localPortNumber intValue]);
+    
+    if ([self preflightKiteRemoteIp:self.kiteHostName remotePort:remotePort]){  // check for conflicts
+        PKKKite *kite = [[PKKManager sharedManager]addKiteWithName:self.kiteName
+                                                          protocol:serviceName
+                                                          remoteIp:self.kiteHostName
+                                                        remotePort:remotePort
+                                                           localIp:@"127.0.0.1"
+                                                         localPort:localPort
+                                                                      ];
+        kite.webDocumentDirectory = self.webRootDir;
+        [self.window orderOut:self];
+        [[PKXAppManager sharedManager] promptToRestart];
+    }
+}
+
+- (BOOL) preflightKiteRemoteIp:(NSString *)remoteIp remotePort:(NSNumber *)port {
+    for (PKKKite *kite in [[PKKManager sharedManager] kites]){
+        if ([remoteIp isEqualToString:kite.remoteIp] && [port isEqualToNumber:kite.remotePort]){
+            NSString *msg = @"This hostname and remote port combination is already in use.  Please choose another hostname/port or delete the other kite first.";
+            [PKXAlert showAlertMesg:@"Address Conflict" info:msg];
+            return NO;
+        }
+    }
+    return YES;
 }
 
 #pragma mark - Getters and Setters

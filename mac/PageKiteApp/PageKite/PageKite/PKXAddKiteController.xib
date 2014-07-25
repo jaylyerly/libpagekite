@@ -181,7 +181,11 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                         <connections>
-                            <binding destination="-2" name="value" keyPath="self.remotePortNumber" id="SVV-ga-voa"/>
+                            <binding destination="-2" name="value" keyPath="self.remotePortNumber" id="fh2-MX-9LW">
+                                <dictionary key="options">
+                                    <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                </dictionary>
+                            </binding>
                         </connections>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mV2-g6-UvS">
@@ -325,7 +329,11 @@
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                     <connections>
-                        <binding destination="-2" name="value" keyPath="self.localPortNumber" id="vVy-xB-8g2"/>
+                        <binding destination="-2" name="value" keyPath="self.localPortNumber" id="Dtk-WK-rMk">
+                            <dictionary key="options">
+                                <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                            </dictionary>
+                        </binding>
                     </connections>
                 </textField>
                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="JnS-K5-GOj" userLabel="Spacer View Left">

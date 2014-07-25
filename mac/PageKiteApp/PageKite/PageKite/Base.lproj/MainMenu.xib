@@ -59,6 +59,9 @@
                 </menuItem>
                 <menuItem title="Help..." id="Nsa-cT-q1P">
                     <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="help:" target="plw-gJ-IT6" id="Hli-7C-fYs"/>
+                    </connections>
                 </menuItem>
                 <menuItem title="About PageKite..." id="xqD-Bm-Cd5">
                     <modifierMask key="keyEquivalentModifierMask"/>

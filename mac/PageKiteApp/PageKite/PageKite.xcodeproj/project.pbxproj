@@ -582,6 +582,7 @@
 			baseConfigurationReference = 4BDC707F55C145AFB3B96D2F /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Developer ID Application: SonicBunny Software, LLC";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PageKite/PageKite-Prefix.pch";
@@ -596,6 +597,7 @@
 			baseConfigurationReference = 4BDC707F55C145AFB3B96D2F /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Developer ID Application: SonicBunny Software, LLC";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PageKite/PageKite-Prefix.pch";
