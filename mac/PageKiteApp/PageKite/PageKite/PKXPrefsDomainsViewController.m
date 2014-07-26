@@ -25,7 +25,7 @@
 }
 
 - (NSString *)toolbarItemLabel {
-    return @"Domains";
+    return @"Hostnames";
 }
 
 - (void) awakeFromNib {

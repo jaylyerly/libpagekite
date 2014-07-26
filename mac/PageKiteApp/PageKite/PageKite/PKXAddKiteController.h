@@ -17,6 +17,9 @@
 @property (nonatomic, weak) IBOutlet    NSView          *modeBoxView;
 @property (nonatomic, weak) IBOutlet    NSTabView       *tabView;
 
+@property (nonatomic, weak) IBOutlet    NSTextField     *localPortTextField;
+@property (nonatomic, weak) IBOutlet    NSTextField     *remotePortTextField;
+
 @property (nonatomic, weak) IBOutlet    NSPopUpButton   *modePopup;
 @property (nonatomic, weak) IBOutlet    NSPopUpButton   *domainPopup;
 @property (nonatomic, weak) IBOutlet    NSPopUpButton   *portPopup;

@@ -27,7 +27,7 @@ int randomPort(int minPort, int maxPort){
 }
 
 
-@interface PKXAddKiteController ()
+@interface PKXAddKiteController () <NSTextFieldDelegate>
 @property (nonatomic, readonly) NSArray         *modeConfig;
 @property (nonatomic, readonly) NSArray         *portConfig;
 @end
@@ -62,6 +62,8 @@ int randomPort(int minPort, int maxPort){
     [self resetFields];
     
     self.tabView.tabViewType = NSNoTabsBezelBorder;
+    self.localPortTextField.delegate = self;
+    self.remotePortTextField.delegate = self;
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
@@ -248,6 +250,18 @@ int randomPort(int minPort, int maxPort){
         }
     }
     return @"";   // if no matching name found, return empty string
+}
+
+
+#pragma mark - NSTextField Delegates
+- (BOOL)control:(NSControl *)control textShouldBeginEditing:(NSText *)fieldEditor {
+    if ([control isEqualTo:self.localPortTextField]){
+        [self.localPortPopup selectItemWithTitle:@"Custom"];
+    }
+    if ([control isEqualTo:self.remotePortTextField]){
+        [self.portPopup selectItemWithTitle:@"Custom"];
+    }
+    return YES;
 }
 
 @end

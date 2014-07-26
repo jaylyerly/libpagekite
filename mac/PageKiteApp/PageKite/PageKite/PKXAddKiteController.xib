@@ -8,10 +8,12 @@
             <connections>
                 <outlet property="domainPopup" destination="W0N-OS-Gif" id="i74-2g-kgR"/>
                 <outlet property="localPortPopup" destination="yLh-RK-agc" id="Im0-dh-2Ke"/>
+                <outlet property="localPortTextField" destination="tob-9z-idl" id="hgn-0b-efv"/>
                 <outlet property="modePopup" destination="K0K-Mu-hv4" id="xf5-ft-tyh"/>
                 <outlet property="portConfigView" destination="olz-Z1-NtW" id="Yyo-Tz-Skb"/>
                 <outlet property="portPopup" destination="Fdd-6E-5eJ" id="itv-k3-vxs"/>
                 <outlet property="protocolPopup" destination="a6v-es-R6a" id="Lw8-fT-TRG"/>
+                <outlet property="remotePortTextField" destination="oR2-0K-zrc" id="zer-6N-Ll5"/>
                 <outlet property="tabView" destination="lfS-RP-ckr" id="RBT-z2-xUY"/>
                 <outlet property="webserverConfigView" destination="kam-rQ-3ux" id="puS-V7-2NL"/>
                 <outlet property="window" destination="7Jp-lR-3bS" id="A0x-Uh-Du4"/>
