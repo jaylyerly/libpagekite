@@ -15,7 +15,7 @@ inputs = [
     
 # sizes from http://ivomynttinen.com/blog/the-ios-7-design-cheat-sheet/
 
-sizes = [
+sizes_ios = [
             120,
             152,
             76,
@@ -28,8 +28,25 @@ sizes = [
             18,     # for NSStatusItem
         ]
       
-icons = []
-for size in sizes:
+sizes_mac = [
+            16,
+            32,
+            128,
+            256,
+            512,
+        ]
+
+plats = { "mac":sizes_mac, "ios":sizes_ios }
+
+def doCmd(cmd):
+    print "Executing cmd:", cmd
+    subprocess.call(cmd, shell=True)      
+
+
+for plat in plats:
+  sizes = plats[plat]
+  icons = []
+  for size in sizes:
     # regular icons
     icon = {}
     icon["name"] = "%%s_%sx%s.png" % (size, size)
@@ -42,20 +59,17 @@ for size in sizes:
     icon["size"] = size * 2
     icons.append(icon)
       
-def doCmd(cmd):
-    print "Executing cmd:", cmd
-    subprocess.call(cmd, shell=True)      
       
-for infile in inputs:
+  for infile in inputs:
     (basename, ext) = os.path.splitext(infile)
-    iosdir = "ios"
+    platdir = plat
     icns = "%s.icns" % basename
     try:
-        os.mkdir(iosdir)
+        os.mkdir(platdir)
     except:
         pass
     for icon in icons:
-        filename = os.path.join(iosdir, icon["name"])
+        filename = os.path.join(platdir, icon["name"])
         filename = filename % basename
         size = icon["size"]
         cmd = "svg2png -w %s -h %s %s %s" % (size, size, infile, filename)
